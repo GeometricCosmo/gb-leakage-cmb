@@ -1,0 +1,41 @@
+## 🚀 gb-leakage-cmb v0.2.0
+
+### Highlights
+- Added **ROADMAP.md** to outline project goals.
+- New **INSTALL.md** with step‑by‑step setup instructions.
+- Added **examples/quickstart.md** for reproducing figures and results.
+- Directory‑level READMEs (`analysis`, `plots`, `validation`, `cluster`, `src`, `data`) for clarity.
+- New **docs/comparison.md** comparing gb-leakage-cmb to CLASS, CAMB, MontePython, HiCLASS.
+
+### Improvements
+- Polished `requirements.txt` with grouped dependencies and optional packages.
+- Updated `docs/theory_notes.md` with improved formatting and LaTeX equations.
+- Enhanced `README.md` with clearer Quickstart and outputs section.
+
+### Outputs
+- Figures saved in `figures/`
+- Results in `results/`
+- Chains in `chains/`
+
+---
+
+## 📦 v0.1.0 (Initial Release)
+
+- Core leakage patch (`src/`)
+- Validation scripts (`validation/`)
+- Plotting utilities (`plots/`)
+- MCMC drivers and ΔS8 scan (`analysis/`)
+- SLURM cluster script (`cluster/`)
+- Example config (`examples/run_planck.ini`)
+- End‑to‑end reproducibility test (`tests/test_pipeline.py`)
+- Citation metadata (`CITATION.cff`)
+- Contribution guidelines (`CONTRIBUTING.md`)
+- MIT License
+
+---
+
+### 🔮 Coming Next
+- Polarization fits (TE/EE suppression tests)
+- Fisher forecast utilities for CMB‑S4
+- Expanded examples for ACT DR6 and SPT‑3G
+- Publication‑quality plotting styles
