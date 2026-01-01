@@ -1,0 +1,166 @@
+### Installation Guide
+
+This document explains how to set up the Python environment, install CAMB and CLASS bindings, and prepare public likelihood data (Planck, ACT, SPT) so the repository’s analysis and tests run reproducibly.
+
+---
+
+### Prerequisites
+
+- **Operating system**: Linux or macOS recommended for scientific toolchain and cluster use.  
+- **Compiler toolchain**: Fortran compiler (gfortran) and a C compiler (gcc/clang) for building cosmology engines.  
+- **MPI**: Optional but recommended for parallel MCMC and cluster runs.  
+- **Disk space**: Allow several GB for likelihood packages and chains.
+
+---
+
+### Python environment and packages
+
+1. **Create an isolated environment** (conda or venv recommended).
+
+   ```bash
+   # Conda example
+   conda create -n gb-leakage python=3.11 -y
+   conda activate gb-leakage
+
+   # venv example
+   python -m venv .venv
+   source .venv/bin/activate
+   ```
+
+2. **Install Python dependencies** from `requirements.txt`.
+
+   ```bash
+   pip install --upgrade pip
+   pip install -r requirements.txt
+   ```
+
+3. **Optional recommended packages** for convenience and plotting:
+
+   ```bash
+   pip install pandas seaborn
+   ```
+
+---
+
+### Install CAMB and CLASS bindings
+
+**CAMB**
+
+- The Python package `camb` provides bindings to CAMB. In many environments `pip install camb` is sufficient.
+
+  ```bash
+  pip install camb
+  ```
+
+- If you need to build CAMB from source (for custom Fortran options), clone the CAMB repo, build the Fortran code, and ensure the Python wrapper points to the built library. Confirm the Python import works:
+
+  ```python
+  python -c "import camb; print(camb.__version__)"
+  ```
+
+**CLASS (optional)**
+
+- If you plan to run CLASS-based workflows, install the Python wrapper `classy` or build CLASS from source and install the Python bindings.
+
+  ```bash
+  # If using pip wrapper
+  pip install classy
+  ```
+
+- Verify import:
+
+  ```python
+  python -c "from classy import Class; print('CLASS OK')"
+  ```
+
+---
+
+### Likelihood data setup
+
+This project expects public likelihoods to be placed under the `data/` directory. The repository includes `data/README.md` with guidance; follow these steps as a checklist.
+
+1. **Planck likelihoods**
+
+   - Download the Planck likelihood package (PLC) from the Planck Legacy Archive or the official Planck distribution.
+   - Extract the package into `data/planck/` so the `.clik` or likelihood files are available.
+   - If your sampler requires an environment variable, set it (example variable names shown; adapt to your sampler):
+
+   ```bash
+   export CLIK_PATH="$(pwd)/data/planck"
+   ```
+
+2. **ACT DR6 likelihoods**
+
+   - Download ACT DR6 likelihood files and place them in `data/act_dr6/`.
+   - Update any config files or `.ini` examples to point to `data/act_dr6/`.
+
+3. **SPT‑3G likelihoods**
+
+   - Download SPT likelihood files and place them in `data/spt3g/`.
+   - Update configs to reference `data/spt3g/`.
+
+4. **Permissions and paths**
+
+   - Ensure the likelihood directories are readable by the user running MCMC jobs.
+   - If MontePython or CosmoMC require specific environment variables, set them in your shell profile or job scripts.
+
+---
+
+### MontePython and CosmoMC setup
+
+1. **MontePython**
+
+   - Clone or download MontePython and install its Python requirements. Typical workflow:
+
+   ```bash
+   git clone <montepython-repo>
+   cd montepython
+   pip install -e .
+   ```
+
+   - Configure MontePython to find CLASS or CAMB and the likelihoods in `data/`.
+
+2. **CosmoMC**
+
+   - CosmoMC typically requires building Fortran code and linking to CAMB. Follow CosmoMC build instructions for your system and ensure the `chains/` and `results/` directories are writable.
+
+3. **Repository integration**
+
+   - The example config `examples/run_planck.ini` shows how to add leakage parameters to a sampler config. Adapt it to your local MontePython or CosmoMC installation.
+
+---
+
+### Verify installation and run reproducibility test
+
+1. **Create output directories**
+
+   ```bash
+   mkdir -p figures results chains
+   ```
+
+2. **Run the end-to-end pipeline test**
+
+   ```bash
+   python tests/test_pipeline.py
+   ```
+
+   - This script runs lightweight validation, plotting, and analysis steps. It checks that the patched CAMB/CLASS, plotting scripts, and analysis scripts execute and produce expected outputs.
+
+---
+
+### Troubleshooting and tips
+
+- **Import errors for CAMB or CLASS**: ensure the Python environment used to run the repo is the same one where CAMB/CLASS were installed. Check `python -c "import camb"` and `python -c "from classy import Class"` for errors and inspect `PYTHONPATH` if needed.
+- **Fortran build failures**: install or update `gfortran` and ensure compilers are on `PATH`. On Debian/Ubuntu: `sudo apt install gfortran build-essential`.
+- **MPI issues**: if using MPI, ensure `mpirun` or `mpiexec` is available and that the sampler is built with MPI support.
+- **Likelihood license or access**: some likelihood packages require registration or acceptance of license terms. Follow the provider’s instructions and place files under `data/` after download.
+- **Cluster runs**: adapt `cluster/slurm_run_fits.sh` to your scheduler and resource limits. Set environment variables inside the job script.
+
+---
+
+### Final notes
+
+- Keep the Python environment and likelihood versions documented for reproducibility. Record exact versions used for any published results.  
+- If you want, run the validation scripts first (`validation/test_suppression.py` and `notebooks/validation_quick.py`) to confirm the leakage patch behaves as expected before launching long MCMC runs.
+
+---
