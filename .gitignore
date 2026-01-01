@@ -1,0 +1,26 @@
+# Path: .gitignore
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.env
+.venv
+venv/
+.envrc
+
+# Data, chains, logs
+data/*/
+chains/
+results/
+figures/
+plots/
+slurm_logs/
+
+# Notebooks
+.ipynb_checkpoints/
+
+# OS / IDE
+.DS_Store
+.idea/
+.vscode/
