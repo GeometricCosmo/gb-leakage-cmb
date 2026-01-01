@@ -1,0 +1,22 @@
+# CITATION.cff
+# Citation metadata for gb-leakage-cmb
+
+cff-version: 1.2.0
+title: "gb-leakage-cmb: Gauss–Bonnet Leakage Model for High-ℓ CMB Suppression"
+message: "If you use this code in your research, please cite it using the following metadata."
+authors:
+  - family-names: "Andre"
+    given-names: "A."
+    affiliation: "Independent researcher, systems architect, and product designer"
+    orcid: "0000-0000-0000-0000"   # replace with your ORCID if available
+version: "1.0.0"
+date-released: "2026-01-01"
+repository-code: "https://github.com/GeometricCosmo/gb-leakage-cmb"
+license: "MIT"
+keywords:
+  - cosmology
+  - CMB
+  - Gauss-Bonnet
+  - modified gravity
+  - leakage model
+  - reproducibility
