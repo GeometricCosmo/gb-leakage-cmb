@@ -5,7 +5,7 @@ A simple, physical fix for the high-ℓ CMB damping and the σ₈/S₈ tension  
 ![Version](https://img.shields.io/badge/version-v1.0.0-blue.svg)
 
 
-This repo adds one smooth, Gauss-Bonnet-inspired transfer function T(k) to the primordial power spectrum. It suppresses small-scale power just enough to:
+This repo adds one smooth, Gauss-Bonnet inspired transfer function T(k) to the primordial power spectrum. It suppresses small-scale power just enough to:
 - Remove the ~3σ preference for extra smoothing in Planck/ACT/SPT data
 - Lower σ₈ by ~0.07 → brings weak lensing and clusters into agreement
 - Keep all the big successes of ΛCDM untouched
@@ -26,7 +26,7 @@ Includes CAMB/CLASS patches, MCMC scripts, and reproducible pipelines for Planck
 ## GB Leakage Model for High-ℓ CMB Suppression
 
 This repository provides a reproducible pipeline to test a phenomenological,
-Gauss-Bonnet–inspired leakage model for high-ℓ CMB power suppression.
+Gauss-Bonnet inspired leakage model for high-ℓ CMB power suppression.
 
 ---
 
