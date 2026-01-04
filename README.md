@@ -1,6 +1,6 @@
 # gb-leakage-cmb
 
-A simple, physical fix for the high-ℓ CMB damping and the σ₈/S₈ tension — without new particles.
+A simple, physical fix for the high-ℓ CMB damping and the σ₈/S₈ tension  without new particles.
 
 This repo adds one smooth, Gauss-Bonnet-inspired transfer function T(k) to the primordial power spectrum. It suppresses small-scale power just enough to:
 - Remove the ~3σ preference for extra smoothing in Planck/ACT/SPT data
@@ -9,8 +9,9 @@ This repo adds one smooth, Gauss-Bonnet-inspired transfer function T(k) to the p
 
 ## Features
 - Drop-in patches for CLASS and CAMB
-- Ready-to-run MontePython and Cobaya likelihoods
-- Full chains with Planck 2018 + ACT DR6 + SPT-3G
+- Simulate a slice from the early universe, this paper show the smudge is not on the lense but its a feature?
+- Ready to run MontePython and Cobaya likelihoods (Big number Math)
+- Full chains with Planck 2018 + ACT DR6 + SPT-3G (Or input your own values)
 - MIT license → grab it, break it, improve it
 
 
@@ -22,7 +23,7 @@ Includes CAMB/CLASS patches, MCMC scripts, and reproducible pipelines for Planck
 ## GB Leakage Model for High-ℓ CMB Suppression
 
 This repository provides a reproducible pipeline to test a phenomenological,
-Gauss–Bonnet–inspired leakage model for high-ℓ CMB power suppression.
+Gauss-Bonnet–inspired leakage model for high-ℓ CMB power suppression.
 
 ---
 
@@ -112,9 +113,9 @@ If you use this code in your work, please cite:
 
 ```
 @misc{gb_leakage_cmb,
-  author       = {Andre and collaborators},
+  author       = {Andre Swart},
   title        = {gb-leakage-cmb: Gauss–Bonnet Leakage Model for High-ℓ CMB Suppression},
-  year         = {2026},
+  year         = {2025/2026},
   publisher    = {GitHub},
   journal      = {GitHub repository},
   howpublished = {\url{https://github.com/GeometricCosmo/gb-leakage-cmb}}
@@ -130,6 +131,7 @@ Pull requests are welcome! See [`CONTRIBUTING.md`](CONTRIBUTING.md) for guidelin
 
 ## 📌 License
 This project is licensed under the MIT License – see [`LICENSE`](LICENSE) for details.
+So use it, break it, make it better?!
 ```
 
 ---
