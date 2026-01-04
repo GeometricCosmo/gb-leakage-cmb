@@ -1,6 +1,10 @@
 # gb-leakage-cmb
 
 A simple, physical fix for the high-ℓ CMB damping and the σ₈/S₈ tension  without new particles.
+# gb-leakage-cmb
+
+![Version](https://img.shields.io/badge/version-v1.0.0-blue.svg)
+
 
 This repo adds one smooth, Gauss-Bonnet-inspired transfer function T(k) to the primordial power spectrum. It suppresses small-scale power just enough to:
 - Remove the ~3σ preference for extra smoothing in Planck/ACT/SPT data
