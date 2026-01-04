@@ -1,4 +1,19 @@
 # gb-leakage-cmb
+
+A simple, physical fix for the high-ℓ CMB damping and the σ₈/S₈ tension — without new particles.
+
+This repo adds one smooth, Gauss-Bonnet-inspired transfer function T(k) to the primordial power spectrum. It suppresses small-scale power just enough to:
+- Remove the ~3σ preference for extra smoothing in Planck/ACT/SPT data
+- Lower σ₈ by ~0.07 → brings weak lensing and clusters into agreement
+- Keep all the big successes of ΛCDM untouched
+
+## Features
+- Drop-in patches for CLASS and CAMB
+- Ready-to-run MontePython and Cobaya likelihoods
+- Full chains with Planck 2018 + ACT DR6 + SPT-3G
+- MIT license → grab it, break it, improve it
+
+
 Phenomenological Gauss–Bonnet braneworld leakage model for high‑ℓ CMB suppression.  
 Includes CAMB/CLASS patches, MCMC scripts, and reproducible pipelines for Planck, ACT DR6, and SPT‑3G data.
 
