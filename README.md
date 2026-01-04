@@ -1,7 +1,6 @@
 # gb-leakage-cmb
 
 A simple, physical fix for the high-ℓ CMB damping and the σ₈/S₈ tension  without new particles.
-# gb-leakage-cmb
 
 ![Version](https://img.shields.io/badge/version-v1.0.0-blue.svg)
 
