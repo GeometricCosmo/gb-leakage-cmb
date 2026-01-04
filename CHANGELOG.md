@@ -44,3 +44,25 @@ and this project adheres to [Semantic Versioning](https://semver.org/).
 - MIT `LICENSE`.
 
 ---
+# Changelog
+
+All notable changes to this project will be documented in this file.
+
+---
+
+## [v1.0.0] - 2026-01-04
+### Summary
+Initial public release of the **gb-leakage-cmb** repository.
+
+### Features
+- Modified CLASS and CAMB wrappers with suppression transfer function
+- MontePython configs for Planck 2018, ACT DR6, and SPT‑3G likelihoods
+- Example figures: transfer function T(k) and residuals plot
+- Short test chains for reproducibility
+- REPRODUCE.md with step‑by‑step instructions
+- SECURITY.md with disclosure policy
+
+### Citation
+Swart, A. (2026). *A Gauss–Bonnet Motivated Phenomenological Model for High‑CMB Power Suppression*.  
+DOI: 10.5281/zenodo.18099543
+
