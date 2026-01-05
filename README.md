@@ -36,12 +36,14 @@ Gauss‑Bonnet inspired leakage model for high‑ℓ CMB power suppression.
 ---
 
 ## 📂 Contents
-- `src/` : CAMB/CLASS patches implementing  
-  
+- `src/` : CAMB/CLASS patches implementing
+
+
 
 \[
-  P_{\rm mod}(k) = P_{\rm prim}(k) \cdot T(k)^2
-  \]
+P_{\rm mod}(k) = P_{\rm prim}(k) \cdot T(k)^2
+\]
+
 
 
 - `analysis/` : MCMC driver wrappers, ΔS8 scans, Fisher forecast utilities
@@ -127,23 +129,11 @@ bibtex
 🤝 Contributing
 Pull requests are welcome! See CONTRIBUTING.md for guidelines.
 
-📌 License
+<details>
+<summary>📌 License</summary>
+
 This project is licensed under the MIT License — see LICENSE for details.
 
 So use it, break it, make it better!
 
-Code
-
----
----
-
-So use it, break it, make it better!
-
-
-
-### Quick commands to fix the PDF filename and update README
-
-1. Rename the PDF in your local clone (fix the double `.pdf`):
-```bash
-git mv GaussBonnet_CMB_Suppression.pdf.pdf GB_CMB_Suppression.pdf
-git commit -m "Rename manuscript to GB_CMB_Suppression.pdf"
+</details>
