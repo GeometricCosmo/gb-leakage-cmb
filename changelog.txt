@@ -1,0 +1,43 @@
+- 2026-01-05
+
+Added
+
+analysis/ANOVA_datasetB_point3.py: Script to perform ANOVA excluding Grubbs' outlier.
+
+analysis/model_comparison.py: Script to compute AIC/BIC for alternative models.
+
+validation/grubbs_test.py: Validation script for outlier detection.
+
+tables/systematics_comparison.csv: Comparison of model vs foreground-only adjustments.
+
+tables/model_comparison.csv: Comparison table against Neutrinos, EDE, and Mod. Recombination.
+
+figures/ANOVA_datasetB_point3_updated.png: Updated ANOVA plot excluding outlier.
+
+figures/appendixC_residuals.png, figures/appendixC_qqplot.png, figures/appendixC_histogram.png: Residual diagnostic plots for Appendix C.
+
+figures/residuals_by_experiment.png: Residuals split by Planck, ACT, and SPT.
+
+figures/posterior_As_kc.png: 2D posterior contour plot.
+
+figures/predicted_S8_shift.png: Forecasted S8 shift plot.
+
+figures/s8_comparison.png: S8 comparison against weak lensing surveys.
+
+figures/figure2_updated.png: Figure 2 updated with error bars.
+
+Changed
+
+main.tex:
+
+Methodology: Replaced "parametric assumptions were met" with detailed justification referencing Appendix C.
+
+Results: Updated ANOVA statistics (F, df, p) and added footnote regarding Grubbs' exclusion.
+
+Section 2: Added subsection "Connection to Gauss-Bonnet Braneworlds".
+
+Section 4: Added "Systematics and Foreground Tests" and "Additional Predictions" subsections.
+
+Conclusion: Replaced "resolves tension" with "alleviates tension".
+
+Table 1: Added LCDM comparison row.
