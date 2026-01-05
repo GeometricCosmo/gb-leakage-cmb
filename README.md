@@ -46,11 +46,11 @@ P_{\rm mod}(k) = P_{\rm prim}(k) \cdot T(k)^2
 
 
 
-- `analysis/` : MCMC driver wrappers, ΔS8 scans, Fisher forecast utilities
-- `plots/` : plotting utilities for transfer, residuals, and corner plots
-- `validation/` : unit tests validating suppression behavior
-- `cluster/` : SLURM array script for large parameter scans
-- `data/` : helper script to document/download public likelihoods
+- `analysis/` : MCMC driver wrappers, ΔS8 scans, Fisher forecast utilities  
+- `plots/` : plotting utilities for transfer, residuals, and corner plots  
+- `validation/` : unit tests validating suppression behavior  
+- `cluster/` : SLURM array script for large parameter scans  
+- `data/` : helper script to document/download public likelihoods  
 - `docs/` : theory notes and assumptions
 
 ---
@@ -131,6 +131,15 @@ Pull requests are welcome! See CONTRIBUTING.md for guidelines.
 
 <details>
 <summary>📌 License</summary>
+
+This project is licensed under the MIT License — see LICENSE for details.
+
+So use it, break it, make it better!
+
+</details>
+
+Code
+
 
 This project is licensed under the MIT License — see LICENSE for details.
 
