@@ -14,7 +14,7 @@ This repo adds one smooth, Gauss‑Bonnet inspired transfer function `T(k)` to t
 - Simulate a slice from the early universe; this paper shows the smudge is not on the lens but is a physical feature  
 - Ready to run MontePython and Cobaya likelihoods  
 - Full chains with Planck 2018 + ACT DR6 + SPT‑3G (or input your own values)  
-- MIT license — grab it, break it, improve it
+- MIT license   grab it, break it, improve it
 
 Phenomenological Gauss–Bonnet braneworld leakage model for high‑ℓ CMB suppression.  
 Includes CAMB/CLASS patches, MCMC scripts, and reproducible pipelines for Planck, ACT DR6, and SPT‑3G data.
