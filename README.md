@@ -24,7 +24,7 @@ Includes CAMB/CLASS patches, MCMC scripts, and reproducible pipelines for Planck
 ## 📄 Manuscript
 
 You can view or download the full paper here:  
-[Gauss–Bonnet Motivated Phenomenological Model for High‑ℓ CMB Power Suppression (PDF)](GB_CMB_Suppression.pdf)
+[[Gauss–Bonnet Motivated Phenomenological Model for High‑ℓ CMB Power Suppression (PDF)](GB_CMB_Suppression.pdf)](https://github.com/GeometricCosmo/gb-leakage-cmb/blob/main/GaussBonnet_CMB_Suppression.pdf)
 
 ---
 
