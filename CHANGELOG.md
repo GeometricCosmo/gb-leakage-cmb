@@ -6,6 +6,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/).
 
 ---
 
+2026-01-12
+Updated the pdf to the right file https://github.com/GeometricCosmo/gb-leakage-cmb/blob/main/GaussBonnet_CMB_Suppression.pdf
+
+---
+
 ## [Unreleased]
 - Polarization extension (TE/EE fits).
 - Fisher forecast utilities for CMB‑S4.
