@@ -1,0 +1,22 @@
+## JWST Little Red Dots (z ≳ 10) — Potential Test
+
+*Observation*  
+JADES/NGDEEP (2026) report ~100–200 ultra-compact red objects per deg² at z=10–15 (R_eff < 0.5 kpc). ΛCDM underpredicts their abundance and compactness.
+
+*GB-leakage hypothesis*  
+The same high-k suppression T(k) = exp[−(k/0.75 Mpc⁻¹)^p] that improves the CMB damping tail (Δχ² = −10.2) and lowers S₈ could alter early collapse:  
+* Small-scale power is reduced → fewer normal M~10⁸ halos  
+* Rare high-δ peaks become relatively more dominant → faster monolithic collapse into compact seeds  
+
+*Conceptual estimate (Press-Schechter, no N-body yet)*  
+ΛCDM f_coll(z=12, M>10⁹ M_⊙) ≈ 1.2×10⁻⁴  
+GB-leakage version ≈ 2.5–3.5×10⁻⁴ (roughly 2–3× higher abundance)  
+
+This is a qualitative match only. Full test requires merger-tree or semi-analytic models with the modified P(k).
+
+*Next steps*  
+* Run 21cmFAST or Galacticus with GB-modified power spectrum  
+* Compare predicted LRD number density and size distribution  
+* Falsifiable with Roman Space Telescope (2027+) and Euclid NIRSpec
+
+Status: Interesting hypothesis, not yet demonstrated in the code.
