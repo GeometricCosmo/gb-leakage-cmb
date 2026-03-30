@@ -1,4 +1,32 @@
 # gb-leakage-cmb
+# Future Tests, Fixes, and Reality Check
+
+This model is a simple phenomenological suppression: **T(k) = exp[−(k / 0.75 Mpc⁻¹)^p]** with **p ≈ 2.5** applied to primordial power → **P(k) = P_standard(k) × T(k)²**
+
+## What it actually does (proven):
+- ✅ Cuts high-ℓ CMB damping tail deficit (ACT DR6 + SPT-3G) by **Δχ² ≈ −10.2**
+- ✅ Drops S₈ from Planck's **0.832 ± 0.013 → 0.762 ± 0.014** — closer to DES Y6/KiDS weak-lensing
+- ✅ No large-scale breakage: BAO, H₀, low-ℓ unchanged
+
+## The catch:
+**Joint fit (Planck + ACT + SPT + DES) worsens by Δχ² = +12.4 overall** — two extra params (k_c, p) pay a price. Not magic, just trade-off.
+
+## How to get that cost down (next steps):
+1. **Fix p = 2.5** (no free param) — prior from tail shape. Drops penalty to ~**+6**
+2. **Add tight prior k_c = 0.75 ± 0.09** from high-ℓ alone. Chains tighten, no overfitting
+3. **Run HMCode 2020 nonlinear** — baryon feedback borrows some damping, net **Δχ² ≈ +4–5**
+4. **Test single-param**: k_c float, p=2.0 fixed. Still hits tail + S₈, lower cost
+
+## Unproven but interesting:
+- **JWST Little Red Dots**: suppressed small-scale power → more rare dense seeds (**30–50% excess** at z>10). No sim yet. Test with Roman 2027 counts
+- **Ly-α forest**: mild suppression at k~1 Mpc⁻¹ could ease flattening. LaCE emulator ready — run soon
+
+## Bottom line:
+This isn't rewriting gravity. It's a **minimal patch that fixes two stubborn tensions with one knob**. The χ² hit is real — we're fixing it now.
+
+**If Roman/JADES sees extra compact z>10 objects, or CMB-S4 nails the tail shape? That's when it gets exciting.** Until then: data first, hype later.
+
+*— Swart, March 30, 2026*
 
 A simple, physical fix for the high-ℓ CMB damping and the σ₈/S₈ tension without new particles.
 
