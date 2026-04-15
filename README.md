@@ -11,7 +11,8 @@
 This repository is **Version 2** of the leakage model project.  
 
 - **Version 1**: [`gb-leakage-cmb`](https://github.com/GeometricCosmo/gb-leakage-cmb) — focused on high‑ℓ CMB damping and the \(S_8\) tension.  
-- **Version 2**: `A_Single_Scale_Suppression_of_Small_Scale_Power_from_5D_Gravitational_Leakage__Phenomenological_Fits_to_CMB_and_JWST_Data` — expands the scope to include JWST early galaxy counts, weak‑lensing fits, and comparisons to alternative suppression mechanisms.  
+- **Version 2**: `gb-leakage-cmb
+/A_Single_Scale_Suppression_of_Small_Scale_Power_from_5D_Gravitational_Leakage__Phenomenological_Fits_to_CMB_and_JWST_Data.pdf` — expands the scope to include JWST early galaxy counts, weak‑lensing fits, and comparisons to alternative suppression mechanisms.  
 
 The idea has evolved into a reproducible framework connecting multiple cosmological tensions with a single phenomenological suppression scale.
 ---
