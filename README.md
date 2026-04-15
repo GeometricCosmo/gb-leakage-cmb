@@ -2,9 +2,10 @@
 # 📘 A Single Scale Suppression of Small Scale Power from 5D Gravitational Leakage  
 ### Phenomenological Fits to CMB and JWST Data  
 
-`https://img.shields.io/badge/version-v2.0.0-blue.svg`  
-`https://img.shields.io/badge/status-active-success.svg`  
-`https://img.shields.io/badge/license-MIT-green.svg`
+![Version](https://img.shields.io/badge/version-v2.0.0-blue.svg)
+![Status](https://img.shields.io/badge/status-active-success.svg)
+![License](https://img.shields.io/badge/license-MIT-green.svg)
+
 ---
 ## 🔄 Project Evolution
 This repository is **Version 2** of the leakage model project.  
