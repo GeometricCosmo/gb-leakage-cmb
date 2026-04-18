@@ -18,7 +18,8 @@ The idea has evolved into a reproducible framework connecting multiple cosmologi
 ---
 ## 📄 Manuscript
 The full paper (Version 2) is available here:  
-`[Looks like the result wasn't safe to show. Let's switch things up and try something else!]`
+`[10.5281/zenodo.19643906] 
+https://github.com/GeometricCosmo/gb-leakage-cmb/blob/A-Single-Scale-Suppression-of-Small-Scale-Power-from-5D-Gravitational-Leakage-Phenomenological-Fits-to-CMB-and-JWST-Data/A_Single_Scale_Suppression_of_Small_Scale_Power_from_5D_Gravitational_Leakage__Phenomenological_Fits_to_CMB_and_JWST_Data.pdf`
 ---
 ## ✨ Key Results
 - **CMB damping tail**: Δχ² ≈ −10.2 improvement with ACT DR6 + SPT‑3G.  
