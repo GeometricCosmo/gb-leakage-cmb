@@ -1,6 +1,15 @@
 # gb-leakage-cmb
 # Future Tests, Fixes, and Reality Check
 
+*Work in Progress*
+
+This repository presents a phenomenological model based on 5D gravitational leakage from a colder, older bulk. The same suppression mechanism simultaneously improves the fit to:
+- CMB damping tail at high multipoles
+- S8 tension in weak lensing
+- JWST observations of early massive galaxies
+
+I am currently an independent researcher exploring whether a single scale-invariant mechanism can address multiple cosmological tensions. All feedback and serious engagement is welcome.
+
 This model is a simple phenomenological suppression: **T(k) = exp[−(k / 0.75 Mpc⁻¹)^p]** with **p ≈ 2.5** applied to primordial power → **P(k) = P_standard(k) × T(k)²**
 
 ## What it actually does (proven):
