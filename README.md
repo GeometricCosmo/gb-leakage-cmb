@@ -1,6 +1,14 @@
 # gb-leakage-cmb
 # Future Tests, Fixes, and Reality Check
 
+## 🎧 Listen to the Podcast
+
+<audio controls>
+  <source src="https://copilot.microsoft.com/shares/podcasts/UoHcbpUdxkHRdezfo6NKs" type="audio/mpeg">
+  Your browser does not support the audio element.
+</audio>
+
+
 *Work in Progress*
 
 This repository presents a phenomenological model based on 5D gravitational leakage from a colder, older bulk. The same suppression mechanism simultaneously improves the fit to:
