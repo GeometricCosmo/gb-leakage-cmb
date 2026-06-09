@@ -1,193 +1,86 @@
 # gb-leakage-cmb
-# Future Tests, Fixes, and Reality Check
+# Radion Leakage in a 5D Braneworld Framework
 
-## 🎧 Listen to the Podcast
+**Work in Progress** — Active Development
 
-<audio controls>
-  <source src="https://copilot.microsoft.com/shares/podcasts/UoHcbpUdxkHRdezfo6NKs" type="audio/mpeg">
-  Your browser does not support the audio element.
-</audio>
+This repository explores a 5D braneworld model in which our 4D observable universe is a dynamical membrane (brane) embedded in a larger 5D bulk. Strong electromagnetic fields on the brane can excite the **radion** — the scalar field controlling the local size of the extra dimension — leading to transient energy leakage into the bulk and a resulting modification of effective gravity on the brane.
 
+The model was developed **brick by brick**, starting from first principles and guided by observations.
 
-*Work in Progress*
+## Core Idea
 
-This repository presents a phenomenological model based on 5D gravitational leakage from a colder, older bulk. The same suppression mechanism simultaneously improves the fit to:
-- CMB damping tail at high multipoles
-- S8 tension in weak lensing
-- JWST observations of early massive galaxies
+Our 4D universe (everything described by ΛCDM) represents only a thin dynamical layer in a much larger 5D space. The characteristic size of our brane in the extra dimension is approximately **0.75** (in normalized units). Deviations from this equilibrium size, driven by electromagnetic sources, produce observable effects in cosmology.
 
-I am currently an independent researcher exploring whether a single scale-invariant mechanism can address multiple cosmological tensions. All feedback and serious engagement is welcome.
+### Brick 1: Radion-EM Coupling (Strongest Foundation)
+Derived from the boundary variation of the 5D gauge action in the ω → 0 limit:
 
-This model is a simple phenomenological suppression: **T(k) = exp[−(k / 0.75 Mpc⁻¹)^p]** with **p ≈ 2.5** applied to primordial power → **P(k) = P_standard(k) × T(k)²**
+$$
+\mathcal{L}_{\rm int} = -\frac{\lambda}{M_5^{3/2}} \, r(x) \, (\partial_\mu \phi)^2
+$$
 
-## What it actually does (proven):
-- ✅ Cuts high-ℓ CMB damping tail deficit (ACT DR6 + SPT-3G) by **Δχ² ≈ −10.2**
-- ✅ Drops S₈ from Planck's **0.832 ± 0.013 → 0.762 ± 0.014** — closer to DES Y6/KiDS weak-lensing
-- ✅ No large-scale breakage: BAO, H₀, low-ℓ unchanged
+This direct coupling allows strong, sharp electromagnetic fields to source the radion field.
 
-## The catch:
-**Joint fit (Planck + ACT + SPT + DES) worsens by Δχ² = +12.4 overall** — two extra params (k_c, p) pay a price. Not magic, just trade-off.
+### Dynamics
+The radion obeys a non-linear wave equation that includes Hubble damping, spatial gradients, self-interactions, and the EM driving term (see diagram in repository).
 
-## How to get that cost down (next steps):
-1. **Fix p = 2.5** (no free param) — prior from tail shape. Drops penalty to ~**+6**
-2. **Add tight prior k_c = 0.75 ± 0.09** from high-ℓ alone. Chains tighten, no overfitting
-3. **Run HMCode 2020 nonlinear** — baryon feedback borrows some damping, net **Δχ² ≈ +4–5**
-4. **Test single-param**: k_c float, p=2.0 fixed. Still hits tail + S₈, lower cost
+### Phenomenological Consequences
+Energy leakage into the bulk leads to a scale-dependent suppression of the effective gravitational constant \( G_{\rm eff}(k) \), most pronounced for \( k \gtrsim 0.75 \, h\,{\rm Mpc}^{-1} \).
 
-## Unproven but interesting:
-- **JWST Little Red Dots**: suppressed small-scale power → more rare dense seeds (**30–50% excess** at z>10). No sim yet. Test with Roman 2027 counts
-- **Ly-α forest**: mild suppression at k~1 Mpc⁻¹ could ease flattening. LaCE emulator ready — run soon
+This mechanism is being explored as a possible unified explanation for:
+- Suppression in the CMB damping tail at high multipoles
+- The S₈ tension
+- Early structure formation hints (JWST)
 
-## Bottom line:
-This isn't rewriting gravity. It's a **minimal patch that fixes two stubborn tensions with one knob**. The χ² hit is real — we're fixing it now.
+## Current Status (Honest Assessment)
 
-**If Roman/JADES sees extra compact z>10 objects, or CMB-S4 nails the tail shape? That's when it gets exciting.** Until then: data first, hype later.
+- **Brick 1** is derived from first principles and is solid.
+- The non-linear radion dynamics and leakage current are physically motivated.
+- The precise mapping from radion excursion to \( G_{\rm eff}(k) \) and the emergence of the 0.75 scale are still under active development (partly phenomenological at present).
+- We are working toward a self-consistent model where a single mechanism addresses multiple cosmological tensions without introducing new particles.
 
-*— Swart, March 30, 2026*
+## What the Model Does
 
-A simple, physical fix for the high-ℓ CMB damping and the σ₈/S₈ tension without new particles.
+A simple transfer function inspired by the underlying physics (for current testing):
 
-![Version](https://img.shields.io/badge/version-v1.0.0-blue.svg)
+$$
+T(k) = \exp\left[ -\left( \frac{k}{0.75} \right)^{2.5} \right] \quad \text{for } k > 0.75 \, h\,{\rm Mpc}^{-1}
+$$
 
-This repo adds one smooth, Gauss‑Bonnet inspired transfer function `T(k)` to the primordial power spectrum. It suppresses small‑scale power just enough to:
-- Remove the ~3σ preference for extra smoothing in Planck/ACT/SPT data
-- Lower σ₈ by ~0.07 → brings weak lensing and clusters into agreement
-- Keep all the big successes of ΛCDM untouched
+Applied as \( P_{\rm mod}(k) = P_{\rm prim}(k) \times T(k)^2 \).
 
-## Features
-- Drop‑in patches for CLASS and CAMB  
-- Simulate a slice from the early universe; this paper shows the smudge is not on the lens but is a physical feature  
-- Ready to run MontePython and Cobaya likelihoods  
-- Full chains with Planck 2018 + ACT DR6 + SPT‑3G (or input your own values)  
-- MIT license   grab it, break it, improve it
+**Proven improvements** (from previous runs):
+- Better fit to high-ℓ CMB damping tail (ACT DR6 + SPT-3G)
+- Reduces S₈ toward weak lensing values
+- Preserves large-scale successes of ΛCDM
 
-Phenomenological Gauss–Bonnet braneworld leakage model for high‑ℓ CMB suppression.  
-Includes CAMB/CLASS patches, MCMC scripts, and reproducible pipelines for Planck, ACT DR6, and SPT‑3G data.
+**Current limitations**: Joint χ² still shows a penalty due to extra parameters. We are working to reduce this by deriving parameters from the 5D physics rather than fitting.
 
----
+## Repository Contents
 
-## 📄 Manuscript
+- `src/`: CAMB/CLASS patches implementing the leakage suppression
+- `analysis/`: MCMC drivers and parameter scans
+- `plots/`: Transfer functions, residuals, corner plots
+- `docs/`: Theory notes, brick descriptions, and derivations
+- `validation/`: Tests of the suppression mechanism
 
-You can view or download the full paper here:  
-[GaussBonnet_CMB_Suppression.pdf](https://github.com/GeometricCosmo/gb-leakage-cmb/blob/main/GaussBonnet_CMB_Suppression.pdf)
+## Quickstart
 
----
+(See original instructions — they remain valid)
 
-## GB Leakage Model for High‑ℓ CMB Suppression
+## Development Roadmap (Current Priorities)
 
-This repository provides a reproducible pipeline to test a phenomenological,
-Gauss‑Bonnet inspired leakage model for high‑ℓ CMB power suppression.
+1. Finalize rigorous derivation of Brick 1
+2. Derive gravity modification (Brick 2) from 5D geometry instead of fitting
+3. Explain the origin of the 0.75 brane size scale from first principles (Brick 3/4)
+4. Compute full cosmological impact on expansion history and structure formation
+5. Explore laboratory signatures (high-voltage asymmetric capacitors in vacuum)
 
----
+## Philosophy
 
-## 📂 Contents
-- `src/` : CAMB/CLASS patches implementing
+This is not another small patch on ΛCDM. It is an attempt to view our universe as a dynamical 4D brane in a larger 5D space, where leakage between the brane and the bulk provides a physical mechanism behind several observed tensions.
 
+**Data first. Transparency always. Hype later.**
 
-
-\[
-P_{\rm mod}(k) = P_{\rm prim}(k) \cdot T(k)^2
-\]
-
-
-
-- `analysis/` : MCMC driver wrappers, ΔS8 scans, Fisher forecast utilities  
-- `plots/` : plotting utilities for transfer, residuals, and corner plots  
-- `validation/` : unit tests validating suppression behavior  
-- `cluster/` : SLURM array script for large parameter scans  
-- `data/` : helper script to document/download public likelihoods  
-- `docs/` : theory notes and assumptions
+— Andre Swart, June 2026
 
 ---
-
-## 🚀 Quickstart
-
-### 1. Clone
-```bash
-git clone https://github.com/GeometricCosmo/gb-leakage-cmb.git
-cd gb-leakage-cmb
-2. Install dependencies
-bash
-pip install -r requirements.txt
-⚠️ Note: You must have CAMB installed with Python bindings.
-For MCMC fits, install MontePython or CosmoMC separately.
-
-3. Run validation
-Check that the leakage patch reproduces the analytic suppression:
-
-bash
-python validation/test_suppression.py
-4. Generate figures
-Analytic envelope (Appendix):
-
-bash
-python notebooks/validation_quick.py
-Transfer function T(k):
-
-bash
-python plots/plot_transfer.py
-Residual ratio C_\ell^{\rm mod}/C_\ell^{\Lambda{\rm CDM}}:
-
-bash
-python plots/plot_residuals.py
-ΔS8 scan:
-
-bash
-python analysis/compute_delta_S8.py --p 2.0 --nproc 8 --outdir results
-Corner plot (from chains):
-
-bash
-python plots/plot_corner.py
-5. Run MCMC fits
-Toy example (local run):
-
-bash
-python analysis/run_mcmc.py --engine cosmomc --kc 0.75 --p 2.5 --nprocs 4
-Cluster scan (SLURM array job):
-
-bash
-sbatch cluster/slurm_run_fits.sh
-6. Outputs
-Figures saved in figures/
-
-ΔS8 results in results/delta_s8_summary.npz
-
-Chains in chains/
-
-📖 Documentation
-Theory background: docs/theory_notes.md
-
-Comparison to related repos: docs/comparison.md (coming soon)
-
-📜 Citation
-If you use this code in your work, please cite:
-
-bibtex
-@misc{gb_leakage_cmb,
-  author       = {Andre Swart},
-  title        = {gb-leakage-cmb: Gauss–Bonnet Leakage Model for High-ℓ CMB Suppression},
-  year         = {2025/2026},
-  publisher    = {GitHub},
-  journal      = {GitHub repository},
-  howpublished = {\url{https://github.com/GeometricCosmo/gb-leakage-cmb}}
-}
-🤝 Contributing
-Pull requests are welcome! See CONTRIBUTING.md for guidelines.
-
-<details>
-<summary>📌 License</summary>
-
-This project is licensed under the MIT License — see LICENSE for details.
-
-So use it, break it, make it better!
-
-</details>
-
-Code
-
-
-This project is licensed under the MIT License — see LICENSE for details.
-
-So use it, break it, make it better!
-
-</details>
