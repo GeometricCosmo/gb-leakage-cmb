@@ -2,12 +2,16 @@
 # Radion Leakage in a 5D Braneworld Framework
 
 **Work in Progress** — Active Development
+For inquiries regarding collaboration, data chains, or seminar presentations, please open a GitHub Discussion or reach out via geometriccosmo.illusion559@passinbox.com.
 
 This repository explores a 5D braneworld model in which our 4D observable universe is a dynamical membrane (brane) embedded in a larger 5D bulk. Strong electromagnetic fields on the brane can excite the **radion** — the scalar field controlling the local size of the extra dimension — leading to transient energy leakage into the bulk and a resulting modification of effective gravity on the brane.
 
 The model was developed **brick by brick**, starting from first principles and guided by observations.
 
 ## Core Idea
+https://zenodo.org/records/20607636
+
+https://the-leakage-theory.lovable.app/
 
 Our 4D universe (everything described by ΛCDM) represents only a thin dynamical layer in a much larger 5D space. The characteristic size of our brane in the extra dimension is approximately **0.75** (in normalized units). Deviations from this equilibrium size, driven by electromagnetic sources, produce observable effects in cosmology.
 
