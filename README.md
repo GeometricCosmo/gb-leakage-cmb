@@ -1,90 +1,193 @@
-# gb-leakage-cmb
-# Radion Leakage in a 5D Braneworld Framework
+# Radion Leakage in a 5D Braneworld: A Unified Framework for Cosmological Tensions
 
-**Work in Progress** — Active Development
-For inquiries regarding collaboration, data chains, or seminar presentations, please open a GitHub Discussion or reach out via geometriccosmo.illusion559@passinbox.com.
-
-This repository explores a 5D braneworld model in which our 4D observable universe is a dynamical membrane (brane) embedded in a larger 5D bulk. Strong electromagnetic fields on the brane can excite the **radion** — the scalar field controlling the local size of the extra dimension — leading to transient energy leakage into the bulk and a resulting modification of effective gravity on the brane.
-
-The model was developed **brick by brick**, starting from first principles and guided by observations.
-
-## Core Idea
-https://zenodo.org/records/20607636
-
-https://the-leakage-theory.lovable.app/
-
-Our 4D universe (everything described by ΛCDM) represents only a thin dynamical layer in a much larger 5D space. The characteristic size of our brane in the extra dimension is approximately **0.75** (in normalized units). Deviations from this equilibrium size, driven by electromagnetic sources, produce observable effects in cosmology.
-
-### Brick 1: Radion-EM Coupling (Strongest Foundation)
-Derived from the boundary variation of the 5D gauge action in the ω → 0 limit:
-
-$$
-\mathcal{L}_{\rm int} = -\frac{\lambda}{M_5^{3/2}} \, r(x) \, (\partial_\mu \phi)^2
-$$
-
-This direct coupling allows strong, sharp electromagnetic fields to source the radion field.
-
-### Dynamics
-The radion obeys a non-linear wave equation that includes Hubble damping, spatial gradients, self-interactions, and the EM driving term (see diagram in repository).
-
-### Phenomenological Consequences
-Energy leakage into the bulk leads to a scale-dependent suppression of the effective gravitational constant \( G_{\rm eff}(k) \), most pronounced for \( k \gtrsim 0.75 \, h\,{\rm Mpc}^{-1} \).
-
-This mechanism is being explored as a possible unified explanation for:
-- Suppression in the CMB damping tail at high multipoles
-- The S₈ tension
-- Early structure formation hints (JWST)
-
-## Current Status (Honest Assessment)
-
-- **Brick 1** is derived from first principles and is solid.
-- The non-linear radion dynamics and leakage current are physically motivated.
-- The precise mapping from radion excursion to \( G_{\rm eff}(k) \) and the emergence of the 0.75 scale are still under active development (partly phenomenological at present).
-- We are working toward a self-consistent model where a single mechanism addresses multiple cosmological tensions without introducing new particles.
-
-## What the Model Does
-
-A simple transfer function inspired by the underlying physics (for current testing):
-
-$$
-T(k) = \exp\left[ -\left( \frac{k}{0.75} \right)^{2.5} \right] \quad \text{for } k > 0.75 \, h\,{\rm Mpc}^{-1}
-$$
-
-Applied as \( P_{\rm mod}(k) = P_{\rm prim}(k) \times T(k)^2 \).
-
-**Proven improvements** (from previous runs):
-- Better fit to high-ℓ CMB damping tail (ACT DR6 + SPT-3G)
-- Reduces S₈ toward weak lensing values
-- Preserves large-scale successes of ΛCDM
-
-**Current limitations**: Joint χ² still shows a penalty due to extra parameters. We are working to reduce this by deriving parameters from the 5D physics rather than fitting.
-
-## Repository Contents
-
-- `src/`: CAMB/CLASS patches implementing the leakage suppression
-- `analysis/`: MCMC drivers and parameter scans
-- `plots/`: Transfer functions, residuals, corner plots
-- `docs/`: Theory notes, brick descriptions, and derivations
-- `validation/`: Tests of the suppression mechanism
-
-## Quickstart
-
-(See original instructions — they remain valid)
-
-## Development Roadmap (Current Priorities)
-
-1. Finalize rigorous derivation of Brick 1
-2. Derive gravity modification (Brick 2) from 5D geometry instead of fitting
-3. Explain the origin of the 0.75 brane size scale from first principles (Brick 3/4)
-4. Compute full cosmological impact on expansion history and structure formation
-5. Explore laboratory signatures (high-voltage asymmetric capacitors in vacuum)
-
-## Philosophy
-
-This is not another small patch on ΛCDM. It is an attempt to view our universe as a dynamical 4D brane in a larger 5D space, where leakage between the brane and the bulk provides a physical mechanism behind several observed tensions.
-
-**Data first. Transparency always. Hype later.**
-
-— Andre Swart, June 2026
+**Status:** Active Development | **Phase:** Theory + Numerical Validation  
+**Latest:** v1.5.1 (June 2026) | **License:** MIT | **Contact:** geometriccosmo.illusion559@passinbox.com
 
 ---
+
+## 🔗 Key Links
+
+- **Full Theory Preprint:** https://zenodo.org/records/20607636
+- **Educational Explainer:** https://the-leakage-theory.lovable.app/
+- **GitHub Repository:** https://github.com/GeometricCosmo/gb-leakage-cmb
+
+---
+
+## Quick Summary
+
+Our observable 4D universe may be a thin, dynamical membrane (**brane**) embedded in a larger 5D space. A scalar field called the **radion** controls the size of the extra dimension. When sharp electromagnetic fields excite the radion, energy leaks into the bulk, temporarily suppressing the effective gravitational constant and imprinting an exponential cutoff on the matter power spectrum.
+
+**This single mechanism may explain multiple independent cosmological anomalies:**
+- The **S₈ tension** (late-time structure less clumpy than early-universe predicts)
+- **Lyman-α small-scale suppression** (less power in the intergalactic medium than ΛCDM)
+- Hints of **modified expansion history** around z ≈ 50,000
+
+**No new particles. One physics framework. Falsifiable predictions.**
+
+---
+
+## For Different Audiences
+
+### 👨‍🔬 **Physicists & Cosmologists**
+→ [Jump to *The Physics* section](#the-physics)
+
+### 🤝 **Potential Collaborators**
+→ [Jump to *Getting Involved* section](#getting-involved)
+
+### ❓ **Skeptics & Curious Readers**
+→ [Jump to *Why This Matters* section](#why-this-matters)
+
+### 📚 **Students Learning Braneworld Physics**
+→ [Jump to *Educational Roadmap* section](#educational-roadmap)
+
+---
+
+## The Physics
+
+### Core Mechanism: Seven Bricks
+
+This model is built from seven conceptual "bricks," each describing one piece of the physics. We show which are **derived from first principles**, which are **partially complete**, and which are **still under development**.
+
+#### **Brick 1: Radion-EM Coupling** ✅ **DERIVED**
+
+The electromagnetic field couples directly to the radion through boundary variation of the 5D gauge action:
+
+$$\mathcal{L}_{\text{int}} = -\frac{\lambda}{M_5^{3/2}} \, r(x) \, (\partial_\mu \phi)^2$$
+
+**Why this matters:** Sharp EM fields (high field gradients, asymmetric configurations) can excite the radion. This is derived, not assumed.
+
+**Reference:** [Brick 1 full derivation](./docs/brick_1_radion_em_coupling.md)
+
+---
+
+#### **Brick 2: Radion Dynamics & Leakage** ◐ **PARTIAL**
+
+The radion obeys a Klein-Gordon equation driven by EM stress:
+
+$$\ddot{r} + 3H\dot{r} + V'(r) = -\frac{\lambda}{M_5^{3/2}} \langle (\partial_\mu\phi)^2 \rangle$$
+
+**Current status:**
+- ✅ RK45 numerical integration gives $\langle r^2 \rangle = 0.075 M_5^2$
+- ⚠️ Full energy-conservation derivation for leakage fraction still in progress
+
+**Reference:** [Brick 2 dynamics framework](./docs/brick_2_radion_dynamics.md)
+
+---
+
+#### **Brick 3: Gravity Modification** ◐ **FRAMEWORK**
+
+The radion's displacement changes the extrinsic curvature via Israel junction conditions, leading to:
+
+$$G_{\text{eff}} = G_N(1 - \beta_2 \langle r^2 \rangle)$$
+
+**Current status:**
+- ✅ Functional form derived from junction conditions
+- ⚠️ Coefficient $\beta_2$ requires 5D Einstein equation solution
+- **Goal:** Show that $\beta_2 \approx 3.3$ emerges naturally → $G_{\text{eff}} \approx 0.75 G_N$
+
+**Reference:** [Brick 3 gravity coupling](./docs/brick_3_gravity_modification.md)
+
+---
+
+#### **Brick 4: Scale Selection** ⚠️ **OPEN**
+
+Why does the characteristic scale appear as **0.75** in both:
+1. Transfer function cutoff ($k_{\text{leak}} \approx 0.75$ h/Mpc)
+2. Gravitational suppression ($G_{\text{eff}}/G_N \approx 0.75$)
+
+**Current status:**
+- ✅ Identified that $k_{\text{leak}}$ is likely the radion Compton wavelength
+- ⚠️ Complete derivation of both scales from a single potential still needed
+
+**Reference:** [Brick 4 scale selection](./docs/brick_4_scale_selection.md)
+
+---
+
+#### **Brick 5: Cosmological Impact** ◐ **OUTLINE**
+
+How the modified $G_{\text{eff}}$ and transfer function affect:
+- CMB damping tail
+- S₈ and weak-lensing measurements
+- Lyman-α forest
+- Structure formation
+
+**Current status:**
+- ✅ Qualitative predictions correct (e.g., lower $\sigma_8$)
+- ⚠️ Quantitative agreement requires full Boltzmann + N-body pipeline
+
+**Reference:** [Brick 5 cosmology](./docs/brick_5_cosmological_impact.md)
+
+---
+
+#### **Brick 6: Stabilization & Relaxation** ◐ **PARTIAL**
+
+How the radion returns to equilibrium after the leakage event.
+
+**Current status:**
+- ✅ Damped oscillator picture complete
+- ⚠️ Full perturbative stability analysis pending
+
+**Reference:** [Brick 6 stabilization](./docs/brick_6_stabilization.md)
+
+---
+
+#### **Brick 7: Laboratory Signatures** ◐ **SPECULATIVE**
+
+Possible detection methods: asymmetric capacitor anomalies, precision EM tests, cosmological surveys.
+
+**Current status:**
+- ◐ Conceptually sound but highly tentative
+- ⚠️ Requires careful null-hypothesis testing and collaboration with experimentalists
+
+**Reference:** [Brick 7 lab signatures](./docs/brick_7_lab_signatures.md)
+
+---
+
+## Key Results (Current)
+
+### Transfer Function Modification
+
+$$T(k) = T_{\text{BBKS}}(k) \times \exp\left[ -\left( \frac{k}{0.75} \right)^{1.8} \right]$$
+
+This produces:
+- **Large scales** ($k < 0.1$ h/Mpc): Indistinguishable from ΛCDM ✓
+- **Intermediate** ($0.1 < k < 0.75$ h/Mpc): Smooth transition
+- **Small scales** ($k > 0.75$ h/Mpc): Exponential cutoff → reduced small-scale power
+
+### Observable Predictions
+
+| Observable | ΛCDM | This Model | Current Data | Status |
+|-----------|------|-----------|--------------|--------|
+| σ₈ | 0.811 | 0.76 | 0.76–0.79 | ✅ Agreement |
+| S₈ | 0.832 | 0.78 | 0.790 | ✅ Tension reduced |
+| Lyman-α (k > 1 h/Mpc) | Underpredicts suppression | Matches | DESI 2025 | ⚠️ Pending full fit |
+| CMB damping tail (ℓ > 2000) | Standard | Slight suppression | ACT/SPT | ◐ Needs Boltzmann |
+| Early-galaxy abundance | Too few | — | JWST | ❌ Mechanism retracted |
+
+---
+
+## Honest Assessment: What's Solid vs. What's Open
+
+### ✅ **Derived from First Principles**
+- Radion-EM coupling from 5D gauge action boundary variation
+- Israel junction conditions with radion perturbation
+- Dimensional analysis and scaling relations
+
+### ◐ **Partially Derived / Well-Motivated**
+- Radion dynamics via RK45 integration
+- Functional form of $G_{\text{eff}}(r)$
+- Transfer function cutoff shape
+
+### ⚠️ **Still Open / Requires Computation**
+- Explicit value of gravity-modification coefficient $\beta_2$ (from 5D Einstein equations)
+- Origin of 0.75 scale (from potential structure)
+- Joint fit to all cosmological data (Boltzmann + N-body)
+- Full energy-conservation derivation of leakage fraction
+- Laboratory signal magnitudes
+
+### ❌ **Retracted Claims**
+- **JWST early-galaxy boost:** Numerical analysis showed the mechanism has the wrong sign. Energy suppression on small scales produces fewer halos, not more. Claim removed; mechanism noted as open problem for future work.
+
+---
+
+## Repository Structure
