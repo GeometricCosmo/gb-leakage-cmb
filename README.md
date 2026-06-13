@@ -186,8 +186,5 @@ This produces:
 - Laboratory signal magnitudes
 
 ### ❌ **Retracted Claims**
-- **JWST early-galaxy boost:** Numerical analysis showed the mechanism has the wrong sign. Energy suppression on small scales produces fewer halos, not more. Claim removed; mechanism noted as open problem for future work.
-
+- **JWST early-galaxy boost:** Numerical analysis showed the mechanism has the wrong sign. Energy suppression on small scales produces fewer halos, not more. Claim removed; mechanism noted as open problem for future work, I do believe they are connected to this in a different way.
 ---
-
-## Repository Structure
