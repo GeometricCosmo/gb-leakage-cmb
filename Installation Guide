@@ -1,166 +1,785 @@
-### Installation Guide
+# Installation Guide
 
-This document explains how to set up the Python environment, install CAMB and CLASS bindings, and prepare public likelihood data (Planck, ACT, SPT) so the repository’s analysis and tests run reproducibly.
+**Complete setup instructions for gb-leakage-cmb: from zero to running MCMC chains.**
 
----
-
-### Prerequisites
-
-- **Operating system**: Linux or macOS recommended for scientific toolchain and cluster use.  
-- **Compiler toolchain**: Fortran compiler (gfortran) and a C compiler (gcc/clang) for building cosmology engines.  
-- **MPI**: Optional but recommended for parallel MCMC and cluster runs.  
-- **Disk space**: Allow several GB for likelihood packages and chains.
+This guide covers environment setup, dependencies, cosmological codes (CAMB/CLASS), likelihood data, and sampler configuration.
 
 ---
 
-### Python environment and packages
+## 🚀 Quick Start (TL;DR)
 
-1. **Create an isolated environment** (conda or venv recommended).
+```bash
+# Clone repository
+git clone https://github.com/GeometricCosmo/gb-leakage-cmb.git
+cd gb-leakage-cmb
 
+# Create environment
+python -m venv venv
+source venv/bin/activate  # On Windows: venv\Scripts\activate
+
+# Install dependencies
+pip install --upgrade pip
+pip install -r requirements.txt
+
+# Download likelihood data
+# (See data/README.md for detailed instructions)
+mkdir -p data/{planck,act_dr6,spt3g}
+# Download Planck/ACT/SPT files into respective directories
+
+# Verify installation
+python tests/test_pipeline.py
+
+# Run a test MCMC chain
+python -m analysis.mcmc_driver --config examples/test_planck_only.ini --n_steps 100
+```
+
+**Estimated time:** 1–2 hours (mostly waiting for likelihood downloads)
+
+---
+
+## 📋 Prerequisites
+
+### **System Requirements**
+
+| Component | Requirement | Purpose |
+|-----------|-------------|---------|
+| **OS** | Linux (recommended) or macOS | Scientific toolchain compatibility |
+| **Python** | ≥ 3.9 (3.11 recommended) | Core language |
+| **Compiler** | gfortran + gcc | Building CAMB, scipy |
+| **MPI** | Optional (OpenMPI or MPICH) | Parallel MCMC |
+| **Disk space** | ≥ 5 GB | Likelihoods + chains |
+| **RAM** | ≥ 8 GB | MCMC, N-body analysis |
+
+### **OS-Specific Setup**
+
+#### **Linux (Ubuntu/Debian)**
+
+```bash
+# Update package manager
+sudo apt update && sudo apt upgrade -y
+
+# Install compiler toolchain
+sudo apt install -y \
+    build-essential \
+    gfortran \
+    git \
+    wget \
+    python3-dev \
+    python3-venv
+
+# Optional: MPI support
+sudo apt install -y libopenmpi-dev openmpi-bin
+
+# Optional: HDF5 support (for large datasets)
+sudo apt install -y libhdf5-dev
+```
+
+**Verify installation:**
+```bash
+gfortran --version
+gcc --version
+python3 --version
+mpirun --version  # If MPI installed
+```
+
+#### **macOS**
+
+```bash
+# Install Homebrew (if not already installed)
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+
+# Install compiler toolchain
+brew install gcc gfortran openmpi open-mpi
+
+# Install HDF5 (optional)
+brew install hdf5
+```
+
+**Verify installation:**
+```bash
+gfortran --version
+gcc --version
+python3 --version
+```
+
+#### **Windows (WSL2 Recommended)**
+
+Windows users should use WSL2 (Windows Subsystem for Linux 2):
+
+```bash
+# In WSL2 terminal, follow Linux (Ubuntu) setup above
+# Then create venv and proceed
+```
+
+**Alternative:** Use Docker (see section below).
+
+---
+
+## 🐳 Option 1: Docker Setup (Easiest for Beginners)
+
+If you want a pre-configured environment without installing everything:
+
+```bash
+# Build Docker image
+docker build -t gb-leakage-cmb:latest .
+
+# Run container
+docker run -it \
+    -v $(pwd)/data:/workspace/data \
+    -v $(pwd)/results:/workspace/results \
+    gb-leakage-cmb:latest
+
+# Inside container, activate environment and you're ready
+cd /workspace/gb-leakage-cmb
+source venv/bin/activate
+python tests/test_pipeline.py
+```
+
+**Pros:** No dependency issues, reproducible everywhere  
+**Cons:** Slightly larger setup time, less flexibility
+
+See `Dockerfile` in repository root for details.
+
+---
+
+## 🐍 Option 2: Local Virtual Environment (Recommended)
+
+### **Step 1: Create Virtual Environment**
+
+**Using venv (built-in):**
+```bash
+# Create isolated Python environment
+python3 -m venv venv
+
+# Activate it
+source venv/bin/activate
+# On Windows: venv\Scripts\activate
+# On macOS: source venv/bin/activate
+
+# Verify you're in the environment (should show "venv" in prompt)
+which python  # Should point to ./venv/bin/python
+```
+
+**Using Conda (alternative):**
+```bash
+# Create conda environment
+conda create -n gb-leakage python=3.11 numpy scipy matplotlib -y
+
+# Activate
+conda activate gb-leakage
+
+# Verify
+which python  # Should show conda environment path
+```
+
+**Why virtual environments?**
+- ✅ Isolate dependencies from system Python
+- ✅ Multiple projects won't conflict
+- ✅ Easy to delete and start fresh
+- ✅ Reproducible on other machines
+
+### **Step 2: Install Python Dependencies**
+
+```bash
+# Upgrade pip first
+pip install --upgrade pip setuptools wheel
+
+# Install from requirements.txt
+pip install -r requirements.txt
+
+# Verify installations
+python -c "import numpy; print(f'NumPy {numpy.__version__}')"
+python -c "import scipy; print(f'SciPy {scipy.__version__}')"
+python -c "import matplotlib; print(f'Matplotlib {matplotlib.__version__}')"
+```
+
+**Expected output:**
+```
+NumPy 1.24.x
+SciPy 1.10.x
+Matplotlib 3.7.x
+```
+
+### **Step 3: Install CAMB**
+
+CAMB is the Cosmic Microwave Background code. Two options:
+
+#### **Option A: Install from PyPI (Easiest)**
+
+```bash
+# Install pre-built CAMB package
+pip install camb
+
+# Verify
+python -c "import camb; print(f'CAMB {camb.__version__}')"
+
+# Test
+python -c "
+import camb
+pars = camb.CAMBparams()
+pars.set_defaults()
+results = camb.get_results(pars)
+print(f'CAMB test: OK')
+"
+```
+
+**Pros:** Fast, no compilation  
+**Cons:** May be outdated, less control
+
+#### **Option B: Build from Source (For Latest Features)**
+
+```bash
+# Clone CAMB repository
+git clone --depth=1 https://github.com/cmbant/CAMB.git
+cd CAMB
+
+# Build Fortran code
+python setup.py build
+
+# Install Python bindings
+pip install -e .
+
+# Return to main repository
+cd ..
+
+# Verify
+python -c "import camb; print(camb.__version__)"
+```
+
+**Pros:** Latest code, customizable  
+**Cons:** Compilation takes time (~5 min), requires gfortran
+
+**Troubleshooting CAMB:**
+
+If you get `ImportError: cannot find libcamb.so`:
+```bash
+# Rebuild
+cd CAMB
+python setup.py clean --all
+python setup.py build
+pip install -e .
+cd ..
+
+# If still failing, check gfortran
+gfortran --version  # Must be installed
+```
+
+### **Step 4: Install CLASS (Optional)**
+
+CLASS is an alternative to CAMB. Only needed if you plan to use CLASS-based analysis.
+
+#### **Option A: Python Wrapper (Easiest)**
+
+```bash
+# Install Python wrapper
+pip install classy
+
+# Verify
+python -c "from classy import Class; print('CLASS installed')"
+```
+
+#### **Option B: Build from Source**
+
+```bash
+# Clone CLASS
+git clone https://github.com/lesgourg/class_public.git CLASS
+cd CLASS
+
+# Build with Python wrapper
+make
+cd python
+python setup.py build
+pip install -e .
+cd ../..
+
+# Verify
+python -c "from classy import Class; Class().compute()"
+```
+
+---
+
+## 📊 Step 5: Download Likelihood Data
+
+**Important:** Likelihoods are **large files** (several GB total). See `data/README.md` for complete instructions.
+
+**Quick summary:**
+
+```bash
+# Create data directories
+mkdir -p data/{planck,act_dr6,spt3g,weak_lensing,lyman_alpha}
+
+# Download Planck (requires registration)
+# https://pla.esac.esa.int/#download
+# Extract into data/planck/
+
+# Download ACT DR6
+# https://lambda.gsfc.nasa.gov/product/act/
+# Extract into data/act_dr6/
+
+# Download SPT-3G
+# https://lambda.gsfc.nasa.gov/product/spt/
+# Extract into data/spt3g/
+
+# Verify downloads
+python data/scripts/test_likelihood.py
+```
+
+**Expected output:**
+```
+✓ Planck TT: OK
+✓ Planck TE: OK
+✓ Planck EE: OK
+✓ ACT DR6: OK
+✓ SPT-3G: OK
+```
+
+---
+
+## ⚙️ Step 6: Set Environment Variables
+
+Create or edit your shell profile (`~/.bashrc`, `~/.zshrc`, or `~/.bash_profile`):
+
+```bash
+# Add these lines
+export GB_LEAKAGE_DATA="$(pwd)/data"
+export CLIK_PATH="${GB_LEAKAGE_DATA}/planck/plc_3.0"
+export LD_LIBRARY_PATH="${CLIK_PATH}/lib:${LD_LIBRARY_PATH}"
+export PYTHONPATH="${PYTHONPATH}:$(pwd)"
+
+# For MPI support (optional)
+export OMPI_MCA_plm=isolated
+export OMPI_MCA_btl_vader_single_copy_mechanism=none
+```
+
+Then reload:
+```bash
+source ~/.bashrc  # or ~/.zshrc
+```
+
+**Verify:**
+```bash
+echo $GB_LEAKAGE_DATA
+echo $CLIK_PATH
+```
+
+---
+
+## 🔧 Step 7: Install MontePython (Optional)
+
+MontePython is a sampler for MCMC analysis. Only needed if you plan to run MCMC fits.
+
+```bash
+# Clone MontePython
+git clone https://github.com/brinckmann/montepython_public.git montepython
+cd montepython
+
+# Install Python dependencies
+pip install -r requirements.txt
+
+# Configure for your system
+# (MontePython uses manual configuration in 'montepython/default.conf')
+
+cd ..
+```
+
+**Configuration:**
+```bash
+# Edit montepython/default.conf
+# Set paths to CAMB, likelihoods, etc.
+# Example:
+# path['camb']     = '/path/to/CAMB'
+# path['root']     = '/path/to/gb-leakage-cmb'
+# path['data']     = '/path/to/gb-leakage-cmb/data'
+```
+
+---
+
+## 🔬 Step 8: Verify Installation
+
+### **Quick Test**
+
+```bash
+# Test Python imports
+python -c "
+import numpy as np
+import scipy
+import matplotlib
+import camb
+print('✓ All core packages OK')
+"
+```
+
+### **Full Validation Test**
+
+```bash
+# Run the full test suite
+python tests/test_pipeline.py
+
+# Expected output:
+# ✓ Testing CAMB installation...
+# ✓ Testing likelihood loading...
+# ✓ Testing plotting functions...
+# ✓ Testing analysis pipeline...
+# ✓ All tests passed!
+```
+
+**Estimated time:** 5–10 minutes
+
+### **Test MCMC Chain (Optional)**
+
+```bash
+# Run a quick MCMC chain (100 steps as test)
+python -m analysis.mcmc_driver \
+    --config examples/test_planck_only.ini \
+    --n_steps 100 \
+    --output results/test_run/
+
+# Should complete in ~5 minutes
+# Check results in results/test_run/
+```
+
+---
+
+## 🆘 Troubleshooting
+
+### **Problem: Import Error for CAMB**
+
+**Error:**
+```
+ModuleNotFoundError: No module named 'camb'
+```
+
+**Solution:**
+```bash
+# Check if venv is activated
+which python  # Should show venv path
+
+# If not activated:
+source venv/bin/activate
+
+# Reinstall CAMB
+pip install --force-reinstall camb
+
+# Test again
+python -c "import camb; print(camb.__version__)"
+```
+
+---
+
+### **Problem: CAMB Compilation Fails**
+
+**Error:**
+```
+gfortran: fatal error: ... no such file or directory
+compilation terminated.
+```
+
+**Solution:**
+```bash
+# Install Fortran compiler
+sudo apt install gfortran  # Ubuntu/Debian
+brew install gfortran      # macOS
+
+# Verify installation
+gfortran --version
+
+# Clean and rebuild
+cd CAMB
+python setup.py clean --all
+python setup.py build
+pip install -e .
+cd ..
+```
+
+---
+
+### **Problem: Likelihood File Not Found**
+
+**Error:**
+```
+FileNotFoundError: data/planck/plc_3.0/.../plik_rd12_HM_v22_TT.clik
+```
+
+**Solution:**
+```bash
+# Check if data directory exists
+ls -la data/planck/
+
+# If empty, download likelihood files
+# See data/README.md for instructions
+
+# If files are there, check paths in config
+grep -r "CLIK_PATH" examples/
+
+# Verify environment variable
+echo $CLIK_PATH
+```
+
+---
+
+### **Problem: MPI Not Found**
+
+**Error:**
+```
+mpirun: command not found
+```
+
+**Solution:**
+```bash
+# Install MPI
+sudo apt install libopenmpi-dev openmpi-bin  # Ubuntu
+brew install open-mpi                         # macOS
+
+# Verify
+mpirun --version
+
+# If still failing, build codes with MPI support
+# (Requires rebuilding CAMB/MontePython with MPI flags)
+```
+
+---
+
+### **Problem: Memory Issues During MCMC**
+
+**Error:**
+```
+MemoryError: Unable to allocate X.XX GiB
+```
+
+**Solution:**
+```bash
+# Reduce number of parallel chains
+python -m analysis.mcmc_driver \
+    --config examples/test_planck_only.ini \
+    --n_chains 2  # Instead of default 4
+
+# Or reduce data resolution
+# Edit config file to use lower-ℓ CMB data only
+
+# Monitor RAM usage
+# In separate terminal: watch -n 1 'free -h'
+```
+
+---
+
+### **Problem: Old Likelihood Version**
+
+**Error:**
+```
+Warning: Likelihood version mismatch. Expected v3.0, got v2.9
+```
+
+**Solution:**
+```bash
+# Delete old likelihood files
+rm -rf data/planck/plc_3.0/
+
+# Download latest version
+# https://pla.esac.esa.int/#download
+
+# Re-run test
+python data/scripts/test_likelihood.py
+```
+
+---
+
+### **Problem: Permission Denied on Cluster**
+
+**Error:**
+```
+PermissionError: [Errno 13] Permission denied: 'data/planck/...'
+```
+
+**Solution:**
+```bash
+# Fix ownership
+chown -R $USER:$USER data/
+chmod -R u+rwx data/
+
+# Or copy data to your home directory
+cp -r data/ ~/my_leakage_data/
+export GB_LEAKAGE_DATA=~/my_leakage_data
+```
+
+---
+
+## 🖥️ Cluster Setup (SLURM Example)
+
+### **Environment Module Setup**
+
+Create `cluster/setup_environment.sh`:
+
+```bash
+#!/bin/bash
+# Load compiler modules
+module load GCC
+module load OpenMPI
+
+# Activate Python environment
+source /path/to/venv/bin/activate
+
+# Set environment variables
+export GB_LEAKAGE_DATA=/path/to/data
+export CLIK_PATH=${GB_LEAKAGE_DATA}/planck
+export LD_LIBRARY_PATH=${CLIK_PATH}/lib:${LD_LIBRARY_PATH}
+export PYTHONPATH=/path/to/gb-leakage-cmb:${PYTHONPATH}
+
+echo "Environment ready"
+```
+
+### **SLURM Job Script Example**
+
+Create `cluster/submit_mcmc.slurm`:
+
+```bash
+#!/bin/bash
+#SBATCH --job-name=gb_leakage_mcmc
+#SBATCH --ntasks=4
+#SBATCH --cpus-per-task=4
+#SBATCH --mem=32G
+#SBATCH --time=24:00:00
+#SBATCH --output=logs/mcmc_%j.log
+
+# Setup environment
+source cluster/setup_environment.sh
+
+# Run MCMC with MPI
+mpirun python -m analysis.mcmc_driver \
+    --config examples/run_planck_act_spt.ini \
+    --n_steps 10000 \
+    --output results/mcmc_${SLURM_JOB_ID}/
+
+echo "Job complete"
+```
+
+**Submit job:**
+```bash
+sbatch cluster/submit_mcmc.slurm
+```
+
+---
+
+## 📚 Next Steps After Installation
+
+### **1. Run Validation Scripts**
+
+```bash
+# Test leakage suppression
+python validation/test_suppression.py
+
+# Quick validation notebook
+jupyter notebook notebooks/validation_quick.ipynb
+```
+
+### **2. Explore Examples**
+
+```bash
+# List available example configs
+ls -la examples/
+
+# Run example MCMC
+python -m analysis.mcmc_driver --config examples/test_planck_only.ini
+```
+
+### **3. Read Documentation**
+
+- Main README: [`README.md`](./README.md)
+- Data setup: [`data/README.md`](./data/README.md)
+- Theory: [`docs/brick_1_radion_em_coupling.md`](./docs/brick_1_radion_em_coupling.md)
+
+### **4. Join Community**
+
+- 📧 Email: geometriccosmo.illusion559@passinbox.com
+- 🐙 GitHub Issues: Ask questions, report bugs
+- 📖 Read [`CONTRIBUTING.md`](./CONTRIBUTING.md) for contribution guidelines
+
+---
+
+## 💡 Best Practices
+
+### **Reproducibility**
+
+```bash
+# Save your environment
+pip freeze > environment_snapshot.txt
+
+# Document Python/package versions
+python --version
+python -c "import camb; print(camb.__version__)"
+python -c "import numpy; print(numpy.__version__)"
+```
+
+### **Development Workflow**
+
+```bash
+# For making changes to the code:
+# 1. Create a new branch
+git checkout -b my_feature
+
+# 2. Make changes to code
+# 3. Run tests
+python tests/test_pipeline.py
+
+# 4. Commit and push
+git add .
+git commit -m "Description of changes"
+git push origin my_feature
+
+# 5. Create pull request on GitHub
+```
+
+### **Performance Tuning**
+
+```bash
+# Run multiple chains in parallel
+export OMP_NUM_THREADS=4  # Parallel CAMB evaluation
+python -m analysis.mcmc_driver \
+    --config examples/run_planck_act_spt.ini \
+    --n_chains 8 \
+    --n_steps 5000
+```
+
+---
+
+## 📞 Getting Help
+
+**If installation fails:**
+
+1. **Check your output carefully** — error messages usually point to the problem
+2. **Search existing GitHub Issues** — your problem might be solved
+3. **Try the Docker setup** — eliminates environment issues
+4. **Run diagnostic script:**
    ```bash
-   # Conda example
-   conda create -n gb-leakage python=3.11 -y
-   conda activate gb-leakage
-
-   # venv example
-   python -m venv .venv
-   source .venv/bin/activate
+   python -c "
+   import sys; print(f'Python: {sys.version}')
+   import camb; print(f'CAMB: {camb.__version__}')
+   import os; print(f'DATA path: {os.environ.get(\"GB_LEAKAGE_DATA\", \"NOT SET\")}')
+   "
    ```
+5. **Open a GitHub Issue** — include the output from above and your error message
 
-2. **Install Python dependencies** from `requirements.txt`.
-
-   ```bash
-   pip install --upgrade pip
-   pip install -r requirements.txt
-   ```
-
-3. **Optional recommended packages** for convenience and plotting:
-
-   ```bash
-   pip install pandas seaborn
-   ```
+**Contact:**
+📧 geometriccosmo.illusion559@passinbox.com
 
 ---
 
-### Install CAMB and CLASS bindings
+## ✅ Installation Checklist
 
-**CAMB**
+- [ ] OS prerequisites installed (gfortran, gcc)
+- [ ] Python 3.9+ available
+- [ ] Virtual environment created and activated
+- [ ] `pip install -r requirements.txt` completed
+- [ ] CAMB installed and imports successfully
+- [ ] CLASS installed (optional) and imports successfully
+- [ ] Likelihood data downloaded to `data/`
+- [ ] Environment variables set (`GB_LEAKAGE_DATA`, `CLIK_PATH`)
+- [ ] `python tests/test_pipeline.py` passes all checks
+- [ ] Test MCMC runs successfully
 
-- The Python package `camb` provides bindings to CAMB. In many environments `pip install camb` is sufficient.
-
-  ```bash
-  pip install camb
-  ```
-
-- If you need to build CAMB from source (for custom Fortran options), clone the CAMB repo, build the Fortran code, and ensure the Python wrapper points to the built library. Confirm the Python import works:
-
-  ```python
-  python -c "import camb; print(camb.__version__)"
-  ```
-
-**CLASS (optional)**
-
-- If you plan to run CLASS-based workflows, install the Python wrapper `classy` or build CLASS from source and install the Python bindings.
-
-  ```bash
-  # If using pip wrapper
-  pip install classy
-  ```
-
-- Verify import:
-
-  ```python
-  python -c "from classy import Class; print('CLASS OK')"
-  ```
+**If all checkboxes are checked, you're ready to run analyses!** 🚀
 
 ---
 
-### Likelihood data setup
-
-This project expects public likelihoods to be placed under the `data/` directory. The repository includes `data/README.md` with guidance; follow these steps as a checklist.
-
-1. **Planck likelihoods**
-
-   - Download the Planck likelihood package (PLC) from the Planck Legacy Archive or the official Planck distribution.
-   - Extract the package into `data/planck/` so the `.clik` or likelihood files are available.
-   - If your sampler requires an environment variable, set it (example variable names shown; adapt to your sampler):
-
-   ```bash
-   export CLIK_PATH="$(pwd)/data/planck"
-   ```
-
-2. **ACT DR6 likelihoods**
-
-   - Download ACT DR6 likelihood files and place them in `data/act_dr6/`.
-   - Update any config files or `.ini` examples to point to `data/act_dr6/`.
-
-3. **SPT‑3G likelihoods**
-
-   - Download SPT likelihood files and place them in `data/spt3g/`.
-   - Update configs to reference `data/spt3g/`.
-
-4. **Permissions and paths**
-
-   - Ensure the likelihood directories are readable by the user running MCMC jobs.
-   - If MontePython or CosmoMC require specific environment variables, set them in your shell profile or job scripts.
-
----
-
-### MontePython and CosmoMC setup
-
-1. **MontePython**
-
-   - Clone or download MontePython and install its Python requirements. Typical workflow:
-
-   ```bash
-   git clone <montepython-repo>
-   cd montepython
-   pip install -e .
-   ```
-
-   - Configure MontePython to find CLASS or CAMB and the likelihoods in `data/`.
-
-2. **CosmoMC**
-
-   - CosmoMC typically requires building Fortran code and linking to CAMB. Follow CosmoMC build instructions for your system and ensure the `chains/` and `results/` directories are writable.
-
-3. **Repository integration**
-
-   - The example config `examples/run_planck.ini` shows how to add leakage parameters to a sampler config. Adapt it to your local MontePython or CosmoMC installation.
-
----
-
-### Verify installation and run reproducibility test
-
-1. **Create output directories**
-
-   ```bash
-   mkdir -p figures results chains
-   ```
-
-2. **Run the end-to-end pipeline test**
-
-   ```bash
-   python tests/test_pipeline.py
-   ```
-
-   - This script runs lightweight validation, plotting, and analysis steps. It checks that the patched CAMB/CLASS, plotting scripts, and analysis scripts execute and produce expected outputs.
-
----
-
-### Troubleshooting and tips
-
-- **Import errors for CAMB or CLASS**: ensure the Python environment used to run the repo is the same one where CAMB/CLASS were installed. Check `python -c "import camb"` and `python -c "from classy import Class"` for errors and inspect `PYTHONPATH` if needed.
-- **Fortran build failures**: install or update `gfortran` and ensure compilers are on `PATH`. On Debian/Ubuntu: `sudo apt install gfortran build-essential`.
-- **MPI issues**: if using MPI, ensure `mpirun` or `mpiexec` is available and that the sampler is built with MPI support.
-- **Likelihood license or access**: some likelihood packages require registration or acceptance of license terms. Follow the provider’s instructions and place files under `data/` after download.
-- **Cluster runs**: adapt `cluster/slurm_run_fits.sh` to your scheduler and resource limits. Set environment variables inside the job script.
-
----
-
-### Final notes
-
-- Keep the Python environment and likelihood versions documented for reproducibility. Record exact versions used for any published results.  
-- If you want, run the validation scripts first (`validation/test_suppression.py` and `notebooks/validation_quick.py`) to confirm the leakage patch behaves as expected before launching long MCMC runs.
-
----
+**Last updated:** June 2026  
+**Maintained by:** Sparky (GeometricCosmo)  
+**Version:** 1.0
