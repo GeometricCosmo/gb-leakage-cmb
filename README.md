@@ -348,7 +348,7 @@ The radion leakage event would boost massive-galaxy abundance at z ~ 10–15, ex
 ### We're NOT Looking For:
 
 - ❌ Speculative extensions before core mechanism validates
-- ❌ Claims of connection to UAP, free energy, or "garage revolution" narratives
+- ❌ Claims of connection to UAP, free energy, or those narratives
 - ❌ Overclaiming of results beyond S₈ and Lyman-α
 - ❌ Vague "it could explain everything" framings
 
