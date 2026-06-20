@@ -52,7 +52,7 @@ A **single unified mechanism** from first principles: the radion (a scalar field
 
 ### 👨‍🔬 **Physicist wanting details? (30 min)**
 1. Read the [Seven-Brick Framework](#-the-seven-brick-framework-what-weve-solved) section
-2. Check the [Status Dashboard](#status-dashboard-whats-complete) 
+2. Check the [Status Dashboard](#status-dashboard-whats-complete)
 3. Review [Observable Predictions](#observable-predictions-vs-data)
 4. → You now know what's proven, what's open, and what's next
 
