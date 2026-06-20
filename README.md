@@ -497,9 +497,9 @@ Just include a copy of the LICENSE file and cite the Zenodo preprint.
 **If you use this work in your research:**
 
 ```bibtex
-@misc{Sparky2026,
+@misc{Andre Swart2026,
   title={Radion Leakage in a 5D Braneworld: A Unified Framework for Cosmological Tensions},
-  author={Sparky},
+  author={Andre Swart},
   year={2026},
   month={June},
   howpublished={Zenodo},
