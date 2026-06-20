@@ -34,7 +34,7 @@ Choose your entry point:
 
 ### 👶 **New to the idea? (5 minutes)**
 1. Read the "One Idea" section above
-2. Look at [Observable Predictions](#observable-predictions-vs-data) table
+2. Look at [Observable Predictions](./docs/observable-predictions-vs-data.md) table
 3. Skim the [Philosophy](#philosophy-what-this-model-is-not) section
 4. → You now understand what this model is trying to do
 
