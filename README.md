@@ -295,7 +295,9 @@ $$V(r) = V_0 \left(1 - e^{-\beta(r - r_0)} \right)^2$$
 
 ---
 
-## 📊 Status Dashboard: What's Complete
+## #status-dashboard-whats-complete
+
+
 
 ### Overall Progress
 
