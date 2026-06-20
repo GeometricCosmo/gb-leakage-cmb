@@ -35,7 +35,18 @@ Choose your entry point:
 ### 👶 **New to the idea? (5 minutes)**
 1. Read the "One Idea" section above
 2. Look at [Observable Predictions](./docs/observable-predictions-vs-data.md) table
-3. Skim the [Philosophy](#philosophy-what-this-model-is-not) section
+3. Philosophy: What This Model Is NOT
+
+This work **deliberately avoids** pitfalls common in independent theoretical physics:
+
+❌ **Not a Theory of Everything** — We address two specific tensions (S₈, Lyman-α), not all physics  
+❌ **Not Overcomplicated** — Built on ~3 core concepts, not 40+  
+❌ **Not Hand-Waving** — Every unknown is explicitly labeled and documented  
+❌ **Not Prematurely Speculative** — Lab signatures deferred until basic physics validates  
+**Result:** A model that is **narrowly focused, rigorously grounded, and ready for peer review.**
+
+👉 **[See detailed philosophy discussion →](./docs/philosophy.md)**
+
 4. → You now understand what this model is trying to do
 
 ### 👨‍🔬 **Physicist/Cosmologist? (20 minutes)**
