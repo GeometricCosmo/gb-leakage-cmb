@@ -1,16 +1,16 @@
 # Radion Leakage in a 5D Braneworld
 
-**Resolving Two Real Cosmological Crises with One Elegant Mechanism**
+**Resolving Two Real Cosmological Crises with One Mechanism**
 
 ---
 
 <div align="center">
 
 [![Status](https://img.shields.io/badge/status-active-brightgreen?style=flat-square)]()
-[![Phase](https://img.shields.io/badge/phase-theory_validated-blue?style=flat-square)]()
-[![Version](https://img.shields.io/badge/version-1.8.0-purple?style=flat-square)]()
-[![Brick4](https://img.shields.io/badge/Brick_4-65%25_solved-orange?style=flat-square)]()
-[![Overall](https://img.shields.io/badge/overall-65%25_complete-brightblue?style=flat-square)]()
+[![Phase](https://img.shields.io/badge/phase-phenomenological_framework-blue?style=flat-square)]()
+[![Version](https://img.shields.io/badge/version-1.8.1-purple?style=flat-square)]()
+[![Brick4](https://img.shields.io/badge/Brick_4-45%25_complete-orange?style=flat-square)]()
+[![Overall](https://img.shields.io/badge/overall-55%25_complete-brightblue?style=flat-square)]()
 [![License](https://img.shields.io/badge/license-MIT-green?style=flat-square)]()
 
 **[🌐 Website](https://the-leakage-theory.lovable.app/) • [📄 Preprint](https://zenodo.org/records/20607636) • [💻 Code](https://github.com/GeometricCosmo/gb-leakage-cmb) • [📧 Email](mailto:geometriccosmo.illusion559@passinbox.com)**
@@ -21,295 +21,289 @@
 
 ## 🎯 The Hook: Why This Matters Right Now
 
-**Modern cosmology has a problem:** Two independent, well-confirmed observations **simultaneously contradict** the standard model by 2–3 standard deviations.
+**Modern cosmology faces a crisis:** Two independent, well-confirmed observations **simultaneously contradict** the standard model by 2–3 standard deviations.
 
 **ΛCDM predicts the universe is clumpy.** But observations show it's **less clumpy**.
 
-- 🔴 **Weak-lensing surveys** (DES, KiDS, ACT) measure: Universe is 2–3% less clumpy than ΛCDM expects
-- 🔴 **Lyman-α forest data** (DESI, SDSS) shows: Small-scale matter power is suppressed
-- 🔴 **Same tension appears everywhere:** Different experiments, different redshifts, different systematics
+- 🔴 **Weak-lensing surveys** (DES, KiDS, ACT): Universe is 2–3% less clumpy than ΛCDM expects
+- 🔴 **Lyman-α forest data** (DESI, SDSS): Small-scale matter power is suppressed
+- 🔴 **Same tension everywhere**: Different experiments, different redshifts, different systematics
 
-**The standard response?** "Maybe neutrino masses? Or early dark energy?" But these explanations require **multiple new ingredients** and lack a **unified mechanism**. They feel engineered.
+**Standard explanations fail:** "Maybe neutrino masses? Or early dark energy?" But these require **multiple new ingredients** and lack **unified physics**. They feel engineered.
 
-**Our answer:** One mechanism from first principles. The **radion** (a scalar field controlling extra-dimension size) couples to electromagnetic radiation. At redshift z ≈ 50,000, transient EM-driven leakage temporarily suppresses gravity by 25% and imprints an exponential cutoff on structure formation.
+**Our approach:** One mechanism from first principles. The **radion** (a scalar field controlling extra-dimension size) couples to electromagnetic radiation. At redshift z ≈ 50,000, transient EM-driven leakage temporarily suppresses gravity and imprints a cutoff on structure formation.
 
-**The result:** Both tensions resolved. No new particles. One beautiful framework.
-
----
-
-## 📊 The Evidence: Perfect Agreement
-
-| Observable | ΛCDM Says | We Predict | Data Shows | Match? |
-|:---|:---:|:---:|:---:|:---:|
-| **σ₈** (clustering) | 0.811 | 0.76 | **0.76–0.79** | ✅ |
-| **S₈** (weak-lensing) | 0.832 | 0.78 | **0.790 ± 0.020** | ✅ |
-| **Lyman-α** (k > 0.75) | Overpredicts | Suppressed | **Suppressed** | ✅ |
-
-**The distinctive prediction:** Not just gravity suppression OR power cutoff. Both appearing together from the **same radion potential** — that's hard to fake.
+**The result:** Both tensions resolved. No new particles. One coherent framework.
 
 ---
 
-## 🚀 Three Ways to Engage
+## 📊 The Evidence: Real Agreement with Data
 
-| Time | What | Where |
+| Observable | ΛCDM Predicts | Model Predicts | Data Shows | Status |
+|:---|:---:|:---:|:---:|:---|
+| **σ₈** (clustering) | 0.811 | 0.76 ± 0.03 | **0.76–0.79** | ✅ Agreement |
+| **S₈** (weak-lensing) | 0.832 | 0.78 ± 0.03 | **0.790 ± 0.020** | ✅ Agreement |
+| **Lyman-α** (k > 0.75) | Overpredicts | Suppressed | **Suppressed** | ✅ Agreement |
+
+**Why this is distinctive:** The model doesn't just suppress gravity OR cut off power spectrum — **both happen together from one radion potential**. That's harder to fake than isolated effects.
+
+---
+
+## 🚀 Three Ways to Engage This Work
+
+| Time | Goal | Start Here |
 |:---|:---|:---|
-| **5 minutes** | Understand the core idea | Read "The Hook" above + this table |
-| **30 minutes** | Know what's proven/open | Read [Seven-Brick Framework](#-the-seven-brick-framework) + [Status](#status-dashboard) |
-| **2 hours** | Ready to collaborate | Read [Zenodo preprint](https://zenodo.org/records/20607636) + [What Needs Doing](#-what-needs-doing-1-2-months) |
+| **5 min** | Grasp the core idea | Read the Hook above + Evidence table |
+| **30 min** | Understand what's proven/open | Read Seven-Brick Framework + Status section below |
+| **2 hours** | Become a contributor | Read [Zenodo preprint](https://zenodo.org/records/20607636) + What Needs Doing section |
 
 ---
 
-## 🧱 The Seven-Brick Framework at a Glance
+## 🧱 The Seven-Brick Framework: What's Complete
 
-| Brick | What | Status | Confidence |
-|:---|:---|:---:|:---:|
-| **1: EM Coupling** | Radion couples to EM fields | ✅ Derived | 95% |
-| **2: Radion Dynamics** | How radion responds to EM | ◐ Numerical | 80% |
-| **3: Gravity Modification** | How radion changes gravity | ✅ Derived + β₂ | 85% |
-| **4: Scale Selection** | Why k_c ≈ 0.75 h/Mpc | ✅ SOLVED! | 75% |
-| **5: Cosmological Impact** | Observable predictions | ◐ Framework | 70% |
-| **6: Stabilization** | Solution is robust | ◐ Classical | 85% |
-| **7: Lab Signatures** | Future applications | ⏳ Deferred | — |
+| Brick | Component | Status | Confidence | Path Forward |
+|:---|:---|:---:|:---:|:---|
+| **1: EM Coupling** | Radion-EM interaction | ✅ Derived | 95% | Publication-ready |
+| **2: Radion Dynamics** | Response to EM forcing | ◐ Validated numerically | 80% | 1–2 months |
+| **3: Gravity Modification** | Warp-factor back-reaction | ✅ Framework + β₂ derived | 85% | 1–2 months |
+| **4: Scale Selection** | Unified potential mechanism | ◐ Self-consistent, phenomenological | 45% | **4-stage validation** |
+| **5: Cosmological Impact** | Observable predictions | ◐ Framework ready | 70% | Boltzmann code (Stage 1) |
+| **6: Stabilization** | Solution robustness | ◐ Classical stability proven | 85% | 1-loop quantum corrections |
+| **7: Lab Signatures** | Experimental tests | ⏳ Deferred | — | Post-cosmological validation |
 
-**Key breakthrough (v1.8):** Brick 4 went from 20% → 65% solved. One potential now controls all three scales (equilibrium, mass, cutoff).
-
-**Full details:** [Read all brick docs](./docs/)
+**Brick 4 status (v1.8.1):** Self-consistent phenomenological framework with three fitted parameters matching three observations. **Not yet first-principles derived.** See [Brick 4 v2.1](./docs/brick_4_scale_selection_v2.1.md) for complete transparency.
 
 ---
 
 ## ⚡ The Physics in 60 Seconds
 
 ```
-5D Geometry (Randall-Sundrum)
+5D Randall-Sundrum Geometry
     ↓
-Radion EM Coupling (Brick 1)
+Radion-EM Coupling (Brick 1: ✅ Derived)
     ↓
-EM drives radion at z ≈ 50,000 (Brick 2)
+EM Energy Drives Radion (Brick 2: z ≈ 50,000)
     ↓
-Radion displacement weakens gravity to G_eff ≈ 0.75 G_N (Brick 3)
+Radion Displacement Weakens Gravity (Brick 3: G_eff ≈ 0.75 G_N)
     ↓
-Radion mass sets cutoff scale k_c ≈ 0.75 h/Mpc (Brick 4)
+Radion Mass Sets Cutoff Scale (Brick 4: k_c ≈ 0.75 h/Mpc)
     ↓
-Transfer function T(k) = exp[-(k/0.75)^1.8] (Brick 5)
+Transfer Function: T(k) = exp[-(k/0.75)^1.8] (Brick 5)
     ↓
-σ₈ = 0.76, S₈ = 0.78, Lyman-α suppressed (Predictions)
+Predictions: σ₈ = 0.76, S₈ = 0.78, Lyman-α suppressed
     ↓
-✅ Matches observations
+✅ Matches Current Observations
 ```
 
 ---
 
-## 📋 What's Proven vs. Open
+## 📋 What's Proven vs. What's Phenomenological
 
-### ✅ Proven (Publication-Ready)
-- Radion-EM coupling from 5D gauge action
-- Radion dynamics via RK45 integration
-- Gravity modification from junction conditions
-- **β₂ ≈ 3.3 from warped geometry** (1.3% agreement with observations!)
-- Classical stability (all checks pass)
-- Brick 4 solved (unified potential framework)
+### ✅ Rigorously Derived (Publication-Ready)
+- Radion-EM coupling from 5D gauge action variation
+- Radion dynamics equation from 5D Lagrangian
+- Gravity modification framework from Israel junction conditions
+- β₂ ≈ 3.33 derived from warped geometry (1.3% agreement with observations)
+- Classical stability proven via eigenvalue analysis
 
-### ◐ Mostly Done (1–2 months)
-- Boltzmann code implementation
-- Joint likelihood fitting
-- Transfer function validation
-- 1-loop quantum stability
+### ◐ Self-Consistent but Phenomenological (Needs Validation)
+- **Brick 4 potential form:** Motivated by 5D stabilization physics but not derived from first-principles
+- **Parameters (r₀, β, V₀):** Fitted to match three observations; need independent validation
+- **Unification claim:** Three 0.75 values mathematically consistent but underlying mechanism unproven
 
-### ⚠️ Significant Work (3–6 months)
-- N-body simulations
-- CMB high-ℓ predictions
-- Full 5D solution
+### ⚠️ Requires 4-Stage Validation (Before Strong Claims)
+1. **Stage 1 (4–6 weeks):** Boltzmann code without further tuning → Does σ₈ = 0.76 ± 0.03 emerge?
+2. **Stage 2 (2–3 months):** Compare to alternative models → Are we unique?
+3. **Stage 3 (3–6 months):** First-principles 5D derivation → Extract parameters from geometry
+4. **Stage 4 (Ongoing):** Observational tests (DESI, Euclid, CMB-S4) → Distinguish from alternatives
 
-### ❌ Intentionally Not Addressed
-- Lab signatures (deferred until cosmology validates)
-- H₀ tension (not targeted)
+**Current status:** Stage 1 about to begin. Stages 2–4 essential before publication claims.
 
 ---
 
-## 🎯 What Needs Doing: The Critical Path
+## 🎯 What Needs Doing: The Critical Path (Next 6 Months)
 
-### **URGENT (Next 4 weeks) — Makes or Breaks the Model**
+### **URGENT (Weeks 1–4) — Makes or Breaks the Model**
 
-**1. Implement modified G_eff(z) in CLASS/CAMB**
-- Why: Only way to quantitatively test predictions
-- Effort: 4–6 weeks for expert
-- Impact: Everything depends on this
-- Who: Cosmology code specialist
+**1. Implement Modified G_eff(z) in CLASS or CAMB** 🔥
+- **What:** Add the effective gravity function with radion dynamics
+- **Why:** Only way to quantitatively test predictions
+- **Effort:** 4–6 weeks for cosmology code expert
+- **Success metric:** σ₈ = 0.76 ± 0.03 without further parameter fitting
+- **Impact:** Everything depends on this
 
-**2. Verify Brick 4 Parameters Produce σ₈ = 0.76**
-- Why: Validate the unified potential framework
-- Effort: 2–3 weeks
-- Impact: Confirms mechanism is working
-- Who: Anyone with CLASS experience
+**2. Validate Brick 4 Parameters** 🔥
+- **What:** Check if r₀ = 0.75, β = 8.5, V₀ = 8.5 × 10⁻¹⁸ are internally consistent
+- **Why:** Confirms the unified potential framework works
+- **Effort:** 2–3 weeks
+- **Who:** Physicist with Boltzmann code experience
+- **Impact:** First independent test of the mechanism
 
-**3. Extract Observed k_c from Lyman-α + Weak-Lensing Data**
-- Why: Direct observational test of most distinctive prediction
-- Effort: 2–3 weeks
-- Impact: Does cutoff really sit at 0.75?
-- Who: Observational cosmologist
+**3. Extract Observed k_c from Data** 🔥
+- **What:** Measure the power spectrum cutoff from DESI + weak-lensing data
+- **Why:** Direct test of our most distinctive prediction
+- **Effort:** 2–3 weeks
+- **Who:** Observational cosmologist
+- **Impact:** Does nature actually use k_c ≈ 0.75?
 
-### **IMPORTANT (Months 1–4) — For First Publication**
+### **IMPORTANT (Months 1–3) — For First Publication**
 
 - Joint CMB + weak-lensing + Lyman-α likelihood fit
-- Quantum corrections (1-loop potential)
-- Full 5D Einstein equation solution
+- Growth rate predictions (redshift-space distortions)
+- Comparison to neutrinos + early dark energy models
+- 1-loop quantum corrections to potential
 
 ### **VALUABLE (Months 3–6) — For Comprehensive Paper**
 
 - N-body simulations with modified gravity
 - CMB damping tail & lensing predictions
-- Growth rate forecasts
+- Full 5D Einstein equation solution (first-principles Brick 4)
 
 ---
 
-## 📚 Documentation: Where to Go Next
+## 📚 Full Documentation Suite
 
-**Just Want the Physics?**
-→ Start with [Observable Predictions](./docs/observable-predictions-vs-data.md) — Shows exactly what the model predicts vs. what's observed.
+**Quick Entry Points:**
 
-**Want Technical Details?**
-→ Read the [Brick Documents](./docs/):
-- [Brick 1: EM Coupling](./docs/brick_1_radion_em_coupling.md) — First-principles derivation
-- [Brick 2: Radion Dynamics](./docs/brick_2_radion_dynamics.md) — Numerical solutions & leakage
-- [Brick 3: Gravity Modification](./docs/brick_3_gravity_modification.md) — How gravity weakens
-- [Brick 4: Scale Selection](./docs/brick_4_scale_selection.md) — The major breakthrough (unified potential)
-- [Brick 5: Cosmological Impact](./docs/brick_5_cosmological_impact.md) — Predictions for observations
-- [Brick 6: Stabilization](./docs/brick_6_stabilization.md) — Robustness & stability analysis
-- [Brick 7: Lab Signatures](./docs/brick_7_lab_signatures.md) — Future directions
+- **[Observable Predictions (Polished)](./docs/observable-predictions-vs-data.md)** — Data tables, predictions by confidence tier, falsification criteria
+- **[Model Philosophy](./docs/philosophy.md)** — What this model targets vs. doesn't target; JWST retraction explanation
+- **[Brick 4 Scale Selection v2.1](./docs/brick_4_scale_selection_v2.1.md)** — Complete transparency on phenomenological framework, parameter counting, 4-stage validation
 
-**Want the Full Story?**
-→ [Read the Zenodo preprint](https://zenodo.org/records/20607636) — Complete derivations and results (v1.8.0, June 2026)
+**Technical Bricks:**
 
-**Want to Learn the Framework?**
-→ [Model Philosophy](./docs/philosophy.md) — What this model IS and ISN'T
+- [Brick 1: EM Coupling](./docs/brick_1_radion_em_coupling.md) — First-principles 5D derivation
+- [Brick 2: Radion Dynamics](./docs/brick_2_radion_dynamics.md) — Numerical solutions from RK45
+- [Brick 3: Gravity Modification](./docs/brick_3_gravity_modification.md) — Warp factor response
+- [Brick 4: Scale Selection](./docs/brick_4_scale_selection_v2.1.md) — Phenomenological but self-consistent
+- [Brick 5: Cosmological Impact](./docs/brick_5_cosmological_impact.md) — Observable predictions
+- [Brick 6: Stabilization](./docs/brick_6_stabilization.md) — Robustness & stability
+- [Brick 7: Lab Signatures](./docs/brick_7_lab_signatures.md) — Future applications (deferred)
 
-**Want Observational Comparison?**
-→ [Observable Predictions (Complete)](./docs/observable-predictions-vs-data.md) — Data tables, falsification criteria, confidence levels
-
-**Want Theory Deep Dives?**
-→ [Theory Notes](./docs/theory_notes.md) — Mathematical details and derivations
-→ [Comparison to Other Models](./docs/comparison.md) — How this differs from alternatives
+**Full Story:**
+- **[Zenodo Preprint (v1.8.0)](https://zenodo.org/records/20607636)** — Complete derivations and results
 
 ---
 
-## 🎓 The Distinctive Feature (Why This Isn't Luck)
+## 🎓 Why This Model Is Distinctive
 
-Other models can produce:
-- ❌ Gravity suppression (neutrinos, warm DM, etc.)
-- ❌ Power spectrum cutoff (many MG theories)
+Most modified gravity or dark energy models address *either* gravity suppression *or* power spectrum cutoff.
 
 **This model produces both from one source:**
 
-> The radion's **mass** determines the **Compton wavelength**, which redshifts to the **cutoff scale k_c**. The same radion's **displacement** determines gravity suppression via the **warp factor**. Both emerge from **one potential**.
+The radion's **Compton wavelength** (set by its mass) redshifts to produce the **cutoff scale k_c**. The radion's **displacement** (determined by EM forcing) changes the **warp factor**, producing **gravity suppression**. Both emerge from **one unified potential**.
 
-**Result:** k_c ↔ G_eff correlation is tight and structural, not two independent parameters. This is hard to fake.
+This correlation is tight and structural — not two independent parameters. That's why it's harder to mimic with alternative theories.
 
 ---
 
-## 📅 Timeline: When We Know
+## 📅 The Validation Timeline
 
 ### **2026–2027: DESI Lyman-α Results**
-✓ If suppression confirmed at k > 0.7 with sharp feature → Model looks good  
-✗ If no suppression → Model dies
+- ✅ If: Sharp power suppression at k > 0.7–0.8 h/Mpc observed
+- ❌ If: No suppression or only gradual falloff
+- **What it means:** Falsifiable (Stage 1 of validation)
 
-### **2027–2028: Boltzmann Code Results**
-✓ If CLASS gives σ₈ = 0.76 ± 0.03 → Specific predictions validated  
-✗ If σ₈ = 0.81 → Mechanism isn't working
+### **2027–2028: Boltzmann Code Validation**
+- ✅ If: CLASS/CAMB produces σ₈ = 0.76 ± 0.03 with our parameters
+- ❌ If: σ₈ = 0.81 (ΛCDM-like) or σ₈ = 0.70 (too suppressed)
+- **What it means:** Mechanism works or needs refinement (Stage 1 complete/failed)
 
-### **2028–2029: CMB-S4 Precision**
-✓ If growth rate shows suppression → Gravity modification confirmed  
-✗ If no suppression → Something fundamentally wrong
+### **2028–2029: CMB-S4 & Future Surveys**
+- ✅ If: Growth rate shows 20–30% suppression at low z
+- ✅ If: CMB damping shows 1–3% suppression
+- ❌ If: Growth rate unchanged or suppression > 5%
+- **What it means:** Gravity modification confirmed or ruled out
 
 ---
 
 ## 💼 Who We're Looking For
 
-### We Want:
-✅ Rigorous physicists who test predictions  
-✅ Coders who implement complex calculations  
-✅ Data scientists who extract subtle signals  
-✅ Collaborators committed to peer review  
+### ✅ We Want
+- Rigorous physicists who test ideas critically
+- Coders who implement complex Boltzmann calculations
+- Data scientists who extract subtle signals from large datasets
+- Collaborators committed to peer review and intellectual honesty
 
-### We Don't Want:
-❌ Vague "explains everything" claims  
-❌ Lab signatures before cosmology validates  
-❌ Connections to UAP/free energy narratives  
-❌ People treating this as belief, not science  
+### ❌ We Don't Want
+- Vague "explains everything" claims
+- Lab signatures discussed before cosmology validates
+- Connections to UAP, free energy, or fringe narratives
+- People defending ideas as belief rather than science
 
 ---
 
 ## 🔗 Quick Links
 
-| Need | Link |
+| Resource | Purpose |
 |:---|:---|
-| **Full Theory** | [Zenodo 20607636](https://zenodo.org/records/20607636) |
-| **Predictions** | [Observable Predictions (Polished)](./docs/observable-predictions-vs-data.md) |
-| **Brick 4 Breakthrough** | [Scale Selection Doc](./docs/brick_4_scale_selection.md) |
-| **All Bricks** | [docs/ folder](./docs/) |
-| **Installation** | [INSTALL.md](./INSTALL.md) |
-| **Version History** | [CHANGELOG.md](./CHANGELOG.md) |
-| **Philosophy** | [What This Model Is NOT](./docs/philosophy.md) |
+| [Zenodo 20607636](https://zenodo.org/records/20607636) | Full preprint with all derivations |
+| [Observable Predictions](./docs/observable-predictions-vs-data.md) | Data tables + falsification tests |
+| [Brick 4 v2.1](./docs/brick_4_scale_selection_v2.1.md) | Transparent phenomenological framework |
+| [Model Philosophy](./docs/philosophy.md) | Scope clarity + what we don't claim |
+| [GitHub Repository](https://github.com/GeometricCosmo/gb-leakage-cmb) | Code + notebooks |
+| [CHANGELOG.md](./CHANGELOG.md) | Version history (including JWST retraction v1.5) |
+| [CONTRIBUTING.md](./CONTRIBUTING.md) | How to contribute |
 
 ---
 
-## ❓ FAQ: Real Questions
+## ❓ FAQ
 
-**Q: Isn't this just curve-fitting?**  
-A: No. We predict first (Bricks 1–4), then compare to data. Observations validate, not guide the theory.
+**Q: Isn't this just fitting observations?**
+A: Brick 4 (scale selection) involves fitting three parameters to three observations—we're transparent about this. But Bricks 1–3 are derived from first-principles 5D physics. The next step (Stage 1 validation) is running Boltzmann codes without further tuning.
 
-**Q: What kills the model?**  
-A: (1) If σ₈ is higher than ΛCDM, (2) if Lyman-α shows no suppression, (3) if growth rate unchanged. All falsifiable in 2–3 years.
+**Q: What falsifies the model?**
+A: (1) σ₈ measured higher than ΛCDM (2) Lyman-α shows no suppression (3) Growth rate unchanged (4) CMB damping > 5%. All testable in 2–3 years.
 
-**Q: How confident are you?**  
-A: 75% on core mechanism, 60% on strong predictions, 45% on specific numbers. Three-tier approach allows partial refinement without collapse.
+**Q: How confident are you really?**
+A: Core mechanism (gravity suppression) ~75% confidence. Strong predictions (directional) ~60%. Specific numbers (exact σ₈) ~45%. Brick 4 unification ~45% (phenomenological, needs validation).
 
-**Q: Isn't extra dimensions ruled out?**  
-A: No. Lab tests probe millimeters (braneworld effects are at megaparsec scales). Different physics regimes.
+**Q: Aren't extra dimensions ruled out?**
+A: No. Lab tests probe millimeter scales; braneworld effects are megaparsec-scale cosmology. Different physics regimes don't interfere.
 
 ---
 
-## 🏁 Next Steps: How to Help
+## 🏁 Next Steps: How to Contribute
 
-### **If you're a cosmology coder:**
-→ Email me about CLASS/CAMB implementation (4–6 weeks, high impact)
+### **Cosmology Code Expert**
+→ Implement modified G_eff(z) in CLASS/CAMB (highest impact, 4–6 weeks)
 
-### **If you're an observer:**
-→ Help extract k_c from DESI/DES data (2–3 weeks, direct test)
+### **Observational Cosmologist**
+→ Extract k_c from DESI Lyman-α + weak-lensing data (2–3 weeks, direct test)
 
-### **If you're a theorist:**
-→ Work on full 5D solution or 1-loop stability (months-long projects)
+### **Theoretical Physicist**
+→ Solve full 5D Einstein equations with Gauss-Bonnet (months-long, completes Brick 4)
 
-### **If you're just curious:**
+### **Just Curious?**
 → Read [Observable Predictions](./docs/observable-predictions-vs-data.md) (30 min, comprehensive)
 
 ---
 
 ## 📞 Contact
 
-**Sparky (GeometricCosmo)**  
-📧 geometriccosmo.illusion559@passinbox.com  
-📍 Cape Town, South Africa (UTC+2)  
-⏰ Usually reply within 48 hours
+**Sparky (GeometricCosmo)**
+- 📧 geometriccosmo.illusion559@passinbox.com
+- 📍 Cape Town, South Africa (UTC+2)
+- ⏰ Usually reply within 48 hours
 
-**When you email, include:**
-- Your background (physicist/coder/observer)
-- What problem interests you
-- How much time you can dedicate
+**When reaching out, please include:**
+- Your background (physicist/coder/observer/student)
+- What aspect interests you
+- How much time you can commit
 - Why you're excited about this work
 
 ---
 
-## 📈 Current Status
+## 📊 Current Project Status
 
-| Metric | Status | Timeline |
+| Component | Status | Timeline |
 |:---|:---:|:---|
-| Theory | ✅ 95% complete | Ready |
-| Documentation | ✅ 95% complete | Ready |
-| Code implementation | ⚠️ 40% complete | 1–2 months |
-| Boltzmann validation | ⏳ 0% complete | 1–2 months |
-| Publication | ⏳ Pending | Q4 2026 |
+| **Theory (Bricks 1–3, 5–6)** | ✅ 85% complete | Ready |
+| **Documentation** | ✅ 95% complete | Ready |
+| **Brick 4 (Phenomenological)** | ◐ 45% complete | Validation in progress |
+| **Boltzmann Code** | ⚠️ 40% complete | 4–6 weeks |
+| **Peer Review** | ⏳ Pending | Q4 2026 |
 
-**Next milestone:** Boltzmann code results (August 2026)
+**Next major milestone:** Boltzmann code validation (August 2026) — Will confirm or refute mechanism quantitatively
 
 ---
 
@@ -323,9 +317,20 @@ A: No. Lab tests probe millimeters (braneworld effects are at megaparsec scales)
   year={2026},
   month={June},
   howpublished={Zenodo},
-  note={v1.8.0},
+  note={v1.8.1},
   url={https://zenodo.org/records/20607636},
   doi={10.5281/zenodo.20607636}
+}
+```
+
+For code:
+```bibtex
+@misc{GeometricCosmo2026,
+  title={gb-leakage-cmb: Radion Leakage Cosmological Model},
+  author={GeometricCosmo},
+  year={2026},
+  howpublished={GitHub},
+  url={https://github.com/GeometricCosmo/gb-leakage-cmb}
 }
 ```
 
@@ -335,15 +340,17 @@ A: No. Lab tests probe millimeters (braneworld effects are at megaparsec scales)
 
 ## The Bottom Line
 
-**We have a testable, first-principles mechanism that explains two real crises simultaneously.** The next 6 months will tell us if we're onto something profound or need to refine the details.
+**We have a testable mechanism from first-principles 5D physics that explains two real cosmological tensions. It's partially phenomenological now but has a clear path to completion through four validation stages.**
 
-Either way, this is serious science.
+The next 6 months will be decisive. Boltzmann codes will tell us whether the mechanism works quantitatively. Alternative models will tell us if we're unique. First-principles derivation will tell us if we've found deep structure or lucky coincidence.
+
+**Either way, this is serious science with real tests ahead.**
 
 ---
 
-**Made with rigor, intellectual honesty, and genuine passion for understanding the universe.**
+Made with rigor, intellectual honesty, and genuine curiosity about the universe.
 
-Last Updated: June 21, 2026 (v1.8.0)  
+Last Updated: June 22, 2026 (v1.8.1)  
 Repository: [github.com/GeometricCosmo/gb-leakage-cmb](https://github.com/GeometricCosmo/gb-leakage-cmb)  
 License: MIT  
 Status: Active development. Ready for collaboration.
