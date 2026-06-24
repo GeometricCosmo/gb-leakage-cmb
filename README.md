@@ -174,7 +174,7 @@ Predictions: σ₈ = 0.76, S₈ = 0.78, Lyman-α suppressed
 - [Brick 1: EM Coupling](./docs/brick_1_radion_em_coupling.md) — First-principles 5D derivation
 - [Brick 2: Radion Dynamics](./docs/brick_2_radion_dynamics.md) — Numerical solutions from RK45
 - [Brick 3: Gravity Modification](./docs/brick_3_gravity_modification.md) — Warp factor response
-- [Brick 4: Scale Selection](./docs/brick_4_scale_selection_v2.1.md) — Phenomenological but self-consistent
+- [Brick 4: Scale Selection](docs/brick_4_scale_selection.md) — Phenomenological but self-consistent
 - [Brick 5: Cosmological Impact](./docs/brick_5_cosmological_impact.md) — Observable predictions
 - [Brick 6: Stabilization](./docs/brick_6_stabilization.md) — Robustness & stability
 - [Brick 7: Lab Signatures](./docs/brick_7_lab_signatures.md) — Future applications (deferred)
