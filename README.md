@@ -71,7 +71,7 @@
 | **6: Stabilization** | Solution robustness | ◐ Classical stability proven | 85% | 1-loop quantum corrections |
 | **7: Lab Signatures** | Experimental tests | ⏳ Deferred | — | Post-cosmological validation |
 
-**Brick 4 status (v1.8.1):** Self-consistent phenomenological framework with three fitted parameters matching three observations. **Not yet first-principles derived.** See [Brick 4 v2.1](./docs/brick_4_scale_selection_v2.1.md) for complete transparency.
+**Brick 4 status (v1.8.1):** Self-consistent phenomenological framework with three fitted parameters matching three observations. **Not yet first-principles derived.** See [Brick 4 v2.1](docs/brick_4_scale_selection.md) for complete transparency.
 
 ---
 
