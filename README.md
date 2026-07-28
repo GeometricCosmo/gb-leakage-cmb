@@ -1,16 +1,16 @@
-# Radion Leakage in a 5D Braneworld
+# Radion Leakage in a 5D Gauss-Bonnet Braneworld
 
-**Resolving Two Real Cosmological Crises with One Mechanism**
+**A First-Principles Derivation, Observational Falsification, and Path Forward**
 
 ---
 
 <div align="center">
 
-[![Status](https://img.shields.io/badge/status-active-brightgreen?style=flat-square)]()
-[![Phase](https://img.shields.io/badge/phase-stage_1_refined-brightgreen?style=flat-square)]()
+[![Status](https://img.shields.io/badge/status-falsification_complete-orange?style=flat-square)]()
+[![Phase](https://img.shields.io/badge/phase-stage_3_complete-orange?style=flat-square)]()
 [![Version](https://img.shields.io/badge/version-1.9.0-purple?style=flat-square)]()
-[![Brick4](https://img.shields.io/badge/Brick_4-70--75%25_validated-brightgreen?style=flat-square)]()
-[![Overall](https://img.shields.io/badge/overall-72%25_complete-brightblue?style=flat-square)]()
+[![Confidence](https://img.shields.io/badge/confidence-mechanism_excluded-red?style=flat-square)]()
+[![Scientific](https://img.shields.io/badge/integrity-honest_falsification-brightgreen?style=flat-square)]()
 [![License](https://img.shields.io/badge/license-MIT-green?style=flat-square)]()
 
 **[🌐 Website](https://the-leakage-theory.lovable.app/) • [📄 Preprint](https://zenodo.org/records/20607636) • [💻 Code](https://github.com/GeometricCosmo/gb-leakage-cmb) • [📧 Email](mailto:geometriccosmo.illusion559@passinbox.com)**
@@ -19,407 +19,328 @@
 
 ---
 
-## 🎯 The Hook: Why This Matters Right Now
+## ⚠️ CRITICAL UPDATE (August 2026)
 
-**Modern cosmology faces a crisis:** Two independent, well-confirmed observations **simultaneously contradict** the standard model by 2–3 standard deviations.
+**Status Change:** v1.8.3 claims have been **observationally falsified** by Stage 3 independent Boltzmann validation.
 
-**ΛCDM predicts the universe is clumpy.** But observations show it's **less clumpy**.
+**What succeeded:**
+- ✅ 5D Gauss-Bonnet geometry solved to residual < 6×10⁻⁶
+- ✅ Holographic entanglement entropy uniquely determines transfer function
+- ✅ Power-law k^(-1/2) asymptote confirmed (universal, geometry-independent)
+- ✅ Full first-principles derivation completed
 
-- 🔴 **Weak-lensing surveys** (DES, KiDS, ACT): Universe is 2–3% less clumpy than ΛCDM expects
-- 🔴 **Lyman-α forest data** (DESI, SDSS): Small-scale matter power is suppressed
-- 🔴 **Same tension everywhere**: Different experiments, different redshifts, different systematics
+**What failed:**
+- ❌ Observational predictions mutually exclusive (S₈ vs Lyman-α)
+- ❌ σ₈ = 0.76 claim quantitatively impossible (wrong by ~6.3%)
+- ❌ Mechanism cannot satisfy both weak-lensing and Lyman-α data simultaneously
+- ❌ This is a structural problem, not a tuning issue
 
-**Standard explanations fail:** "Maybe neutrino masses? Or early dark energy?" But these require **multiple new ingredients** and lack **unified physics**. They feel engineered.
-
-**Our approach:** One mechanism from first principles. The **radion** (a scalar field controlling extra-dimension size) couples to electromagnetic radiation. At redshift z ≈ 50,000, transient EM-driven leakage temporarily suppresses gravity and imprints a smooth power-law cutoff on structure formation.
-
-**The result:** Both tensions resolved. No new particles. One coherent framework. **Now validated against dark-galaxy abundances.**
-
----
-
-## 📊 The Evidence: Real Agreement with Data (All Four Constraints)
-
-| Observable | ΛCDM Predicts | Model Predicts | Data Shows | Status |
-|:---|:---:|:---:|:---:|:---|
-| **σ₈** (clustering) | 0.811 | 0.76 ± 0.03 | **0.76–0.79** | ✅ **VALIDATED** |
-| **S₈** (weak-lensing) | 0.832 | 0.78 ± 0.03 | **0.790 ± 0.020** | ✅ **VALIDATED** |
-| **Lyman-α** power ratio (k > 0.75) | 1.0 | ~0.89 | **~0.80** | ✅ **VALIDATED** |
-| **CDG-2 dwarf abundance** (Euclid discovery) | ~5.5 per cluster | ~2.1 per cluster | **~1–10 per cluster** | ✅ **VALIDATED** |
-
-**Why this is distinctive:** The model doesn't just suppress gravity OR cut off power spectrum - **both happen together from one radion mechanism**, and the solution is **gentle enough to preserve dwarf galaxies**. That's harder to fake than isolated effects.
+**Scientific verdict:** The model in its current form (power-law transfer function acting on matter power spectrum) should be **published as an observational falsification**—not as a success. This is valuable science: it shows why this mechanism doesn't work and saves the field time.
 
 ---
 
-## 🚀 Three Ways to Engage This Work
+## 📊 The Falsification: S₈/Lyman-α Mutual Exclusion
 
-| Time | Goal | Start Here |
-|:---|:---|:---|
-| **5 min** | Grasp the core idea | Read the Hook above + Evidence table |
-| **30 min** | Understand what's proven/open | Read Seven-Brick Framework + Status section below |
-| **2 hours** | Become a contributor | Read [Zenodo preprint](https://zenodo.org/records/20607636) + What Needs Doing section |
+### The Problem in 30 Seconds
 
----
+The power-law transfer function T(k) = (1.5/k)^0.5 has a fatal flaw:
 
-## 🧱 The Seven-Brick Framework: What's Complete
+1. **σ₈ is insensitive to k > 1.5 h/Mpc** (window function has zero weight there)
+   - To reduce σ₈ from 0.811 → 0.76, must suppress at k < 1.5 h/Mpc
+   
+2. **Lyman-α is sensitive to k ~ 2–8 h/Mpc** 
+   - Observes ~15–20% suppression
+   - Allowing Lyman-α unsuppressed requires k_gap ~ 1.5–2 h/Mpc
 
-| Brick | Component | Status | Confidence | Path Forward |
-|:---|:---|:---:|:---:|:---|
-| **1: EM Coupling** | Radion-EM interaction | ✅ Derived | 95% | Publication-ready |
-| **2: Radion Dynamics** | Response to EM forcing | ◐ Validated numerically | 80% | 1–2 months |
-| **3: Gravity Modification** | Warp-factor back-reaction | ✅ Framework + β₂ derived | 85% | 1–2 months |
-| **4: Scale Selection** | **Power-law transfer function** | ✅ **Validated against CDG-2** | **70–75%** | **Stage 2: Uniqueness** |
-| **5: Cosmological Impact** | Observable predictions | ✅ All four constraints satisfied | 75% | Boltzmann code ✅ |
-| **6: Stabilization** | Solution robustness | ◐ Classical stability proven | 85% | 1-loop quantum corrections |
-| **7: Lab Signatures** | Experimental tests | ⏳ Deferred | - | Post-cosmological validation |
+3. **No parameter value satisfies both**
+   - If k_gap moves low enough to suppress σ₈ → Lyman-α gets 95–97% suppression (excluded)
+   - If k_gap moves high enough to spare Lyman-α → σ₈ unchanged (misses S₈ target)
 
-**Brick 4 update (v1.9.0):** Transfer function shape refined from exponential to power-law after independent CDG-2 test. Now satisfies all four constraints (σ₈, S₈, Lyman-α, dwarf abundance). Confidence raised 65–70% → **70–75%**.
+**This is structural.** A monotonic power-law cannot connect two observational bands with incompatible requirements separated by one decade in k.
 
----
+### Evidence Table
 
-## ⚡ The Physics in 60 Seconds
+| μ_gap (h/Mpc) | σ₈ | S₈ | P(5 h/Mpc)/P_ΛCDM | Lyman-α Exclusion |
+|:---:|:---:|:---:|:---:|:---|
+| 0.40 | 0.771 | 0.790 ✓ | 0.050 | ❌ 95% suppression (ruled out) |
+| 0.80 | 0.798 | 0.818 ✓ | 0.107 | ❌ 89% suppression (ruled out) |
+| **1.50** | 0.805 | 0.825 | 0.214 | ❌ 78% suppression (ruled out) |
+| **2.11** (v1.8.3) | 0.809 | 0.829 ✓ | 0.300 | ❌ 70% suppression (ruled out) |
+| 3.0+ | 0.810 | 0.831 | >0.3 | ❌ ~60% suppression (ruled out) |
 
-```
-5D Randall-Sundrum Geometry
-    ↓
-Radion-EM Coupling (Brick 1: ✅ Derived)
-    ↓
-EM Energy Drives Radion (Brick 2: z ≈ 50,000)
-    ↓
-Radion Displacement Weakens Gravity (Brick 3: G_eff ≈ 0.75 G_N)
-    ↓
-Radion Mass Sets Cutoff Scale (Brick 4: k_c ≈ 1.5 h/Mpc with power-law tail)
-    ↓
-Transfer Function: T(k) = (1.5/k)^0.5 for k ≥ 1.5 h/Mpc (Brick 5)
-    ↓
-Predictions: σ₈ = 0.76 ✅, S₈ = 0.78 ✅, Lyman-α suppressed ✅, dwarfs preserved ✅
-    ↓
-✅ Matches All Current Observations
-```
+**No row satisfies: S₈ ∈ [0.76, 0.82] AND Lyman-α suppression ≤ 20%**
 
 ---
 
-## 🔬 NEW (v1.9.0): CDG-2 Dark Galaxy Test & Transfer Function Refinement
+## 🚀 What Stage 3 Revealed
 
-**Status:** Independent falsification test PASSED after transfer function optimization
+### Phase 1: Full 5D Solution (SUCCESSFUL)
 
-### What Happened
+We solved the complete Einstein-Gauss-Bonnet equations with radion + EM source:
 
-The Euclid space telescope discovered **CDG-2** (Candidate Dark Galaxy-2), a galaxy in the Perseus cluster that is ~99.95% dark matter with only ~3 million solar masses of starlight and 4 globular clusters.
+**Equation System:**
+$$G_{\mu\nu}^{(5)} + \alpha_{\rm GB} H_{\mu\nu}^{(5)} = \kappa_5^2 T_{\mu\nu}^{\rm (radion + EM)}$$
 
-**Initial problem (v1.8.2):** Exponential transfer function T(k) = exp(-(k/0.75)^2.5) predicted CDG-2-like dwarfs would have abundance of 10^-49 per cluster, while observations show 1–10. **Failure by 50+ orders of magnitude.**
+**Results:**
+- BVP boundary residual: < 6×10⁻⁶ ✓
+- Mode-function solutions: 0.1–3% agreement with analytic AdS–Bessel ✓
+- Transfer function via brane response: T(k) = G(k)/G(0) (unique, prescription-free) ✓
+- Asymptotic behavior: k^(-1/2) confirmed universal ✓
 
-**Solution (v):** Systematic testing of 134 transfer function candidates revealed that a **shallow power-law** naturally satisfies all four constraints:
+**Confidence:** 80% (math is solid)
 
-$$T(k) = \begin{cases} 1.0 & k < 1.5\,h\,\rm Mpc^{-1} \\ (1.5/k)^{0.5} & k \geq 1.5\,h\,\rm Mpc^{-1} \end{cases}$$
+### Phase 2: Fixed Holographic Dictionary (SUCCESSFUL)
 
-**Result:** All four constraints now pass ✅
-- σ₈ = 0.760 (target: 0.76 ± 0.03) ✅
-- S₈ = 0.779 (target: 0.78 ± 0.03) ✅
-- Lyman-α ratio = 0.889 (target: 0.70–0.90) ✅
-- CDG-2 abundance = 2.08 per cluster (target: 1–10) ✅
+**Removed ambiguity** in the 5D→4D projection by deriving the brane response function directly from dimensional reduction:
 
-### Why Power-Law Works Better
+$$G(k) = \int_0^\infty d\mu \, \rho(\mu) \frac{1}{k^2 + \mu^2}$$
 
-| Scale | Exponential | Power-Law | Real Data |
-|:---|:---:|:---:|:---:|
-| k=0.75 (Lyman-α low) | 1.0→0.02 | 1.0→0.95 | ~0.80 ✅ |
-| k=3 (Lyman-α high) | 1.0→10^-7 | 1.0→0.71 | ~0.80 ✅ |
-| k=10 (dwarf halos) | 1.0→10^-694 | 1.0→0.39 | Need ~0.1–0.4 ✅ |
-| k=20 (ultra-dwarfs) | 1.0→10^-1388 | 1.0→0.27 | Need ~0.05–0.2 ✅ |
+where ρ(μ) is the spectral density of KK modes.
 
-**Key insight:** Power-law suppression is gentler than exponential. It suppresses Lyman-α smoothly while preserving enough small-scale power for dwarf galaxies to form.
+**Result:** Transfer function is uniquely defined, not prescription-dependent.
 
-### Physical Interpretation
+**Confidence:** 80% (derivation rigorous)
 
-The power-law emerges naturally from:
-1. **Asymptotic behavior of warp factor** in holographic RG flow
-2. **Scale-dependent screening** of the radion's gravitational effect
-3. **Effective-theory interpretation** at high-k (where sharp exponential transitions to power-law)
+### Phase 3: CAMB Validation (FAILED)
 
-Brick 4 documentation now explains why n=0.5 is geometrically preferred.
+**Test:** Run CAMB with the predicted T(k) using Planck 2018 baseline, extract σ₈ and S₈, compare to data.
 
----
+**Result:**
+- σ₈ predicted by T(k) = (1.5/k)^0.5: **0.811** (ΛCDM, unchanged)
+- σ₈ claimed by v1.8.3: **0.76** (impossible from this T(k))
+- **Error:** ±6.3% miss on primary constraint
 
-## 🔬 Updated: All Four Observational Constraints
-
-### Plot 1: Transfer Function Comparison
-
-![Transfer Function](transfer_optimized.png)
-
-**New transfer function (red)** shows gradual power-law decay instead of exponential wall.
+**Confidence:** <5% (observationally excluded)
 
 ---
 
-### Plot 2: CMB Power Spectrum
+## 🔍 Why v1.8.3 Claims Were Wrong
 
-![CMB Spectrum](cmb_leakage_spectrum_refined.png)
+**Root cause:** The σ₈ = 0.76 value was never actually run through CAMB with the stated T(k). The number came from somewhere else (possibly a different transfer function, or an earlier mistaken calculation).
 
-**All acoustic peaks intact** - gravity modification doesn't break early-universe physics.
+**How it escaped notice:** 
+1. v1.8.3 claimed "all four constraints pass" ✓
+2. No one re-ran CAMB independently ⚠️
+3. Stage 3 did exactly that — caught the error ✓
 
----
-
-### Plot 3: Growth Rate & S₈ Resolution
-
-![Growth and S8](growth_s8_refined.png)
-
-**Growth suppressed at small scales, S₈ tension resolved.**
+**Lesson:** Never trust observational predictions without independent verification through the actual Boltzmann code.
 
 ---
 
-### Plot 4: Dark Galaxy Abundance
+## 📋 What This Repository Now Contains
 
-![CDG-2 Validation](cdg2_validation.png)
+### ✅ Stage 1–2 (v1.8.2): Validation Complete
+- Holographic entanglement entropy foundation
+- Fourier-mode minimal surface analysis
+- Initial Boltzmann code validation
 
-**NEW:** Halo mass function now matches observed dwarf-galaxy abundance. CDG-2 test PASSED.
+### ✅ Stage 3 Phase 1–2 (v1.9.0): Falsification Complete
+- Full 5D Einstein-Gauss-Bonnet solution
+- Fixed holographic dictionary
+- **CAMB test showing observational failure** ← New
 
----
+### 📚 Documentation
+- `/docs/BRICK_4_v1.8.3_DEFINITIVE.md` — Original scale-selection derivation
+- `/docs/STAGE3_FALSIFICATION_REPORT_FINAL.md` — Complete falsification analysis ← NEW
+- `/docs/RESURRECTION_PATHS.md` — Potential salvage routes ← NEW
 
-## 📋 What's Proven vs. What's Phenomenological
+### 💾 Data Files
+- `transfer_function_stage3_dictionary.csv` — Predicted T(k), 500 points
+- `camb_test_results_stage3.csv` — σ₈, S₈, Lyman-α outcomes
+- `warp_factor_stage3.csv`, `radion_profile_stage3.csv`, `radion_potential_stage3.csv` — 5D geometry
 
-### ✅ Rigorously Derived (Publication-Ready)
-- Radion-EM coupling from 5D gauge action variation
-- Radion dynamics equation from 5D Lagrangian
-- Gravity modification framework from Israel junction conditions
-- β₂ ≈ 3.33 derived from warped geometry
-- Classical stability proven via eigenvalue analysis
-- **Power-law tail justified by holographic RG flow** (Brick 4 refined)
-
-### ◐ Validated Independently
-- **Transfer function shape:** Power-law T(k) = (1.5/k)^0.5 passes CDG-2 test independently
-- **Stage 1 (Boltzmann):** ✅ Complete - All four constraints satisfied
-- **Dwarf-galaxy abundance:** ✅ Matches Euclid observations
-
-### ⏳ Requires Further Validation
-
-**Stage 2 (4–6 weeks):** Compare to neutrino mass, f(R), early DE, coupled DE. Is power-law suppression unique to GB?
-
-**Stage 3 (6–12 months):** Full 5D Einstein solution derives transfer function from first principles.
+### 📊 Plots
+- `CAMB_test_stage3.png` — T(k) and power spectra showing incompatibility
+- `falsification_summary.png` — Visual S₈/Lyman-α mutual exclusion ← NEW
 
 ---
 
-## 🎯 What Needs Doing: The Critical Path (Next 6 Months)
+## 🛣️ Three Paths Forward
 
-### **URGENT (Weeks 1–2) - Finalize v1.9.0 Release**
+The power-law mechanism is excluded **in its current form**. But the foundational work (5D solution, holographic dictionary) is sound. We've identified three possible resurrections:
 
-**1. Update Brick 4 Documentation** 🔥
-- Explain why power-law emerges from holographic RG flow
-- Document CDG-2 test and its resolution
-- Compare exponential vs power-law physics
-- **Timeline:** 1 week
+### Path A: Modified Transfer Function (Low Confidence)
 
-**2. Modify CAMB Pipeline** 🔥
-- Swap in new T(k) = (1.5/k)^0.5
-- Solve for A_s to match σ₈ = 0.76
-- Recompute all predictions (CMB, growth, lensing)
-- **Timeline:** 3–5 days
+Replace k^(-1/2) with a **shallow tail** (slope ≳ -0.2) + **low-k rollover** at k ~ 0.2–0.3 h/Mpc.
 
-**3. Update Observable Predictions** 🔥
-- New transfer function shape
-- Updated growth rate predictions
-- Weak-lensing forecasts with power-law suppression
-- **Timeline:** 3 days
-
-### **IMPORTANT (Weeks 3–6) - Stage 2 Uniqueness Testing**
-
-**1. Compare GB to Competitors** 
-- Neutrino mass: smooth suppression (not power-law)
-- f(R) gravity: different scale dependence
-- Early DE: affects early universe (we don't)
-- **Question:** Is power-law distinctive to GB?
-
-**2. Stage 2 Framework** 
-- Updated with 5 competitor models
-- 6 observational tests
-- Success criterion: GB must differ ≥2σ on ≥3 tests
+**Advantage:** Can tune to satisfy both constraints  
+**Disadvantage:** Loses the holographically-derived asymptote; becomes another phenomenological model  
+**Verdict:** Possible but defeats the point of first-principles derivation
 
 ---
 
-## 📚 Full Documentation Suite
+### Path B: Growth-Rate Modification (Medium Confidence)
 
-**Quick Entry Points:**
+Move the mechanism from **power spectrum suppression** to **time-dependent growth rate modification**.
 
-- **[Observable Predictions (Refined)](./docs/observable-predictions-vs-data.md)** - Data tables, power-law predictions
-- **[Model Philosophy](./docs/philosophy.md)** - Scope clarity, CDG-2 test honesty
-- **[Brick 4 v1.9.0 (NEW)](./docs/BRICK_4_v1.9.0_POWER_LAW.md)** - Power-law foundation + CDG-2 resolution
+**Mechanism:** Radion leakage doesn't change T(k), but modifies how dark matter clusters with cosmic time.
 
-**Technical Bricks:**
+**Advantage:** 
+- Avoids window-function problem
+- Can suppress growth at z < 1 without touching power spectrum shape
+- Lyman-α unaffected (probes z > 2)
 
-- [Brick 1: EM Coupling](./docs/brick_1_radion_em_coupling.md) - First-principles 5D derivation
-- [Brick 2: Radion Dynamics](./docs/brick_2_radion_dynamics.md) - Numerical solutions
-- [Brick 3: Gravity Modification](./docs/brick_3_gravity_modification.md) - Warp factor response
-- [Brick 4: Scale Selection](docs/brick_4_scale_selection.md) - **Power-law RG flow justification**
-- [Brick 5: Cosmological Impact](./docs/brick_5_cosmological_impact.md) - Observable predictions
-- [Brick 6: Stabilization](./docs/brick_6_stabilization.md) - Robustness & stability
-- [Brick 7: Lab Signatures](./docs/brick_7_lab_signatures.md) - Future applications
+**Disadvantage:**
+- Requires rebuilding Bricks 1–3 (different coupling)
+- Loses "unified" aspect
 
-**Reference:**
-- **[Zenodo Preprint (v1.9.0 incoming)](https://zenodo.org/records/20607636)** - Complete derivations
-- **[CHANGELOG.md](./CHANGELOG.md)** - Full version history
-- **[Transfer Function Optimization Report](./docs/transfer_function_optimization_results.md)** - All 134 candidates tested
+**Effort:** 4–6 weeks derivation + 4 weeks Stage 1–3 rerun  
+**Verdict:** Scientifically viable, worth exploring
 
 ---
 
-## 🎓 Why This Model Is Distinctive
+### Path C: Partially-Coupled Dark Matter (Highest Confidence)
 
-Most modified gravity models address *either* gravity suppression *or* power cutoff. Some address both but need multiple mechanisms.
+Only a **fraction f_c ~ 0.2–0.3** of dark matter couples to the radion.
 
-**This model produces all four constraints from one source:**
+**Mechanism:** 
+$$\rho_m = f_c \rho_m^{\rm coupled} + (1-f_c) \rho_m^{\rm uncoupled}$$
 
-1. **σ₈ suppression** → Radion weakens gravity via warp-factor back-reaction
-2. **S₈ tension resolution** → Same gravity weakening → lensing power reduced
-3. **Lyman-α suppression** → Power-law cutoff from radion Compton wavelength
-4. **Dwarf-galaxy preservation** → Gentle power-law (not sharp cutoff) → small-scale structures survive
+**Advantage:**
+- ✅ Keeps holographic k^(-1/2) for coupled sector
+- ✅ Effective T(k) softened by factor f_c
+- ✅ Lyman-α unaffected (gas + uncoupled DM)
+- ✅ S₈ reduced exactly by coupling fraction
+- ✅ Both constraints simultaneously satisfiable
 
-**All four from one unified 5D geometry.** The power-law emerges naturally from holographic RG flow, not fitted.
+**Disadvantage:**
+- Different model (not "standard radion leakage")
+- Requires motivation: why does only fraction couple?
 
----
-
-## 📅 The Validation Timeline
-
-### **2026 (NOW) - Phase 3, Stage 1, CDG-2 Test All Complete ✅**
-- ✅ Holographic entanglement analysis: 10–15% accuracy
-- ✅ Boltzmann code: σ₈ = 0.76, S₈ = 0.78 validated
-- ✅ CDG-2 test: Dwarfs match observations after power-law refinement
-- ✅ Transfer function optimized: 9 candidates pass all 4 constraints
-- **→ Next: Stage 2 (test uniqueness)**
-
-### **2026–2027 - Stage 2: Test Uniqueness** ⏳
-- Compare GB power-law to neutrino mass, f(R), early DE
-- Does GB make ≥3 unique predictions ≥2σ from competitors?
-- **Timeline:** 4–6 weeks
-- **Impact:** Determines if mechanism is distinctive
-
-### **2027 - DESI Lyman-α Results** ⏳
-- ✅ If: Power suppression with k_ref ~ 1.5 h/Mpc
-- ❌ If: Different scale or shape
-- **Impact:** Direct test of power-law cutoff
-
-### **2027–2028 - CMB-S4 & Future Surveys** ⏳
-- ✅ If: Growth rate shows scale-dependent suppression
-- ❌ If: Scale-independent or no suppression
-- **Impact:** Gravity modification confirmed or ruled out
+**Effort:** 2 weeks new derivation + 4 weeks Stage 1–3 rerun  
+**Verdict:** Most promising resurrection path
 
 ---
 
-## 💼 Who We're Looking For
+## 🏁 What We're Publishing
 
-### ✅ We Want
-- Rigorous physicists who test ideas critically
-- Coders who implement complex Boltzmann calculations
-- Data scientists who extract subtle signals
-- Observers who validate predictions against new data
-- Collaborators committed to honest science
+### Paper 1 (IMMEDIATE): Falsification Analysis
 
-### ❌ We Don't Want
-- Vague "explains everything" claims
-- Lab signatures before cosmology validates
-- Belief-based rather than evidence-based defense
+**Title:** "Holographic Radion-Leakage in 5D Gauss-Bonnet Braneworlds: A First-Principles Derivation and Observational Exclusion"
 
----
+**Content:**
+- Full Stage 3 Phase 1–2 results (5D solution, holographic dictionary)
+- CAMB validation showing S₈/Lyman-α incompatibility
+- Error analysis (why v1.8.3 claims failed)
+- Discussion of resurrection paths
 
-## 🔗 Quick Links
-
-| Resource | Purpose |
-|:---|:---|
-| [Zenodo 20607636](https://zenodo.org/records/20607636) | Full preprint (v1.9.0 incoming) |
-| [Observable Predictions](./docs/observable-predictions-vs-data.md) | Data tables + tests |
-| [Brick 4 v1.9.0](./docs/BRICK_4_v1.9.0_POWER_LAW.md) | Power-law foundation |
-| [Model Philosophy](./docs/philosophy.md) | Scope clarity |
-| [CAMB Pipeline](./code/camb_pipeline.py) | Boltzmann code (updated) |
-| [Transfer Optimization](./docs/transfer_function_optimization_results.md) | CDG-2 test resolution |
-| [Stage 2 Framework](./docs/STAGE_2_TEST_UNIQUENESS_PROMPT.md) | Comparison plan |
-| [GitHub](https://github.com/GeometricCosmo/gb-leakage-cmb) | Code + notebooks |
-| [CHANGELOG.md](./CHANGELOG.md) | Version history |
+**Status:** Ready to write (2–3 weeks)  
+**Target:** JCAP (falsifications are publishable)  
+**Impact:** First rigorous derivation + test of this mechanism
 
 ---
 
-## ❓ FAQ
+### Paper 2 (CONDITIONAL): Path C Resurrection
 
-**Q: Wasn't the exponential model validated? Why change it?**
-A: v1.8.2 passed S₈ and Lyman-α tests but failed independently against CDG-2 dwarf abundances (50+ order discrepancy). The power-law passes all four constraints. This is how science works: test, refine, improve.
+If we pursue partially-coupled dark matter:
 
-**Q: Does this make Bricks 1–3 wrong?**
-A: No. The mechanism (EM-driven radion leakage, gravity suppression) is unchanged. Only the transfer function *shape* (Brick 4) was refined. Bricks 1–3 remain derived from first principles.
+**Title:** "Partially-Coupled Radion Dynamics in 5D Braneworlds: Resolving S₈ and Lyman-α Tensions"
 
-**Q: What falsifies the model now?**
-A: (1) σ₈ measured higher than 0.80, (2) Power-law cutoff NOT observed in Lyman-α, (3) Dwarfs NOT match prediction, (4) Stage 2 shows competitors fit equally well. All testable in 1–2 years.
+**Content:**
+- Derivation of coupling strength from first principles
+- New Boltzmann predictions
+- Joint constraints from S₈, Lyman-α, BAO
 
-**Q: How confident are you really?**
-A: Core mechanism ~75%. Transfer function shape ~70–75%. S₈ prediction ~75%. Full first-principles (Stage 3) ~60%. These increase with validation.
-
-**Q: Aren't extra dimensions ruled out?**
-A: No. Lab tests probe millimeter scales; braneworld effects are cosmological (megaparsec). Different regimes.
+**Status:** 6–8 weeks work if pursued  
+**Target:** JCAP  
+**Impact:** Potential positive solution from falsification analysis
 
 ---
 
-## 🏁 Next Steps: How to Contribute
+## 💡 Why Publishing Falsification Is Right
 
-### **Cosmologist (Ideal for Stage 2)**
-→ Compare GB power-law to competing models. Identify unique predictions. 4–6 weeks, high impact.
+**"But won't this hurt our credibility?"**
 
-### **Observational Cosmologist (Ideal for 2027)**
-→ Extract k_ref from DESI Lyman-α data. Test power-law directly.
+No. Quite the opposite:
 
-### **Theoretical Physicist (Ideal for Stage 3)**
-→ Full 5D Einstein solution. Derives power-law from RG flow.
+- ✅ **Honesty builds trust** (shows we test our own ideas)
+- ✅ **Negative results are publishable** (JCAP explicitly welcomes them)
+- ✅ **Rigorous falsification is valuable** (saves the field time exploring dead ends)
+- ✅ **We're cited as the first to properly test this** (not as failures)
+- ✅ **We can pivot to Path C** (published falsification doesn't prevent new work)
 
-### **Data Analyst (Ideal for Stage 2)**
-→ Run likelihood fits with new transfer function. CMB + weak-lensing constraints.
+Compare:
+- ❌ Suppress Stage 3, claim success → Eventually someone else tests → We look dishonest
+- ✅ Publish Stage 3 falsification → Community knows the truth → We look rigorous
 
-### **Just Curious?**
-→ Read [Observable Predictions](./docs/observable-predictions-vs-data.md). 30 min, comprehensive.
-
----
-
-## 📞 Contact
-
-**Sparky (GeometricCosmo)**
-- 📧 geometriccosmo.illusion559@passinbox.com
-- 📍 Cape Town, South Africa (UTC+2)
-- ⏰ Usually reply within 48 hours
-
-**When reaching out, please include:**
-- Your background (physicist/coder/observer/student)
-- What aspect interests you
-- How much time you can commit
+The choice is between looking wrong (eventually) or looking rigorous (immediately).
 
 ---
 
-## 📊 Current Project Status
+## 🎯 Next Steps
 
-| Component | Status | Timeline |
-|:---|:---:|:---|
-| **Theory (Bricks 1–3, 5–6)** | ✅ 85% complete | Ready |
-| **Brick 4 (Transfer Function)** | ✅ **70–75% validated** | **Stage 2 ready** |
-| **Boltzmann Code** | ✅ 100% complete (updated) | Production |
-| **CDG-2 Test Resolution** | ✅ **Complete** | **v1.9.0** |
-| **Documentation** | ✅ 95% complete | Ready |
-| **Peer Review** | ⏳ Preparing | Q4 2026 |
+### This Week
+1. [ ] Review Stage 3 Falsification Report (this repo)
+2. [ ] Agree on publication strategy (falsification paper, Path C, or both?)
+3. [ ] Prepare manuscript outline
 
-**Latest milestones (v1.9.0):** ✅ CDG-2 test passed • ✅ Transfer function optimized • ✅ All 4 constraints satisfied • → **Stage 2 next**
+### Weeks 2–4
+4. [ ] Write falsification paper (methods, results, implications)
+5. [ ] Generate publication-quality figures
+6. [ ] Prepare Zenodo v1.9.0 preprint
+
+### Weeks 5–8
+7. [ ] Submit falsification paper to JCAP
+8. [ ] (Optional) Begin Path C derivation
+9. [ ] Community engagement & feedback
+
+### Months 2–3
+10. [ ] (Optional) Path C derivation + Stage 1–3 rerun
+11. [ ] (Optional) Path C paper to JCAP
+
+---
+
+## 📞 Contact & Collaboration
+
+**Author:** Sparky (GeometricCosmo)  
+**Email:** geometriccosmo.illusion559@passinbox.com  
+**Location:** Cape Town, South Africa (UTC+2)  
+**Availability:** ~48 hour response time
+
+**Looking for:**
+- Co-authors for falsification paper (2–3 people ideal)
+- Collaborators on Path B or C (if interested)
+- Community feedback on resurrection strategies
+
+---
+
+## 🎓 Scientific Integrity Statement
+
+This project was designed to test a bold hypothesis from first principles. Stage 3 showed the hypothesis fails observationally, despite being mathematically sound. 
+
+**We are publishing this falsification because:**
+1. It is honest science
+2. It is reproducible and verifiable
+3. It advances the field (eliminates a dead end)
+4. It preserves our scientific integrity
+
+The alternative—suppressing Stage 3—would be scientifically dishonest and would eventually fail when someone else ran the same Boltzmann test.
+
+This is how science should work: propose, derive, test, report honestly, and move forward.
 
 ---
 
 ## 📖 Citation
 
+**For the falsification paper (v1.9.0):**
 ```bibtex
-@misc{Sparky2026,
-  title={Radion Leakage in a 5D Braneworld: A Unified Framework
-         for S₈, Lyman-α, and Dark Galaxy Abundances},
+@misc{Sparky2026v1.9.0,
+  title={Holographic Radion-Leakage in 5D Gauss-Bonnet Braneworlds: 
+         A First-Principles Derivation and Observational Falsification},
   author={Sparky (GeometricCosmo)},
   year={2026},
   month={August},
   howpublished={Zenodo},
-  note={v1.9.0},
-  url={https://zenodo.org/records/20607636},
-  doi={10.5281/zenodo.20607636}
+  note={v1.9.0 — Falsification Analysis},
+  doi={10.5281/zenodo.20607636},
+  url={https://zenodo.org/records/20607636}
 }
 ```
 
-For code:
+**For the code/data:**
 ```bibtex
 @misc{GeometricCosmo2026,
-  title={gb-leakage-cmb: Radion Leakage Cosmological Model},
+  title={gb-leakage-cmb: Stage 3 Falsification Analysis},
   author={GeometricCosmo},
   year={2026},
   howpublished={GitHub},
@@ -429,23 +350,49 @@ For code:
 
 ---
 
-<div align="center">
+## 📊 Project Status Summary
 
-## The Bottom Line
-
-**We have a testable mechanism from first-principles 5D physics that explains four real cosmological observables simultaneously. The power-law transfer function emerges naturally from holographic RG flow. Independent validation against dwarf-galaxy abundances PASSED after transfer-function optimization.**
-
-The model survived its toughest test (CDG-2 falsification) through rigorous refinement. Now Stage 2 determines uniqueness. Alternative models compete or fall away. First-principles derivation awaits.
-
-**This is serious science with real tests passing, real predictions to make, and real stakes.**
+| Phase | Component | Status | Confidence |
+|:---|:---|:---:|:---:|
+| **Stage 1** | Theoretical foundation (Bricks 1–3) | ✅ Complete | 75–80% |
+| **Stage 2** | Boltzmann validation (v1.8.3) | ⚠️ Failed re-test | <20% |
+| **Stage 3a** | 5D Einstein solution | ✅ Complete | 80% |
+| **Stage 3b** | Holographic dictionary | ✅ Complete | 80% |
+| **Stage 3c** | CAMB observational test | ❌ **Falsified** | **<20%** |
+| **Model (current form)** | Power-law mechanism | ❌ **Excluded** | **<20%** |
+| **Potential resurrection (Path C)** | Partially-coupled DM | ⏳ Under consideration | 50% |
 
 ---
 
-Made with rigor, intellectual honesty, and genuine curiosity about the universe.
+<div align="center">
 
-Last Updated: August 1, 2026 (v1.9.0)  
-Repository: [github.com/GeometricCosmo/gb-leakage-cmb](https://github.com/GeometricCosmo/gb-leakage-cmb)  
-License: MIT  
-Status: Active development. Ready for collaboration.
+## The Honest Bottom Line
+
+We built a first-principles model in 5D geometry, solved it completely, and tested it rigorously. The test showed it doesn't work observationally.
+
+**This is not a failure. This is science.**
+
+We're publishing it as a falsification, because that's what integrity looks like.
+
+The field now knows: power-law transfer functions from holographic radion-leakage don't resolve both S₈ and Lyman-α. Someone else won't waste 6 months exploring this dead end.
+
+And we have a promising resurrection path (partially-coupled DM) if we want to keep going.
+
+---
+
+**Status:** v1.9.0 — Falsification Complete  
+**Confidence:** <20% (mechanism excluded)  
+**Integrity:** ✅ Maintained  
+**Publication:** Ready  
+**Next:** Falsification paper (2–3 weeks)
+
+This is serious science. Done honestly.
 
 </div>
+
+---
+
+Last Updated: **August 2026** (v1.9.0)  
+Repository: [github.com/GeometricCosmo/gb-leakage-cmb](https://github.com/GeometricCosmo/gb-leakage-cmb)  
+License: MIT  
+Status: Falsification analysis complete. Honest publication in progress.
