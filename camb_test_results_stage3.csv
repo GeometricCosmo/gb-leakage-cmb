@@ -1,0 +1,5 @@
+case,sigma8,S8,P_at_5hMpc_over_LCDM,Lya_viable
+LambdaCDM_Planck2018,0.8112493912564696,0.8315383256977458,1.0,yes
+v1.8.3_literal,0.8112102839393415,0.8314982403265175,0.3,NO (70% suppression)
+Stage3_dictionary,0.8088381986848122,0.8290668304268952,0.3000000000000132,NO (70% suppression)
+needed_for_sigma8_0.76 (mu_gap~0.35),0.76,0.779,0.05,NO (95% suppression)

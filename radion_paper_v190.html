@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Holographic Radion-Leakage in 5D Gauss-Bonnet Braneworlds</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
+<script src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js"></script>
+<style>
+body { margin: 0; padding: 0; font-family: Georgia, "Times New Roman", serif;
+       font-size: 11pt; line-height: 1.55; color: #333; string-set: doctitle "";
+       text-align: justify; text-align-last: left; }
+@page { size: A4; margin: 2.5cm 2.2cm;
+        @top-center { content: string(doctitle); font-size: 9pt; color: #666; }
+        @bottom-center { content: counter(page); font-size: 9pt; } }
+@page :first { margin: 0; @top-center { content: none; } @bottom-center { content: none; } }
+.cover { width: 210mm; height: 297mm; margin: 0; position: relative; overflow: hidden;
+         page-break-after: always; background: white; }
+.cover-content { position: absolute; top: 46%; left: 50%; transform: translate(-50%,-50%);
+                 text-align: center; width: 82%; }
+.cover-title { font-size: 22pt; font-weight: 700; color: #222; margin-bottom: 0.6cm; line-height: 1.3; }
+.cover-subtitle { font-size: 12.5pt; color: #555; margin-bottom: 2.2cm; }
+.cover-meta { font-size: 11.5pt; color: #333; line-height: 1.9; }
+h1 { font-size: 0; }
+h1.pagetitle { string-set: doctitle "Holographic Radion-Leakage: Derivation and Falsification"; }
+h2 { font-size: 15pt; color: #222; border-bottom: 1px solid #999; padding-bottom: 4px;
+     margin-top: 1.6em; page-break-after: avoid; }
+h3 { font-size: 12.5pt; color: #333; margin-top: 1.3em; page-break-after: avoid; }
+table { border-collapse: collapse; margin: 1em auto; max-width: 100%;
+        border-top: 2px solid #333; border-bottom: 2px solid #333; page-break-inside: avoid; }
+thead { border-bottom: 1px solid #333; }
+th, td { padding: 4px 12px; text-align: center; font-size: 10pt; }
+caption { font-size: 10pt; color: #555; margin: 0.4em; }
+caption::before { content: attr(data-label) "  "; font-weight: bold; }
+tr { page-break-inside: avoid; }
+.equation { margin: 0.8em 0; }
+.equation::after { content: attr(data-label); float: right; color: #555; }
+.keybox { border-left: 3px solid #333; padding-left: 1em; margin: 1em 0; }
+.references li { padding-left: 2em; text-indent: -2em; margin-bottom: 0.5em; font-size: 10pt; }
+pre, table, figure, img, blockquote, .equation { max-width: 100%; box-sizing: border-box; }
+.katex-display { overflow-x: auto; }
+.abstract { font-size: 10.5pt; margin: 0 1cm; }
+figure { text-align: center; margin: 1em 0; page-break-inside: avoid; }
+figure img { max-width: 88%; height: auto; }
+figcaption { font-size: 10pt; color: #555; margin-top: 0.3em; }
+figcaption::before { content: attr(data-label) "  "; font-weight: bold; }
+.small { font-size: 9.5pt; color: #555; }
+</style>
+</head>
+<body>
+
+<div class="cover">
+  <div class="cover-content">
+    <div class="cover-title">Holographic Radion-Leakage in 5D Gauss-Bonnet Braneworlds:<br>A First-Principles Derivation and Observational Falsification</div>
+    <div class="cover-subtitle">Zenodo Record 20607636 &mdash; v1.9.0 (Falsification Analysis)</div>
+    <div class="cover-meta">
+      <p><b>Sparky (GeometricCosmo)</b></p>
+      <p>Cape Town, South Africa</p>
+      <p>July 29, 2026</p>
+    </div>
+  </div>
+</div>
+
+<h1 class="pagetitle">Holographic Radion-Leakage in 5D Gauss-Bonnet Braneworlds</h1>
+
+<h2>Abstract</h2>
+<div class="abstract">
+<p>We present a first-principles derivation of the matter transfer function T(k) in 5D Gauss-Bonnet braneworld gravity with radion&ndash;electromagnetic coupling, solving the coupled Einstein&ndash;scalar system on a Gauss-Bonnet-corrected AdS vacuum (&lambda;<sub>GB</sub> = 0.05) with a brane-localized electromagnetic source, and fixing the 5D&rarr;4D projection dictionary unambiguously via dimensional reduction.</p>
+<p>The mathematical framework is well controlled: the boundary value problem closes with equation-of-motion residuals &lt; 6&times;10<sup>&minus;6</sup>, mode-function solutions agree with the analytic AdS&ndash;Bessel form to 0.1&ndash;3%, and the holographic dictionary uniquely determines T(k) as the normalized brane response function G(k)/G(0). The transfer-function exponent is fixed by geometry to 2&nu;&minus;1, with &nu; = &radic;(4 + m<sup>2</sup><sub>radion</sub>/k<sup>2</sup><sub>eff</sub>); the v1.8.3 value of &minus;1/2 requires &nu; = 1/4, i.e. m<sup>2</sup><sub>radion</sub> = &minus;3.9375 k<sup>2</sup><sub>eff</sub>, within 1.6% of the Breitenlohner&ndash;Freedman stability bound.</p>
+<p><b>However, direct Boltzmann-code validation reveals a fatal observational incompatibility.</b> The mechanism cannot simultaneously satisfy S<sub>8</sub> weak-lensing and Lyman-&alpha; forest constraints. Achieving S<sub>8</sub> &le; 0.80 requires a suppression turnover at small wavenumbers, which produces 95&ndash;97% power suppression at Lyman-&alpha; scales &mdash; excluded by observations by an order of magnitude. This is a structural flaw, not a tuning problem: with the derived steep power law, the wavenumber separation between the two observational bands makes the constraints mutually exclusive.</p>
+<p>Prior work (v1.8.3) claimed &sigma;<sub>8</sub> = 0.760 from T(k) = (1.5/k)<sup>0.5</sup>. Direct integration shows this transfer function leaves &sigma;<sub>8</sub> unchanged at 0.811: the &sigma;<sub>8</sub> window function has essentially zero weight at k &gt; 1.5 h/Mpc. The claimed &sigma;<sub>8</sub> reduction is quantitatively impossible from the stated mechanism.</p>
+<p>We document this falsification rigorously: complete derivation, CAMB test results, error analysis, and discussion of observational incompatibilities. The value of this work lies in (1) demonstrating that holographic methods can derive transfer functions from first principles, (2) showing why this particular mechanism fails, and (3) providing a cautionary example of the necessity of direct observational testing before publication of bold claims. We discuss three potential resurrection paths and identify partially-coupled dark matter as the most promising.</p>
+<p><b>Keywords:</b> braneworld gravity, radion dynamics, holographic methods, transfer function, observational falsification, S<sub>8</sub> tension, Lyman-&alpha; forest</p>
+<p><b>Preprint archive:</b> Zenodo Record 20607636 (v1.9.0 &mdash; Falsification Analysis)</p>
+</div>
+
+<h2 id="sec1">1. Introduction</h2>
+
+<h3>1.1 Context: Tensions in &Lambda;CDM</h3>
+<p>Standard cold dark matter cosmology (&Lambda;CDM) successfully explains most cosmological observations, yet the amplitude of late-time structure has been persistently debated:</p>
+<p><b>The S<sub>8</sub> tension.</b> Weak-lensing surveys (KiDS, DES) measure S<sub>8</sub> &equiv; &sigma;<sub>8</sub>(&Omega;<sub>m</sub>/0.3)<sup>0.5</sup> &asymp; 0.76&ndash;0.78, while Planck 2018 CMB analysis predicts S<sub>8</sub> &asymp; 0.832 &mdash; a 2&ndash;3&sigma; discrepancy suggesting the universe is less clumpy at late times than early-time conditions predict.</p>
+<p><b>Small-scale power.</b> The Lyman-&alpha; forest probes matter clustering at k ~ 2&ndash;20 h/Mpc. Some analyses have reported hints of ~10&ndash;20% power suppression at these scales relative to &Lambda;CDM, although current DESI and SDSS Lyman-&alpha; results remain broadly consistent with the standard model; we treat the reported suppression as motivational rather than established.</p>
+<p><b>Standard explanations</b> (neutrino mass, f(R) gravity, early dark energy) address one tension or the other, but lack a unified mechanism producing both effects from a single physical origin.</p>
+
+<h3>1.2 The Proposal: Radion-Leakage in Braneworlds</h3>
+<p>Previous work (Sparky 2026, v1.8.1&ndash;1.8.3) proposed that radion&ndash;electromagnetic coupling in 5D Gauss-Bonnet braneworld geometry naturally produces both effects via:</p>
+<p>1. <b>Growth suppression:</b> radion displacement weakens the effective 4D gravitational coupling (G<sub>eff</sub> &asymp; 0.75 G<sub>N</sub>);<br>
+2. <b>Power cutoff:</b> a characteristic scale (k<sub>c</sub> &asymp; 1.5 h/Mpc) with a power-law transfer function T(k) = (1.5/k)<sup>0.5</sup>.</p>
+<p>The proposal was mechanistically motivated (Bricks 1&ndash;3) but its observational predictions were not rigorously tested with a Boltzmann code before publication.</p>
+
+<h3>1.3 This Work: Rigorous Testing and Falsification</h3>
+<p>Stage 3 of the research program set out to: (1) derive T(k) from a first-principles 5D solution, removing phenomenology; (2) independently test predictions against CAMB-based observables; (3) report success or failure honestly.</p>
+<p>The result: <b>success on (1) and (2); failure of the observable predictions.</b> The 5D solution exists and yields a well-defined transfer function, but the predicted observables are observationally excluded. We present the falsification rigorously and discuss its implications.</p>
+
+<h2 id="sec2">2. Theoretical Framework</h2>
+
+<h3>2.1 5D Gauss-Bonnet Geometry</h3>
+<p>The action is</p>
+<div class="equation" data-label="(1)">
+$$S_5 = \int d^5x \sqrt{-g^{(5)}} \left[\frac{M_5^3}{2}\mathcal{R}^{(5)} + \alpha_{\rm GB} \mathcal{L}_{\rm GB} - V(r) - \frac{1}{4}F_{\mu\nu}F^{\mu\nu}\right] + S_{\rm brane}$$
+</div>
+<p>with metric ansatz</p>
+<div class="equation" data-label="(2)">
+$$ds_5^2 = e^{-2A(y)}\left(1 + \delta A(x,y)\right) \eta_{\mu\nu} dx^\mu dx^\nu + dy^2,$$
+</div>
+<p>where A(y) is the background warp factor, &delta;A the radion-induced modulation, and y &isin; [0, &infin;) the bulk coordinate. Gauss-Bonnet corrections enter the background through the effective AdS curvature scale: with &lambda;<sub>GB</sub> = 0.05, the vacuum condition 1 &minus; f<sub>&infin;</sub> + &lambda;<sub>GB</sub>f<sup>2</sup><sub>&infin;</sub> = 0 gives f<sub>&infin;</sub> = 1.056 and an effective warp rate k<sub>eff</sub> = k<sub>w</sub>&radic;f<sub>&infin;</sub>. Dynamical Gauss-Bonnet tensor perturbations are neglected at this stage; this truncation is part of the stated error budget (Appendix C).</p>
+
+<h3>2.2 Field Equations with Sources</h3>
+<div class="equation" data-label="(3)">
+$$G_{\mu\nu}^{(5)} + \alpha_{\rm GB} H_{\mu\nu}^{(5)} = \kappa_5^2 T_{\mu\nu},$$
+</div>
+<p>with sources: the radion equation &nbsp;&square;r &minus; dV/dr = &minus;(&lambda;/M<sub>5</sub><sup>3/2</sup>) T<sup>(EM)</sup><sub>&mu;&nu;</sub> g<sup>&mu;&nu;</sup>, the electromagnetic stress tensor, and Israel junction conditions at the brane. In the domain-wall background these reduce to the Einstein&ndash;scalar system</p>
+<div class="equation" data-label="(4)">
+$$A'' = -\tfrac{1}{3}(r')^2, \qquad r'' = 4A'r' + \frac{dV}{dr} + S_{\rm EM}(y),$$
+</div>
+<p>with quadratic potential V(r) = &minus;6f<sub>&infin;</sub> + &frac12;m<sup>2</sup>(r&minus;r<sub>0</sub>)<sup>2</sup> (cosmological constant fine-tuned Randall&ndash;Sundrum-style) and brane-localized EM source S<sub>EM</sub>(y) = &minus;&lambda;&rho;<sub>0</sub>e<sup>&minus;&rho;y</sup>.</p>
+
+<h3>2.3 Boundary Conditions</h3>
+<p>At the brane (y=0): A(0) = 0, A&prime;(0) = k<sub>eff</sub> (junction condition with tuned tension), r(0) = r<sub>0</sub>. In the bulk: r&prime;(y<sub>max</sub>) = 0 (asymptotic constancy), regularity of the metric, and normalizability of zero modes.</p>
+
+<h2 id="sec3">3. Stage 3 Phase 1: Background Solution and Mode Functions</h2>
+
+<h3>3.1 Numerical Method</h3>
+<p>The background system (4) was solved as a boundary value problem using a fourth-order collocation solver (scipy <code>solve_bvp</code>) on a 400-point mesh (2000-point evaluation grid), y &isin; [0, 10 k<sub>eff</sub><sup>&minus;1</sup>], with tolerance 10<sup>&minus;8</sup>. Radion mode functions &phi;<sub>k</sub>(y) satisfy</p>
+<div class="equation" data-label="(5)">
+$$\phi_k'' - 4A'\phi_k' - \left(k^2 e^{2A} + m^2\right)\phi_k = 0,$$
+</div>
+<p>integrated with a Riccati (log-derivative) method, stable over k = 10<sup>&minus;4</sup>&ndash;10<sup>2</sup> in warp-scale units, selecting the normalizable decaying branch with brane normalization &phi;<sub>k</sub>(0) = 1.</p>
+
+<h3>3.2 Validation and Convergence</h3>
+<p><b>Equation residual.</b> The equation-of-motion residual satisfies max |A&Prime; + (r&prime;)<sup>2</sup>/3| &lt; 6&times;10<sup>&minus;6</sup> across the domain. (The first-integral constraint is modified at O(0.2) near the brane by the explicit EM source term, as expected &mdash; the source itself contributes to T<sub>yy</sub>.)</p>
+<p><b>Mode functions.</b> Riccati solutions of (5) on the numerical background agree with the analytic pure-AdS Bessel-K form to 0.1&ndash;3% across four decades in k. This analytic cross-check, rather than grid doubling alone, is our primary convergence evidence.</p>
+
+<h3>3.3 Recovered Geometry</h3>
+<p><b>Warp factor A(y):</b> smooth, monotonic, singularity-free; asymptotically AdS with rate k<sub>eff</sub>. For the transfer-function analysis the physically required warp scale is k<sub>eff</sub> &gg; 20 h/Mpc (we adopt &mu;<sub>UV</sub> = 30 h/Mpc), so that the entire cosmological band lies in the continuum regime of the Kaluza&ndash;Klein spectrum.</p>
+<p><b>Radion profile r(y):</b> VEV r<sub>0</sub> of order M<sub>5</sub> (fiducial r<sub>0</sub> = 1 in M<sub>5</sub> units); the EM source drives a brane-localized displacement of order 30% of the VEV, decaying over y ~ k<sub>eff</sub><sup>&minus;1</sup>. The radion 4D mass gap &mu;<sub>gap</sub> &asymp; 2 h/Mpc corresponds to a Compton wavelength &asymp; 0.5 Mpc/h.</p>
+<p><b>EM current J(y):</b> brane-localized with bulk penetration depth ~ k<sub>eff</sub><sup>&minus;1</sup> &asymp; 0.03 Mpc/h.</p>
+
+<h3>3.4 Confidence in the 5D Solution</h3>
+<p>Mathematical control: 80&ndash;85% (equations solved, validated against analytics). Physical reasonableness: 80% (scales sensible within the model&rsquo;s internal logic). Transfer-function extraction: 75&ndash;80% before fixing the dictionary &mdash; the subject of the next section.</p>
+
+<h2 id="sec4">4. Stage 3 Phase 2: The Holographic Dictionary, Fixed</h2>
+
+<h3>4.1 The Ambiguity Problem</h3>
+<p>Earlier work discussed several extraction prescriptions (minimal-surface scaling, mode overlap &beta;<sub>r</sub>(k), brane response, effective 4D potential), giving results differing at the 10&ndash;15% level and even different asymptotic exponents. Removing this freedom is the essential step: <b>the exponent of T(k) is not determined until the projection prescription is.</b></p>
+
+<h3>4.2 Fixing the Dictionary from First Principles</h3>
+<p>The unique prescription-free object for &ldquo;source on brane &rarr; observable on brane&rdquo; is the brane response function:</p>
+<p>1. Expand the radion in orthonormal KK modes: r(x,y) = &int; dm r<sub>m</sub>(x) &psi;<sub>m</sub>(y), with &int; dy e<sup>&minus;2A</sup> &psi;<sub>m</sub>&psi;<sub>m&prime;</sub> = &delta;(m&minus;m&prime;) (canonical 4D fields);<br>
+2. a brane-localized source J(x)&delta;(y) excites r<sub>m</sub>(k) = &psi;<sub>m</sub>(0) J(k)/(k<sup>2</sup> + m<sup>2</sup>);<br>
+3. the brane observable is governed by the spectral representation</p>
+<div class="equation" data-label="(6)">
+$$G(k) = \int_{\mu_{\rm gap}}^{\mu_{\rm UV}} dm\; \rho(m)\, \frac{1}{k^2 + m^2}, \qquad \rho(m) \equiv \psi_m(0)^2,$$
+</div>
+<p>4. the transfer function is the normalized response: <b>T(k) = G(k)/G(0)</b>. This is the definition used in all CAMB tests below; it gives T &rarr; 1 at low k automatically, repairing the low-k divergence of the raw (1.5/k)<sup>0.5</sup> form.</p>
+
+<h3>4.3 Results</h3>
+<p>For pure AdS with a Neumann brane the spectral density is exactly &rho;(m) &prop; m<sup>2&nu;</sup>, &nu; = &radic;(4 + m<sup>2</sup><sub>radion</sub>/k<sup>2</sup><sub>eff</sub>), so in the regime &mu;<sub>gap</sub> &ll; k &ll; &mu;<sub>UV</sub>,</p>
+<div class="equation" data-label="(7)">
+$$G(k) \propto k^{2\nu - 1}.$$
+</div>
+<p>The exponent is thus fixed by geometry <i>given the radion mass</i> &mdash; but it is mass-dependent. The v1.8.3 slope &minus;1/2 requires &nu; = 1/4, i.e. m<sup>2</sup><sub>radion</sub> = &minus;63/16 k<sup>2</sup><sub>eff</sub> = &minus;3.9375 k<sup>2</sup><sub>eff</sub>: admissible (above the BF bound of &minus;4, in the alternative-quantization window) but tuned to within 1.6% of instability. Calibrating the amplitude to the v1.8.3 pivot gives &mu;<sub>gap</sub> = 2.11 h/Mpc, and the resulting full T(k) matches the target power law to ~13% over k &isin; [0.8, 20] h/Mpc, with the correct T &rarr; 1 behavior at low k.</p>
+
+<h3>4.4 Confidence</h3>
+<p>Dictionary uniqueness: 85% (derived from the brane response; no prescription freedom remains). Exponent &minus;1/2: 60% (geometrically allowed but requires the near-BF-bound tuning; other &nu; values give other exponents).</p>
+
+<h2 id="sec5">5. Direct Boltzmann Validation: The Falsification</h2>
+
+<h3>5.1 Method</h3>
+<p>For each value of &mu;<sub>gap</sub> we: (1) compute T(k) = G(k)/G(0) from the fixed dictionary; (2) generate the matter power spectrum P<sub>&Lambda;CDM</sub>(k, z=0) with CAMB 2.0 at the Planck-2018 baseline (&Omega;<sub>b</sub> = 0.049, &Omega;<sub>c</sub> = 0.265, &Omega;<sub>&Lambda;</sub> = 0.685, h = 0.674, &sigma;<sub>8</sub> = 0.811); (3) form P<sub>model</sub>(k) = P<sub>&Lambda;CDM</sub>(k) &times; T<sup>2</sup>(k) &mdash; the standard transfer-function-modification procedure used for WDM/ETHOS-type analyses, leaving background and growth unchanged; (4) extract &sigma;<sub>8</sub> and S<sub>8</sub> by window-function integration, validated against CAMB&rsquo;s internal <code>get_sigma8</code> to 0.01%.</p>
+
+<h3>5.2 Results</h3>
+<table>
+<caption data-label="Table 1">Observables for the Stage-3 transfer function as a function of the radion mass gap &mu;<sub>gap</sub>. &ldquo;Ly&alpha; supp.&rdquo; is the power suppression at k = 5 h/Mpc.</caption>
+<thead><tr><th>&mu;<sub>gap</sub> (h/Mpc)</th><th>&sigma;<sub>8</sub></th><th>S<sub>8</sub></th><th>P(5)/P<sub>&Lambda;CDM</sub></th><th>Ly&alpha; supp.</th><th>Status</th></tr></thead>
+<tbody>
+<tr><td>0.10</td><td>0.607</td><td>0.622</td><td>0.011</td><td>99%</td><td>EXCLUDED</td></tr>
+<tr><td>0.20</td><td>0.709</td><td>0.726</td><td>0.023</td><td>98%</td><td>EXCLUDED</td></tr>
+<tr><td>0.40</td><td>0.771</td><td>0.790</td><td>0.050</td><td>95%</td><td>EXCLUDED (S<sub>8</sub> OK, Ly&alpha; not)</td></tr>
+<tr><td>0.80</td><td>0.798</td><td>0.818</td><td>0.107</td><td>89%</td><td>EXCLUDED</td></tr>
+<tr><td>1.50</td><td>0.807</td><td>0.827</td><td>0.212</td><td>79%</td><td>EXCLUDED</td></tr>
+<tr><td><b>2.11</b> (v1.8.3 pivot)</td><td>0.809</td><td>0.829</td><td>0.300</td><td>70%</td><td>EXCLUDED</td></tr>
+<tr><td>3.00</td><td>0.810</td><td>0.830</td><td>0.416</td><td>58%</td><td>EXCLUDED</td></tr>
+</tbody>
+</table>
+<p class="small">Observational targets: S<sub>8</sub> &asymp; 0.76&ndash;0.78 (KiDS-1000: 0.759&plusmn;0.024; DES-Y3: 0.776&plusmn;0.017); Planck: S<sub>8</sub> = 0.832&plusmn;0.013, &sigma;<sub>8</sub> = 0.811&plusmn;0.006. Lyman-&alpha; allowance: &lesssim;20% suppression at k &isin; [2, 8] h/Mpc (equivalent to thermal-relic WDM masses m<sub>WDM</sub> &gsim; 3&ndash;5 keV).</p>
+
+<h3>5.3 The Fatal Problem: S<sub>8</sub>/Lyman-&alpha; Mutual Exclusion</h3>
+<p><b>Finding 1.</b> Achieving S<sub>8</sub> &le; 0.80 requires &mu;<sub>gap</sub> &le; 0.4&ndash;0.5 h/Mpc, which suppresses P(5 h/Mpc) by 95&ndash;97% &mdash; excluded by Lyman-&alpha; data by roughly two orders of magnitude in allowed suppression.</p>
+<p><b>Finding 2.</b> v1.8.3 claimed &sigma;<sub>8</sub> = 0.760 from T(k) = (1.5/k)<sup>0.5</sup>. Direct test with this T(k): &sigma;<sub>8</sub> = 0.811 &mdash; a 6.3% discrepancy with the claim. The &sigma;<sub>8</sub> window function has essentially zero weight above the pivot:</p>
+<div class="equation" data-label="(8)">
+$$\sigma_8^2 = \int_0^\infty \frac{dk\, k^2}{2\pi^2}\, P(k)\, T^2(k)\, W^2(kR), \qquad R = 8\ \mathrm{Mpc}/h,\quad W(x) = \frac{3(\sin x - x\cos x)}{x^3}.$$
+</div>
+<table>
+<caption data-label="Table 2">Share of the &sigma;<sub>8</sub> window-function weight by wavenumber band (Planck-2018 &Lambda;CDM).</caption>
+<thead><tr><th>Band</th><th>k range (h/Mpc)</th><th>Weight in &sigma;<sub>8</sub><sup>2</sup></th></tr></thead>
+<tbody>
+<tr><td>large scales</td><td>&lt; 0.1</td><td>22%</td></tr>
+<tr><td>&sigma;<sub>8</sub>-sensitive</td><td>0.1 &ndash; 1.5</td><td>78%</td></tr>
+<tr><td>Lyman-&alpha; band</td><td>2 &ndash; 8</td><td>0.01%</td></tr>
+<tr><td>small scales</td><td>&gt; 8</td><td>&lt; 0.01%</td></tr>
+</tbody>
+</table>
+<p>Any T(k) that is &asymp; 1 below k = 1.5 h/Mpc and suppresses only above cannot move &sigma;<sub>8</sub> at all.</p>
+
+<h3>5.4 Why This Is Structural, Not Parametric</h3>
+<p>The S<sub>8</sub>-sensitive band (k ~ 0.5&ndash;1.5 h/Mpc) and the Lyman-&alpha; band (k ~ 2&ndash;8 h/Mpc) are separated by roughly a decade in wavenumber. With the derived steep law (amplitude slope &minus;1/2, power slope &minus;1), moving the turnover into the S<sub>8</sub> band inevitably drags a decade of additional suppression across the Lyman-&alpha; band. Satisfying both would require either a much shallower high-k tail (slope &gsim; &minus;0.2 in amplitude &mdash; abandoning the model&rsquo;s signature), non-monotonic structure (contradicting the smooth holographic response), or two separate mechanisms (defeating the unification claim). No parameter choice resolves this.</p>
+
+<h2 id="sec6">6. Error Analysis: Where v1.8.3 Went Wrong</h2>
+
+<h3>6.1 The &sigma;<sub>8</sub> = 0.760 Claim</h3>
+<p>v1.8.3 stated &sigma;<sub>8</sub> = 0.760 &plusmn; 0.025 (predicted) from T(k) = (1.5/k)<sup>0.5</sup>. Direct integration yields &sigma;<sub>8</sub> = 0.811, unchanged from &Lambda;CDM. The value was likely computed with a different (small-scale-suppressing) transfer function, or without window-function integration.</p>
+
+<h3>6.2 Why It Escaped Notice</h3>
+<p>1. v1.8.3 was positioned as a refinement of v1.8.2 (exponential &rarr; power-law), and observables were carried over rather than recomputed;<br>
+2. the claimed observables were stated but never re-verified with a Boltzmann code;<br>
+3. no independent CAMB re-run occurred before publication &mdash; Stage 3 is the first such test.</p>
+
+<h3>6.3 Lesson</h3>
+<p>Bold observational claims require independent verification through full Boltzmann-code integration. Analytical estimates cannot substitute for direct computation. This validation should have preceded the v1.8.3 publication.</p>
+
+<h2 id="sec7">7. Discussion: What Worked, What Failed</h2>
+
+<h3>7.1 Successes</h3>
+<p>&bull; The 5D background solution is mathematically controlled (residuals &lt; 6&times;10<sup>&minus;6</sup>, validated against analytics).<br>
+&bull; The 5D&rarr;4D projection dictionary is fixed uniquely: T(k) = G(k)/G(0) from the spectral representation of the brane response.<br>
+&bull; The transfer-function exponent is geometric: 2&nu; &minus; 1. The value &minus;1/2 is achievable, though tuned near the BF bound.<br>
+&bull; The mechanism is fully derivable from first principles &mdash; its mathematical form requires no phenomenological input.<br>
+&bull; The falsification itself is rigorous: CAMB-tested, with the S<sub>8</sub>/Lyman-&alpha; incompatibility shown to be structural.</p>
+
+<h3>7.2 Failures</h3>
+<p>&bull; The observational predictions are contradicted by data: the &sigma;<sub>8</sub> claim is impossible, and S<sub>8</sub>-compliant parameters exclude Lyman-&alpha;.<br>
+&bull; v1.8.3&rsquo;s claims were not independently verified before publication.<br>
+&bull; No observationally viable parameter region exists within the current framework.</p>
+
+<h3>7.3 Confidence Reassessment</h3>
+<table>
+<caption data-label="Table 3">Confidence before and after Stage 3.</caption>
+<thead><tr><th>Aspect</th><th>v1.8.3</th><th>Stage 3</th><th>Change</th></tr></thead>
+<tbody>
+<tr><td>5D mathematics</td><td>70&ndash;75%</td><td>80%</td><td>improved</td></tr>
+<tr><td>Holographic derivation</td><td>65&ndash;70%</td><td>80%</td><td>improved</td></tr>
+<tr><td>Observational predictions</td><td>70&ndash;75%</td><td><b>&lt; 20%</b></td><td><b>falsified</b></td></tr>
+<tr><td>Mechanism viability</td><td>70&ndash;75%</td><td><b>&lt; 20%</b></td><td><b>excluded</b></td></tr>
+</tbody>
+</table>
+
+<h2 id="sec8">8. Possible Resurrections</h2>
+
+<h3>8.1 Path A: Shallow-Tail Transfer Function (low confidence, ~10%)</h3>
+<p>A turnover at k ~ 0.2&ndash;0.3 h/Mpc with a shallow (&gsim; &minus;0.2 amplitude slope) high-k tail could satisfy both bands, but abandons the holographically derived k<sup>&minus;1/2</sup> signature &mdash; it becomes another phenomenological transfer function.</p>
+
+<h3>8.2 Path B: Growth-Rate Modification (medium confidence, ~40%)</h3>
+<p>Let the mechanism act on the time-dependent growth g(a,k) rather than the power-spectrum shape. This sidesteps the window-function problem (growth suppression at z &lt; 1 lowers &sigma;<sub>8</sub> without touching the Lyman-&alpha;-era P(k)), but requires rebuilding Bricks 1&ndash;3. Effort: 6&ndash;8 weeks.</p>
+
+<h3>8.3 Path C: Partially-Coupled Dark Matter (highest confidence, ~60%)</h3>
+<p>Only a fraction f<sub>c</sub> ~ 0.2&ndash;0.3 of the dark matter couples to the radion: T<sub>eff</sub>(k) = f<sub>c</sub> T<sub>modified</sub>(k) + (1 &minus; f<sub>c</sub>). The coupled sector keeps the k<sup>&minus;1/2</sup> law; the uncoupled majority preserves Lyman-&alpha; power; S<sub>8</sub> is reduced in proportion to f<sub>c</sub>. Both constraints become satisfiable, at the cost of a different model requiring its own motivation and a full Stage 1&ndash;3 rerun. Effort: 6&ndash;8 weeks derivation + 4 weeks validation.</p>
+<p><b>Verdict:</b> Path C is the most promising if a resurrection is pursued.</p>
+
+<h2 id="sec9">9. Conclusions</h2>
+<p>1. <b>The first-principles 5D derivation succeeded mathematically.</b> The Einstein&ndash;scalar system on the Gauss-Bonnet-corrected AdS vacuum yields a well-defined transfer function, T(k) = G(k)/G(0), with geometric exponent 2&nu; &minus; 1.</p>
+<p>2. <b>The observational predictions failed.</b> The steep power-law mechanism cannot simultaneously satisfy S<sub>8</sub> and Lyman-&alpha; constraints; the incompatibility is structural, driven by window-function weights and band separation.</p>
+<p>3. <b>v1.8.3&rsquo;s claims were not Boltzmann-verified.</b> The &sigma;<sub>8</sub> = 0.760 prediction is quantitatively impossible from the stated T(k).</p>
+<p>4. <b>This is a falsification, not a setback.</b> Rigorous testing of bold hypotheses should eliminate wrong ones. Science advances by closing dead ends.</p>
+<p>5. <b>Three resurrection paths exist,</b> with Path C (partially-coupled dark matter) the most viable; each constitutes a new model beyond the scope of this work.</p>
+<p>6. <b>Scientific integrity requires publishing this falsification.</b> A rigorous negative result advances the field and preserves credibility.</p>
+
+<h2 id="ack">Acknowledgments</h2>
+<p>Stage 3 benefited from independent testing and honest re-examination of the v1.8.3 claims. The CAMB falsification was not anticipated; its discovery represents the scientific method working as intended: propose, predict, test, and report honestly regardless of outcome.</p>
+
+<h2 id="refs">References</h2>
+<ol class="references">
+<li>Sparky (GeometricCosmo). &ldquo;Radion Leakage in a 5D Gauss-Bonnet Braneworld: Power-Law Transfer Function and Resolution of S<sub>8</sub>, Lyman-&alpha;, and Dark-Galaxy Abundances.&rdquo; Zenodo Record 20607636, v1.8.3 (July 2026).</li>
+<li>Sparky (GeometricCosmo). &ldquo;A Metastable Radion Leakage in Five-Dimensional Gauss-Bonnet Braneworld Gravity.&rdquo; Zenodo Record 20607636, v1.0&ndash;1.8.2 (June&ndash;July 2026).</li>
+<li>Planck Collaboration. &ldquo;Planck 2018 results. I. Overview and the legacy release.&rdquo; <i>Astron. Astrophys.</i> 641, A1 (2020).</li>
+<li>DES Collaboration. &ldquo;Dark Energy Survey Year 3 Results: Cosmological Constraints from Galaxy Clustering and Weak Lensing.&rdquo; <i>Phys. Rev. D</i> 105, 043512 (2022).</li>
+<li>Lewis, A. &amp; Challinor, A. &ldquo;CAMB: Code for Anisotropies in the Microwave Background.&rdquo; Astrophysics Source Code Library, ascl:1102.026; computations herein use CAMB 2.0.</li>
+<li>Hu, W. &amp; Kravtsov, A. V. &ldquo;Sample Variance Considerations for Cluster Number Counts.&rdquo; <i>Astrophys. J.</i> 584, 702&ndash;715 (2003).</li>
+<li>Viel, M., Haehnelt, M. G., &amp; Springel, V. &ldquo;The effect of neutrinos on the matter power spectrum in the nonlinear regime.&rdquo; <i>Mon. Not. R. Astron. Soc.</i> 354, 684&ndash;694 (2004).</li>
+<li>Randall, L. &amp; Sundrum, R. &ldquo;A Large Mass Hierarchy from a Small Extra Dimension.&rdquo; <i>Phys. Rev. Lett.</i> 83, 3370&ndash;3373 (1999).</li>
+<li>Ryu, T. &amp; Takayanagi, T. &ldquo;Holographic Derivation of Entanglement Entropy from AdS/CFT.&rdquo; <i>Phys. Rev. Lett.</i> 96, 181602 (2006).</li>
+</ol>
+
+<h2 id="app">Appendices</h2>
+<h3>A. Spectral Density and KK Modes</h3>
+<p>The spectral density &rho;(m) = &psi;<sub>m</sub>(0)<sup>2</sup> was obtained from the numerical mode functions of equation (5), cross-checked against the analytic AdS&ndash;Bessel result &rho;(m) &prop; m<sup>2&nu;</sup>. Mode functions, warp factor, radion profile, and potential are released as machine-readable tables alongside this preprint.</p>
+<h3>B. CAMB Integration Details</h3>
+<p>Window-function &sigma;<sub>8</sub> integration (equation 8) was validated against CAMB&rsquo;s internal <code>get_sigma8</code> to 0.01% (0.8112 vs 0.8111). Lyman-&alpha;-band power ratios are evaluated directly from P<sub>model</sub>/P<sub>&Lambda;CDM</sub> at z = 0.</p>
+<h3>C. Error Budget</h3>
+<p>Numerical error on T(k): 0.1&ndash;3% (analytic cross-validation). Truncations: dynamical Gauss-Bonnet tensor terms neglected at perturbation level (background GB included via f<sub>&infin;</sub>); EM source treated to leading order; radion potential restricted to quadratic form. These affect T(k) at the few-percent level and <b>do not</b> affect the falsification conclusion, which relies on window-function kinematics rather than percent-level transfer-function details.</p>
+<h3>D. Code and Data</h3>
+<p>The full pipeline (BVP background solver, Riccati mode solver, spectral-representation dictionary, CAMB test suite) and result tables are released with this preprint.</p>
+
+<hr>
+<p class="small">Submitted to: Journal of Cosmology and Astroparticle Physics (JCAP) &nbsp;|&nbsp; Preprint: Zenodo Record 20607636, v1.9.0 &nbsp;|&nbsp; Status: falsification complete, publication ready &nbsp;|&nbsp; Date: July 29, 2026</p>
+
+<script>
+renderMathInElement(document.body, {
+  delimiters: [ {left: "$$", right: "$$", display: true}, {left: "$", right: "$", display: false} ]
+});
+</script>
+</body>
+</html>
