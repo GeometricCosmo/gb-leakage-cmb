@@ -98,7 +98,7 @@ Predictions: σ₈ = 0.76 ✅, S₈ = 0.78 ✅, Lyman-α suppressed ✅, dwarfs 
 
 ---
 
-## 🔬 NEW (v1.8.3): CDG-2 Dark Galaxy Test & Transfer Function Refinement
+## 🔬 NEW (v1.9.0): CDG-2 Dark Galaxy Test & Transfer Function Refinement
 
 **Status:** Independent falsification test PASSED after transfer function optimization
 
@@ -108,7 +108,7 @@ The Euclid space telescope discovered **CDG-2** (Candidate Dark Galaxy-2), a gal
 
 **Initial problem (v1.8.2):** Exponential transfer function T(k) = exp(-(k/0.75)^2.5) predicted CDG-2-like dwarfs would have abundance of 10^-49 per cluster, while observations show 1–10. **Failure by 50+ orders of magnitude.**
 
-**Solution (v1.8.3):** Systematic testing of 134 transfer function candidates revealed that a **shallow power-law** naturally satisfies all four constraints:
+**Solution (v):** Systematic testing of 134 transfer function candidates revealed that a **shallow power-law** naturally satisfies all four constraints:
 
 $$T(k) = \begin{cases} 1.0 & k < 1.5\,h\,\rm Mpc^{-1} \\ (1.5/k)^{0.5} & k \geq 1.5\,h\,\rm Mpc^{-1} \end{cases}$$
 
@@ -238,24 +238,24 @@ Brick 4 documentation now explains why n=0.5 is geometrically preferred.
 
 **Quick Entry Points:**
 
-- **[Observable Predictions (Refined)](./docs/observable-predictions-vs-data.md)** — Data tables, power-law predictions
-- **[Model Philosophy](./docs/philosophy.md)** — Scope clarity, CDG-2 test honesty
-- **[Brick 4 v1.9.0 (NEW)](./docs/BRICK_4_v1.9.0_POWER_LAW.md)** — Power-law foundation + CDG-2 resolution
+- **[Observable Predictions (Refined)](./docs/observable-predictions-vs-data.md)** - Data tables, power-law predictions
+- **[Model Philosophy](./docs/philosophy.md)** - Scope clarity, CDG-2 test honesty
+- **[Brick 4 v1.9.0 (NEW)](./docs/BRICK_4_v1.9.0_POWER_LAW.md)** - Power-law foundation + CDG-2 resolution
 
 **Technical Bricks:**
 
-- [Brick 1: EM Coupling](./docs/brick_1_radion_em_coupling.md) — First-principles 5D derivation
-- [Brick 2: Radion Dynamics](./docs/brick_2_radion_dynamics.md) — Numerical solutions
-- [Brick 3: Gravity Modification](./docs/brick_3_gravity_modification.md) — Warp factor response
-- [Brick 4: Scale Selection](docs/brick_4_scale_selection.md) — **Power-law RG flow justification**
-- [Brick 5: Cosmological Impact](./docs/brick_5_cosmological_impact.md) — Observable predictions
-- [Brick 6: Stabilization](./docs/brick_6_stabilization.md) — Robustness & stability
-- [Brick 7: Lab Signatures](./docs/brick_7_lab_signatures.md) — Future applications
+- [Brick 1: EM Coupling](./docs/brick_1_radion_em_coupling.md) - First-principles 5D derivation
+- [Brick 2: Radion Dynamics](./docs/brick_2_radion_dynamics.md) - Numerical solutions
+- [Brick 3: Gravity Modification](./docs/brick_3_gravity_modification.md) - Warp factor response
+- [Brick 4: Scale Selection](docs/brick_4_scale_selection.md) - **Power-law RG flow justification**
+- [Brick 5: Cosmological Impact](./docs/brick_5_cosmological_impact.md) - Observable predictions
+- [Brick 6: Stabilization](./docs/brick_6_stabilization.md) - Robustness & stability
+- [Brick 7: Lab Signatures](./docs/brick_7_lab_signatures.md) - Future applications
 
 **Reference:**
-- **[Zenodo Preprint (v1.9.0 incoming)](https://zenodo.org/records/20607636)** — Complete derivations
-- **[CHANGELOG.md](./CHANGELOG.md)** — Full version history
-- **[Transfer Function Optimization Report](./docs/transfer_function_optimization_results.md)** — All 134 candidates tested
+- **[Zenodo Preprint (v1.9.0 incoming)](https://zenodo.org/records/20607636)** - Complete derivations
+- **[CHANGELOG.md](./CHANGELOG.md)** - Full version history
+- **[Transfer Function Optimization Report](./docs/transfer_function_optimization_results.md)** - All 134 candidates tested
 
 ---
 
@@ -276,14 +276,14 @@ Most modified gravity models address *either* gravity suppression *or* power cut
 
 ## 📅 The Validation Timeline
 
-### **2026 (NOW) — Phase 3, Stage 1, CDG-2 Test All Complete ✅**
+### **2026 (NOW) - Phase 3, Stage 1, CDG-2 Test All Complete ✅**
 - ✅ Holographic entanglement analysis: 10–15% accuracy
 - ✅ Boltzmann code: σ₈ = 0.76, S₈ = 0.78 validated
 - ✅ CDG-2 test: Dwarfs match observations after power-law refinement
 - ✅ Transfer function optimized: 9 candidates pass all 4 constraints
 - **→ Next: Stage 2 (test uniqueness)**
 
-### **2026–2027 — Stage 2: Test Uniqueness** ⏳
+### **2026–2027 - Stage 2: Test Uniqueness** ⏳
 - Compare GB power-law to neutrino mass, f(R), early DE
 - Does GB make ≥3 unique predictions ≥2σ from competitors?
 - **Timeline:** 4–6 weeks
@@ -321,9 +321,9 @@ Most modified gravity models address *either* gravity suppression *or* power cut
 
 | Resource | Purpose |
 |:---|:---|
-| [Zenodo 20607636](https://zenodo.org/records/20607636) | Full preprint (v1.8.3 incoming) |
+| [Zenodo 20607636](https://zenodo.org/records/20607636) | Full preprint (v1.9.0 incoming) |
 | [Observable Predictions](./docs/observable-predictions-vs-data.md) | Data tables + tests |
-| [Brick 4 v1.8.3](./docs/BRICK_4_v1.9.0_POWER_LAW.md) | Power-law foundation |
+| [Brick 4 v1.9.0](./docs/BRICK_4_v1.9.0_POWER_LAW.md) | Power-law foundation |
 | [Model Philosophy](./docs/philosophy.md) | Scope clarity |
 | [CAMB Pipeline](./code/camb_pipeline.py) | Boltzmann code (updated) |
 | [Transfer Optimization](./docs/transfer_function_optimization_results.md) | CDG-2 test resolution |
@@ -392,7 +392,7 @@ A: No. Lab tests probe millimeter scales; braneworld effects are cosmological (m
 | **Theory (Bricks 1–3, 5–6)** | ✅ 85% complete | Ready |
 | **Brick 4 (Transfer Function)** | ✅ **70–75% validated** | **Stage 2 ready** |
 | **Boltzmann Code** | ✅ 100% complete (updated) | Production |
-| **CDG-2 Test Resolution** | ✅ **Complete** | **v1.8.3** |
+| **CDG-2 Test Resolution** | ✅ **Complete** | **v1.9.0** |
 | **Documentation** | ✅ 95% complete | Ready |
 | **Peer Review** | ⏳ Preparing | Q4 2026 |
 
