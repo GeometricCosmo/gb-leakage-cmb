@@ -72,7 +72,7 @@
 | **6: Stabilization** | Solution robustness | ◐ Classical stability proven | 85% | 1-loop quantum corrections |
 | **7: Lab Signatures** | Experimental tests | ⏳ Deferred | - | Post-cosmological validation |
 
-**Brick 4 update (v1.8.3):** Transfer function shape refined from exponential to power-law after independent CDG-2 test. Now satisfies all four constraints (σ₈, S₈, Lyman-α, dwarf abundance). Confidence raised 65–70% → **70–75%**.
+**Brick 4 update (v1.9.0):** Transfer function shape refined from exponential to power-law after independent CDG-2 test. Now satisfies all four constraints (σ₈, S₈, Lyman-α, dwarf abundance). Confidence raised 65–70% → **70–75%**.
 
 ---
 
@@ -396,7 +396,7 @@ A: No. Lab tests probe millimeter scales; braneworld effects are cosmological (m
 | **Documentation** | ✅ 95% complete | Ready |
 | **Peer Review** | ⏳ Preparing | Q4 2026 |
 
-**Latest milestones (v1.8.3):** ✅ CDG-2 test passed • ✅ Transfer function optimized • ✅ All 4 constraints satisfied • → **Stage 2 next**
+**Latest milestones (v1.9.0):** ✅ CDG-2 test passed • ✅ Transfer function optimized • ✅ All 4 constraints satisfied • → **Stage 2 next**
 
 ---
 
@@ -410,7 +410,7 @@ A: No. Lab tests probe millimeter scales; braneworld effects are cosmological (m
   year={2026},
   month={August},
   howpublished={Zenodo},
-  note={v1.8.3},
+  note={v1.9.0},
   url={https://zenodo.org/records/20607636},
   doi={10.5281/zenodo.20607636}
 }
@@ -443,7 +443,7 @@ The model survived its toughest test (CDG-2 falsification) through rigorous refi
 
 Made with rigor, intellectual honesty, and genuine curiosity about the universe.
 
-Last Updated: August 1, 2026 (v1.8.3)  
+Last Updated: August 1, 2026 (v1.9.0)  
 Repository: [github.com/GeometricCosmo/gb-leakage-cmb](https://github.com/GeometricCosmo/gb-leakage-cmb)  
 License: MIT  
 Status: Active development. Ready for collaboration.
