@@ -8,7 +8,7 @@
 
 [![Status](https://img.shields.io/badge/status-active-brightgreen?style=flat-square)]()
 [![Phase](https://img.shields.io/badge/phase-stage_1_refined-brightgreen?style=flat-square)]()
-[![Version](https://img.shields.io/badge/version-1.8.3-purple?style=flat-square)]()
+[![Version](https://img.shields.io/badge/version-1.9.0-purple?style=flat-square)]()
 [![Brick4](https://img.shields.io/badge/Brick_4-70--75%25_validated-brightgreen?style=flat-square)]()
 [![Overall](https://img.shields.io/badge/overall-72%25_complete-brightblue?style=flat-square)]()
 [![License](https://img.shields.io/badge/license-MIT-green?style=flat-square)]()
