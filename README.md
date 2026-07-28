@@ -46,7 +46,7 @@
 | **Lyman-α** power ratio (k > 0.75) | 1.0 | ~0.89 | **~0.80** | ✅ **VALIDATED** |
 | **CDG-2 dwarf abundance** (Euclid discovery) | ~5.5 per cluster | ~2.1 per cluster | **~1–10 per cluster** | ✅ **VALIDATED** |
 
-**Why this is distinctive:** The model doesn't just suppress gravity OR cut off power spectrum — **both happen together from one radion mechanism**, and the solution is **gentle enough to preserve dwarf galaxies**. That's harder to fake than isolated effects.
+**Why this is distinctive:** The model doesn't just suppress gravity OR cut off power spectrum - **both happen together from one radion mechanism**, and the solution is **gentle enough to preserve dwarf galaxies**. That's harder to fake than isolated effects.
 
 ---
 
@@ -70,7 +70,7 @@
 | **4: Scale Selection** | **Power-law transfer function** | ✅ **Validated against CDG-2** | **70–75%** | **Stage 2: Uniqueness** |
 | **5: Cosmological Impact** | Observable predictions | ✅ All four constraints satisfied | 75% | Boltzmann code ✅ |
 | **6: Stabilization** | Solution robustness | ◐ Classical stability proven | 85% | 1-loop quantum corrections |
-| **7: Lab Signatures** | Experimental tests | ⏳ Deferred | — | Post-cosmological validation |
+| **7: Lab Signatures** | Experimental tests | ⏳ Deferred | - | Post-cosmological validation |
 
 **Brick 4 update (v1.8.3):** Transfer function shape refined from exponential to power-law after independent CDG-2 test. Now satisfies all four constraints (σ₈, S₈, Lyman-α, dwarf abundance). Confidence raised 65–70% → **70–75%**.
 
@@ -154,7 +154,7 @@ Brick 4 documentation now explains why n=0.5 is geometrically preferred.
 
 ![CMB Spectrum](cmb_leakage_spectrum_refined.png)
 
-**All acoustic peaks intact** — gravity modification doesn't break early-universe physics.
+**All acoustic peaks intact** - gravity modification doesn't break early-universe physics.
 
 ---
 
