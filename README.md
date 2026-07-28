@@ -186,7 +186,7 @@ Brick 4 documentation now explains why n=0.5 is geometrically preferred.
 
 ### ◐ Validated Independently
 - **Transfer function shape:** Power-law T(k) = (1.5/k)^0.5 passes CDG-2 test independently
-- **Stage 1 (Boltzmann):** ✅ Complete — All four constraints satisfied
+- **Stage 1 (Boltzmann):** ✅ Complete - All four constraints satisfied
 - **Dwarf-galaxy abundance:** ✅ Matches Euclid observations
 
 ### ⏳ Requires Further Validation
@@ -199,7 +199,7 @@ Brick 4 documentation now explains why n=0.5 is geometrically preferred.
 
 ## 🎯 What Needs Doing: The Critical Path (Next 6 Months)
 
-### **URGENT (Weeks 1–2) — Finalize v1.8.3 Release**
+### **URGENT (Weeks 1–2) - Finalize v1.9.0 Release**
 
 **1. Update Brick 4 Documentation** 🔥
 - Explain why power-law emerges from holographic RG flow
@@ -219,7 +219,7 @@ Brick 4 documentation now explains why n=0.5 is geometrically preferred.
 - Weak-lensing forecasts with power-law suppression
 - **Timeline:** 3 days
 
-### **IMPORTANT (Weeks 3–6) — Stage 2 Uniqueness Testing**
+### **IMPORTANT (Weeks 3–6) - Stage 2 Uniqueness Testing**
 
 **1. Compare GB to Competitors** 
 - Neutrino mass: smooth suppression (not power-law)
@@ -240,7 +240,7 @@ Brick 4 documentation now explains why n=0.5 is geometrically preferred.
 
 - **[Observable Predictions (Refined)](./docs/observable-predictions-vs-data.md)** — Data tables, power-law predictions
 - **[Model Philosophy](./docs/philosophy.md)** — Scope clarity, CDG-2 test honesty
-- **[Brick 4 v1.8.3 (NEW)](./docs/BRICK_4_v1.8.3_POWER_LAW.md)** — Power-law foundation + CDG-2 resolution
+- **[Brick 4 v1.9.0 (NEW)](./docs/BRICK_4_v1.9.0_POWER_LAW.md)** — Power-law foundation + CDG-2 resolution
 
 **Technical Bricks:**
 
@@ -253,7 +253,7 @@ Brick 4 documentation now explains why n=0.5 is geometrically preferred.
 - [Brick 7: Lab Signatures](./docs/brick_7_lab_signatures.md) — Future applications
 
 **Reference:**
-- **[Zenodo Preprint (v1.8.3 incoming)](https://zenodo.org/records/20607636)** — Complete derivations
+- **[Zenodo Preprint (v1.9.0 incoming)](https://zenodo.org/records/20607636)** — Complete derivations
 - **[CHANGELOG.md](./CHANGELOG.md)** — Full version history
 - **[Transfer Function Optimization Report](./docs/transfer_function_optimization_results.md)** — All 134 candidates tested
 
@@ -289,12 +289,12 @@ Most modified gravity models address *either* gravity suppression *or* power cut
 - **Timeline:** 4–6 weeks
 - **Impact:** Determines if mechanism is distinctive
 
-### **2027 — DESI Lyman-α Results** ⏳
+### **2027 - DESI Lyman-α Results** ⏳
 - ✅ If: Power suppression with k_ref ~ 1.5 h/Mpc
 - ❌ If: Different scale or shape
 - **Impact:** Direct test of power-law cutoff
 
-### **2027–2028 — CMB-S4 & Future Surveys** ⏳
+### **2027–2028 - CMB-S4 & Future Surveys** ⏳
 - ✅ If: Growth rate shows scale-dependent suppression
 - ❌ If: Scale-independent or no suppression
 - **Impact:** Gravity modification confirmed or ruled out
@@ -323,7 +323,7 @@ Most modified gravity models address *either* gravity suppression *or* power cut
 |:---|:---|
 | [Zenodo 20607636](https://zenodo.org/records/20607636) | Full preprint (v1.8.3 incoming) |
 | [Observable Predictions](./docs/observable-predictions-vs-data.md) | Data tables + tests |
-| [Brick 4 v1.8.3](./docs/BRICK_4_v1.8.3_POWER_LAW.md) | Power-law foundation |
+| [Brick 4 v1.8.3](./docs/BRICK_4_v1.9.0_POWER_LAW.md) | Power-law foundation |
 | [Model Philosophy](./docs/philosophy.md) | Scope clarity |
 | [CAMB Pipeline](./code/camb_pipeline.py) | Boltzmann code (updated) |
 | [Transfer Optimization](./docs/transfer_function_optimization_results.md) | CDG-2 test resolution |
