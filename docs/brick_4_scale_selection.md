@@ -18,7 +18,7 @@ Bricks 1–3 derive how a radion couples to electromagnetic radiation and how th
 
 - **v1.8.2 (July 2026):** Holographic entanglement entropy foundation. Predicted exponential T(k) = exp(-(k/0.75)^2.5). Solved S₈ and Lyman-α. Confidence: 65–70%. **Then Euclid discovered CDG-2 dark galaxies, and the exponential failed catastrophically.**
 
-- **v1.8.3 (August 2026, THIS WORK):** Systematic optimization of 134 transfer-function candidates. Power-law T(k) = (1.5/k)^0.5 passes all four constraints. Derived from holographic RG-flow theory. Validated independently by Boltzmann code against CDG-2 dwarf abundances. Confidence: **70–75%** (semi-derived + empirically validated).
+- **v1.9.0 (August 2026, THIS WORK):** Systematic optimization of 134 transfer-function candidates. Power-law T(k) = (1.5/k)^0.5 passes all four constraints. Derived from holographic RG-flow theory. Validated independently by Boltzmann code against CDG-2 dwarf abundances. Confidence: **70–75%** (semi-derived + empirically validated).
 
 **The Bottom Line:**
 
