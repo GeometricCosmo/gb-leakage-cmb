@@ -1,38 +1,65 @@
 # Radion Leakage in 5D Gauss-Bonnet Braneworlds
 
-**A First-Principles Derivation, Successful Resolution of S₈/Lyman-α Tensions, and Observational Constraints**
+**Independent Verification: The Phenomenological Baseline and the Proposed Mechanism Are Both Falsified**
 
 <div align="center">
 
-![Status](https://img.shields.io/badge/Status-Observational_Constraints_Identified-orange?style=for-the-badge)
+![Status](https://img.shields.io/badge/Status-Negative_Result-red?style=for-the-badge)
 ![Version](https://img.shields.io/badge/Version-2.0.0-purple?style=for-the-badge&logo=github)
 ![Physics](https://img.shields.io/badge/Physics-5D_Braneworld-blue?style=for-the-badge)
-![Integrity](https://img.shields.io/badge/Integrity-Rigorous_Testing-brightgreen?style=for-the-badge)
+![Integrity](https://img.shields.io/badge/Integrity-Retraction_Published-brightgreen?style=for-the-badge)
 ![License](https://img.shields.io/badge/License-MIT-green?style=for-the-badge)
 
-**[🌐 Website](https://the-leakage-theory.lovable.app/) • [📄 Preprint](https://zenodo.org/records/20607636) • [📧 Contact](mailto:geometriccosmo.illusion559@passinbox.com)**
+**[📄 Paper (PDF)](./v2.0/radion_leakage_v2.0.pdf) • [🔒 Locked Baseline](./v2.0/V2.0_BASELINE_LOCKED.md) • [📦 Zenodo v1.9.1 (retracted)](https://zenodo.org/records/21663023) • [📧 Contact](mailto:geometriccosmo.illusion559@passinbox.com)</strong>**
 
 </div>
 
 ---
 
-## 🚀 The Research Journey
+## 🚨 CRITICAL UPDATE (September 2026)
 
-### A Complete Scientific Narrative: From Hypothesis to Rigorous Observational Testing
+**Status change:** the observational claims of v1.8.x and v1.9.x are **retracted**.
+Independent CAMB verification at fixed $A_s$, followed by a direct derivation from
+the published radion Lagrangian, shows that **neither the phenomenological curve
+nor the proposed mechanism survives scrutiny.**
 
-This repository documents a **three-stage theoretical physics project** demonstrating rigorous scientific methodology—including how to properly test speculative mechanisms and publish complete results.
+**What was claimed (v1.9.1):**
+- ✅ $S_8 = 0.829$ — reported as a **pass**
+- ⚠️ $\sigma_8 = 0.811$ — reported as a **constraint requiring modification**
+- ✅ Lyman-α ratio $= 0.891$ — reported as a **pass**
+
+**What independent verification found:**
+- ❌ $\sigma_8$ moves by $-4.8\times10^{-5}$ — the mechanism does **nothing**
+- ❌ $S_8$ and $\sigma_8$ are the **same measurement** ($S_8=1.025\,\sigma_8$); one
+  cannot pass while the other fails
+- ❌ The Lyman-α "pass" used a non-standard convention and two sampling points
+  where the transfer function is a tautology; under the standard convention the
+  suppression reaches **70% at $k=5\,h\,\mathrm{Mpc}^{-1}$** and is excluded
+- ❌ The radion Lagrangian, correctly reduced, predicts **enhancement of
+  clustering, not suppression** — the opposite of what is needed — at a coupling
+  strength already excluded by four to thirteen orders of magnitude
+
+This is a complete negative result at both the phenomenological and the
+mechanistic level. It is published in full, with independent verification code,
+because that is what the scientific record requires.
+
+---
+
+## 🔬 The Research Journey
+
+### A Complete Record: From Hypothesis, Through a Wrong Turn, to Independent Verification
 
 <div align="center">
 
 ```
-STAGE 1             STAGE 2              STAGE 3
-─────────────────────────────────────────────────────
-Theoretical      ×   Observational   ×   Observational
-Framework           Revision            Validation
+STAGE 1               STAGE 2                    STAGE 3
+──────────────────────────────────────────────────────────────────
+Theoretical       ×   Observational          ×   Independent
+Framework             Revision                   Verification
 
-     ✅                ✅ SUCCESS          ⚠️ CONSTRAINTS
-   SOUND              REVISED            IDENTIFIED
-   MATH               THEORY             NEEDED
+     ✅                  ❌ RETRACTED               ❌ FALSIFIED
+  SOUND MATH           WRONG NUMBERS,           BOTH THE CURVE
+  (unaffected)         WRONG CONVENTIONS        AND THE MECHANISM
 ```
 
 </div>
@@ -41,30 +68,27 @@ Framework           Revision            Validation
 
 ## 📖 What This Repository Contains
 
-### The Complete Scientific Record
-
 <table>
 <tr>
 <td width="50%">
 
-#### ✅ What We Built
-- **5D Einstein-Gauss-Bonnet geometry** solved from first principles
-- **Holographic entanglement entropy** transfer function derivation  
-- **Power-law T(k)** derived and justified theoretically
-- **Full CAMB pipeline** integration
-- **Rigorous observational testing** against cosmological data
-- **Complete documentation** at every stage
+#### ✅ What Remains Sound
+- **5D Einstein-Gauss-Bonnet geometry**, solved to residual $<6\times10^{-6}$
+- **CAMB pipeline infrastructure**, fully reproducible
+- **Independent verification code**, open and re-runnable in under two minutes
+- **Complete documentation of the failure**, including a full derivation
 
 </td>
 <td width="50%">
 
-#### ✅ What We Achieved
-- **Resolves S₈ tension** (weak-lensing constraint)
-- **Preserves Lyman-α constraint** (high-z structure)
-- **Fixes CDG-2 dwarf galaxy problem** (v1.8.2 → v1.9.0)
-- **Identifies observational tradeoffs** (σ₈ vs small-scale suppression)
+#### ❌ What Is Retracted
+- The claim that $T(k)=(1.5/k)^{0.5}$ passes $S_8$ and Lyman-α
+- The claim that $\sigma_8$ is the only failing constraint
+- The attribution of this transfer function to radion leakage
+- The earlier "$10^{42}$ screening violation" (withdrawn as a category error,
+  and replaced by a worse but correct statement: there is no screening at all)
 
-**Result:** Constrained mechanism requiring small-scale modification
+**Result:** a fully negative result, published with the tools needed to check it.
 
 </td>
 </tr>
@@ -75,264 +99,232 @@ Framework           Revision            Validation
 ## 🎯 Quick Navigation
 
 ### For the Impatient
-- **"Does it work?"** → [Observational Results](#-observational-results) (2 min read)
-- **"Show me the data"** → [What We Passed](#what-we-passed) (3 min)
-- **"I want the code"** → [`camb_pipeline.py`](./camb_pipeline.py) (Python CAMB pipeline)
-- **"Where's the science?"** → [`Stage3_Dictionary_and_CAMB_Test.pdf`](./Stage3_Dictionary_and_CAMB_Test.pdf) (Full technical report)
+- **"Does it work?"** → No. See [The Two Failures](#-the-two-failures) below (3 min).
+- **"Show me the numbers"** → [`baseline_verification.json`](./v2.0/baseline_verification.json)
+- **"I want to check it myself"** → [`verify_baseline.py`](./v2.0/verify_baseline.py) (runs in under 2 minutes)
+- **"Where's the derivation?"** → [Paper, §4–5](./v2.0/radion_leakage_v2.0.pdf)
 
 ### For the Thorough
-- **Complete observational analysis** → [`Stage3_Dictionary_and_CAMB_Test.md`](./Stage3_Dictionary_and_CAMB_Test.md)
-- **Stage 3 technical report** → [`Stage3_Phase1_Technical_Report.md`](./Stage3_Phase1_Technical_Report.md)
-- **5D solution methods** → [`BRICK_4_v1.9.0_REVISION.md`](./docs/BRICK_4_v1.9.0_REVISION.md)
-- **Data files** → [`camb_test_results_stage3.csv`](./camb_test_results_stage3.csv)
+- **Full paper with appendices and errata** → [`radion_leakage_v2.0.pdf`](./v2.0/radion_leakage_v2.0.pdf)
+- **Frozen Layer-1 baseline (do not edit)** → [`V2.0_BASELINE_LOCKED.md`](./v2.0/V2.0_BASELINE_LOCKED.md)
+- **Raw power spectra and the $\sigma_8$ integrand** → [`pk_baseline.csv`](./v2.0/pk_baseline.csv)
+- **Figure generation script** → [`make_figures.py`](./v2.0/make_figures.py)
 
 ---
 
 ## 🔬 The Science: What Happened
 
-### STAGE 1: Theoretical Development ✅
-**Timeline:** 2024–2025 | **Status:** Complete
+### STAGE 1: Theoretical Development ✅ (unaffected)
+**Timeline:** 2024–2025 | **Status:** Complete, still sound
 
-We derived a complete model for EM-radion coupling in 5D geometry:
+We derived a model for EM-radion coupling in 5D geometry:
 
 $$\ddot{r} + 3H\dot{r} - \frac{1}{a^2}\nabla^2 r + m_r^2 r + (\gamma + 3\beta)r^2 + \delta r^3 + \alpha r(\dot{r}^2 - (\nabla r)^2) = \frac{\lambda}{M_5^{3/2}}(\partial_\mu \phi)^2$$
 
-**Results:**
-- ✅ 5D geometry solved to residual < 6×10⁻⁶
-- ✅ Holographic dictionary uniquely determined
-- ✅ Power-law k^(-1/2) asymptote derived from first principles
-- ✅ Mathematical framework sound (80% confidence)
+- ✅ 5D geometry solved to residual $<6\times10^{-6}$
+- ✅ Standard-sign kinetic term (not a ghost)
+- ⚠️ The scale $k_c\approx1.5\,h\,\mathrm{Mpc}^{-1}$ was **fitted**, not derived, from
+  the outset — this was always a phenomenological input, correctly labelled as
+  such in earlier versions
+
+### STAGE 2: Observational Revision ❌ (retracted)
+**Timeline:** July 2026 | **Status:** Superseded
+
+A power-law transfer function was fitted to 134 candidate shapes:
+
+$$T(k) = \begin{cases} 1.0 & k < 1.5\ h\,\mathrm{Mpc}^{-1} \\ (1.5/k)^{0.5} & k \geq 1.5\ h\,\mathrm{Mpc}^{-1} \end{cases}$$
+
+and reported to pass $S_8$ and Lyman-α while only $\sigma_8$ remained a problem.
+**This report was incorrect** — see Stage 3.
+
+### STAGE 3: Independent Verification ❌ (this version)
+**Timeline:** September 2026 | **Status:** Complete
+
+We froze the Stage 2 function and numbers as an immutable control, re-ran CAMB
+2.0.4 at fixed $A_s$ (no amplitude rescaling), and separately derived the
+effective gravitational coupling implied by the published Lagrangian.
+
+**Corrected observational table:**
+
+| Observable | v1.9.1 reported | Independently verified | Verdict |
+|:---|:---:|:---:|:---|
+| $\sigma_8$ | $0.811$, "fails" | $0.8112$ | this **is** the $\Lambda$CDM value — the mechanism changes it by $-4.8\times10^{-5}$ |
+| $S_8$ | $0.829$, "passes" | $0.8315$ | $1.7\sigma$ high; **not** a pass |
+| Lyman-α ratio | $0.891$, "passes" | $0.8125$ (standard convention) | wrong convention used; excluded once corrected |
+
+Only **0.048%** of the $\sigma_8$ variance lies above the break scale $k_c$. A
+function equal to 1 below $k_c$ cannot move $\sigma_8$, regardless of what it does
+above it — this is a property of the top-hat filter, not of any specific theory.
 
 ---
 
-### STAGE 2: Observational Revision ✅
-**Timeline:** July 2026 | **Status:** Successful Improvement
+## ❌ The Two Failures
 
-Initial exponential model failed against observational constraints (CDG-2 dwarf galaxy problem).
+### Failure 1 (Layer 1 — the curve itself)
 
-We systematically tested **134 alternative T(k) shapes** and identified a power-law revision:
+$S_8$ and $\sigma_8$ are the same measurement up to a fixed factor,
+$S_8 = 1.02501\,\sigma_8$, because $\Omega_m$ is fixed. **The reported pattern of
+an $S_8$ pass alongside a $\sigma_8$ failure cannot occur for any transfer
+function applied at $z=0$.** Both quantities sit $1.7\sigma$ above target. The
+Lyman-α "pass" required applying $T$ to $P(k)$ instead of $T^2$, and averaging in
+two sampling points at which $T\equiv1$ by construction. Under the correct
+convention, suppression reaches 70% at $k=5\,h\,\mathrm{Mpc}^{-1}$ — excluded.
 
-$$T(k) = \begin{cases} 1.0 & \text{for } k < 1.5 \text{ h/Mpc} \\ (1.5/k)^{0.5} & \text{for } k \geq 1.5 \text{ h/Mpc} \end{cases}$$
+![Window function](./v2.0/figures/fig1_window.png)
+![S8 vs sigma8](./v2.0/figures/fig2_s8_sigma8.png)
+![Lyman-alpha](./v2.0/figures/fig3_lyman_alpha.png)
 
-**Improvement Results:**
-- ✅ Re-derived from holographic first principles
-- ✅ S₈ constraint: **PASS** (0.829 vs target 0.78±0.03)
-- ✅ Lyman-α constraint: **PASS** (0.891 vs target 0.70–0.90)
-- ✅ CDG-2 dwarf galaxies: **PASS** (matches observational abundance)
-- ⚠️ σ₈ constraint: Requires small-scale modification (0.811 vs target 0.76±0.03)
+### Failure 2 (Layer 2 — the mechanism)
 
----
+Reducing the published radion equation of motion in the quasi-static limit gives
 
-### STAGE 3: Rigorous Observational Validation ⚠️
-**Timeline:** August–September 2026 | **Status:** Constraints Identified
+$$\frac{G_{\rm eff}(k,a)}{G} = 1 + 2\beta^2\,\frac{k^2}{k^2+a^2 m_{\rm eff}^2}$$
 
-We performed complete Boltzmann validation to test mechanism against all constraints simultaneously.
+This fails in three independent ways:
 
-**The Question:** Does power-law T(k) satisfy observational requirements across all tested metrics?
+- **Sign:** the correction is $\propto\beta^2$, so it is positive for every real
+  coupling. A healthy scalar linearly coupled to matter **enhances** clustering.
+  It cannot lower $\sigma_8$.
+- **Shape:** the response is a saturating Yukawa step (flat, then rising to a
+  plateau), not a declining power law. No parameter choice converts one into
+  the other.
+- **Magnitude:** matching a percent-level shift needs $\beta\simeq0.2$. Because
+  the coupling reaches matter only through electromagnetic binding energy, it is
+  long-range and unscreened, and is excluded by Cassini ($\beta^2\lesssim10^{-5}$)
+  and MICROSCOPE (schematically $\beta^2\lesssim10^{-14}$) — a shortfall of at
+  least four, and plausibly many more, orders of magnitude.
 
-**The Test:**
-1. Run full CAMB with predicted T(k)
-2. Extract σ₈, S₈, matter power spectrum
-3. Compare against Planck 2018 + DESI 2024 + Lyman-α
+The earlier report of a $10^{42}$ "screening violation" is **withdrawn as a
+category error**: it measured the ratio of background source strengths, not a
+screening factor. The Lagrangian contains no chameleon, symmetron or Vainshtein
+mechanism at all — the corrected statement is worse than the one it replaces.
 
-**The Result:** 
-
-| Observable | Target | v2.0.0 Prediction | Status | Significance |
-|:---|:---:|:---:|:---:|---|
-| **S₈** | 0.78 ± 0.03 | 0.829 ✓ | ✅ **PASS** | Resolves weak-lensing tension |
-| **Lyman-α** (k=0.5–3) | 0.70–0.90 | 0.891 ✓ | ✅ **PASS** | Preserves high-z structure |
-| **σ₈** | 0.76 ± 0.03 | 0.811 | ⚠️ **CONSTRAINT** | Requires modification |
-
----
-
-## ✅ What We Passed
-
-### The Achievement: Simultaneous S₈ and Lyman-α Resolution
-
-**Passing BOTH S₈ and Lyman-α simultaneously is non-trivial:**
-
-Most modified-gravity mechanisms struggle with one or both constraints. Your mechanism:
-
-- ✅ **Resolves S₈ tension** (weak lensing / growth rate problem)
-- ✅ **Preserves Lyman-α constraints** (small-scale matter power)
-- ✅ **Maintains holographic first-principles derivation**
-- ✅ **Provides physically-motivated transfer function** (not phenomenological)
-
-This is **significant progress** toward resolving cosmological tensions.
+![G_eff derivation](./v2.0/figures/fig4_geff.png)
+![Required vs permitted coupling](./v2.0/figures/fig5_coupling.png)
 
 ---
 
-## ⚠️ What We Found: σ₈ Constraint
+## 🧭 What Would Be Required, and What Is Deferred
 
-The mechanism successfully handles S₈ and Lyman-α but requires small-scale modification to match σ₈.
+A successor mechanism that still deserves the name "radion leakage" would need,
+simultaneously:
 
-**This is NOT falsification—it's identifying a structural requirement:**
+1. **$\Delta G < 0$** — ruling out ordinary conformal scalar exchange entirely;
+   requires either genuine energy transfer out of the matter sector or a
+   derivative/disformal coupling.
+2. **A suppression that does not drift in comoving $k$** — a fixed Compton
+   scale $a\,m_{\rm eff}$ sweeps through all wavenumbers as $a\to0$; either
+   $m_{\rm eff}\propto H$ or the model needs an explicit $T(k,z)$.
+3. **A coupling that avoids the electromagnetic sector, or is genuinely
+   screened** — the current route is closed by Section 5 of the paper.
 
-The power-law form T(k) = (1.5/k)^0.5 doesn't suppress enough at low-k (k < 1.5) to reduce σ₈ to observed levels while maintaining the high-k behavior needed for Lyman-α safety.
+**The proposed move to 6D flux compactification is deferred.** None of the three
+failures above depends on the number of extra dimensions: $G_{\rm eff}$ follows
+from any light scalar with a healthy kinetic term coupled linearly to matter
+through $F^2$, in 5D, 6D, or otherwise. Flux compactification would determine how
+$m_{\rm eff}$ and $\lambda$ are fixed; it would not change the sign of $\beta^2$.
+Building a 6D foundation under a mechanism that already fails its own internal
+consistency check is not the highest-leverage next step.
 
-**Options to address this:**
-
-1. **Steeper low-k rollover** → Modify T(k) form
-2. **Growth-rate modification** (Path B) → Different coupling mechanism
-3. **Partially-coupled DM** (Path C) → Only fraction couples to radion
-
----
-
-## 🎨 Visualizing the Results
-
-### Figure 1: Transfer Function
-![Transfer Function](./transfer.png)
-
-The power-law form (orange line) provides optimal balance among 134 tested candidates, successfully handling Lyman-α while solving CDG-2 problem.
-
----
-
-### Figure 2: CMB Power Spectrum
-![CMB Spectrum](./cmb_leakage_spectrum.png)
-
-CMB acoustic peaks unchanged—radion effect is at structure-formation scales (z < 2), not CMB-formation scales.
-
----
-
-### Figure 3: Growth Rate & σ₈
-![Growth Rate](./growth_s8.png)
-
-Scale-dependent growth suppression creates the S₈/Lyman-α improvement, but doesn't quite reach σ₈ target without additional modification.
-
----
-
-### Figure 4: Power Spectrum Ratio
-![Power Ratio](./power_ratio.png)
-
-Suppression pattern showing the mechanism's effect: strong at intermediate scales (solving S₈), controlled at small scales (preserving Lyman-α), but needing enhancement at very small scales (σ₈).
-
----
-
-### Figure 5: Full CAMB Analysis
-![CAMB Summary](./gb_leakage_camb_summary.png)
-
-Complete 9-panel Boltzmann analysis across all observational metrics.
-
----
-
-## 🛣️ Three Paths Forward
-
-The mechanism successfully resolves S₈/Lyman-α but requires modification for σ₈. Three pathways:
-
-### Path A: Modified Transfer Function ⭐⭐
-**Idea:** Steepen low-k rollover to reach σ₈ target  
-**Advantage:** Minimal theoretical changes  
-**Disadvantage:** May lose some first-principles motivation  
-**Status:** Straightforward modification
-
----
-
-### Path B: Growth-Rate Modification ⭐⭐⭐⭐
-**Idea:** Radion affects growth rate f(z) rather than power spectrum shape  
-**Advantage:** 
-- ✅ Avoids power-spectrum window-function tradeoff
-- ✅ Naturally targets σ₈ via growth modification
-- ✅ Keeps S₈ and Lyman-α safe
-- ✅ Theoretically elegant
-
-**Disadvantage:** Requires new derivation  
-**Status:** **Most promising**, worth 4–6 weeks
-
----
-
-### Path C: Partially-Coupled Dark Matter ⭐⭐⭐⭐⭐
-**Idea:** Only fraction f_c ~ 0.2–0.3 of DM couples to radion  
-**Advantage:** 
-- ✅ Keeps holographic k^(-1/2) for coupled sector
-- ✅ Effective suppression naturally softened
-- ✅ All three constraints simultaneously satisfiable
-- ✅ Only 2 weeks derivation
-
-**Status:** **Highest confidence**, worth immediate pursuit
+**The one calculation that could revive this line of work:** an explicit
+dimensional reduction of the 5D action, carried far enough to check whether the
+induced matter coupling is genuinely conformal (as assumed here) or of a
+derivative/disformal type that could evade the sign argument. Until that exists,
+neither a refit of $T(k)$ nor a move to 6D rests on anything.
 
 ---
 
 ## 💻 Code & Data
 
-### Quick Start
+### Quick Start — reproduce every number in the paper
 ```bash
-# Clone the repository
 git clone https://github.com/GeometricCosmo/gb-leakage-cmb.git
-cd gb-leakage-cmb
+cd gb-leakage-cmb/v2.0
 
-# Install dependencies
-pip install -r requirements.txt
+pip install camb numpy scipy matplotlib
 
-# Run the CAMB pipeline
-python camb_pipeline.py
-
-# View results
-cat camb_test_results_stage3.csv
+python verify_baseline.py     # -> baseline_verification.json, pk_baseline.csv
+python make_figures.py        # -> figures/fig1..fig5.png
 ```
+Runtime under two minutes on a single core. CAMB 2.0.4 was used; any version
+from 1.3 onward should reproduce $\sigma_8$ to better than $10^{-3}$.
 
 ### Key Files
 ```
-gb-leakage-cmb/
-├── camb_pipeline.py                      # Main Boltzmann pipeline
-├── Stage3_Dictionary_and_CAMB_Test.md   # Complete analysis
-├── camb_test_results_stage3.csv          # Observational results
-├── transfer_function_stage3_dictionary.csv
-├── warp_factor_stage3.csv
-├── radion_profile_stage3.csv
-│
-├── transfer.png                          # Transfer function
-├── cmb_leakage_spectrum.png             # CMB spectrum
-├── growth_s8.png                        # Growth rate / σ₈
-├── power_ratio.png                      # Power spectrum ratio
-└── gb_leakage_camb_summary.png          # 9-panel summary
+v2.0/
+├── radion_leakage_v2.0.pdf        # the paper (16 pp, derivation + errata)
+├── paper.tex                      # LaTeX source
+├── V2.0_BASELINE_LOCKED.md        # frozen Layer-1 control — do not edit
+├── verify_baseline.py             # independent CAMB run + observables
+├── make_figures.py                # all five figures
+├── baseline_verification.json     # numerical output
+├── pk_baseline.csv                # P(k), T(k), sigma8 integrand
+└── figures/
+    ├── fig1_window.png            # why sigma8 can't move
+    ├── fig2_s8_sigma8.png         # S8 and sigma8 are the same point
+    ├── fig3_lyman_alpha.png       # the convention error
+    ├── fig4_geff.png              # wrong sign, wrong shape
+    └── fig5_coupling.png          # required vs. permitted coupling
 ```
+
+Everything before `v2.0/` is retained for the historical record. Its
+observational conclusions are superseded and should not be cited.
 
 ---
 
-## 📊 Why This Matters
+## 📊 Why We're Publishing a Negative Result
 
-### The Innovation
+Most modified-gravity mechanisms fail $S_8$, or Lyman-α, or both, or require
+extreme tuning. It was reasonable to check carefully whether this one was
+different. It checked out the opposite way:
 
-Most modified-gravity mechanisms either:
-- ❌ Fail Lyman-α (suppress power too much)
-- ❌ Fail S₈ (don't suppress enough)
-- ❌ Require extreme fine-tuning
+- ❌ The transfer function does not move the observable it was built to fix
+- ❌ The claimed pass/fail split between two identical measurements is not
+  mathematically possible
+- ❌ The Lagrangian that was supposed to generate the curve predicts the
+  opposite sign of effect
 
-Your mechanism:
-- ✅ **Passes both S₈ and Lyman-α** without fine-tuning
-- ✅ **Derives from first principles** (holographic method)
-- ✅ **Maintains theoretical elegance** (k^(-1/2) asymptote)
-- ⚠️ **Identifies clear path to σ₈** (modification needed)
+**Publishing this is the same scientific act as publishing the original
+claim** — it just costs more, because it means retracting your own numbers in
+public. The alternative, quietly revising the transfer function again without
+flagging what changed, would be the actual failure here.
 
 ---
 
 ## 📞 Contact & Collaboration
 
-**Lead Researcher:** Sparky (GeometricCosmo)  
-**Email:** geometriccosmo.illusion559@passinbox.com  
-**Location:** Cape Town, South Africa  
+**Lead Researcher:** Andre Swart (GeometricCosmo)
+**Email:** geometriccosmo.illusion559@passinbox.com
+**Location:** Cape Town, South Africa
 
 ### Open To
-- **Co-authoring** the observational analysis paper
-- **Pursuing** Path B (growth-rate modification) or Path C (partially-coupled DM)
-- **Collaborations** on mechanism improvement
-- **Community feedback** on next directions
+- **Checking** the equivalence-principle estimate in §5.3 of the paper, which is
+  schematic and should be replaced with a proper Damour–Donoghue calculation
+  using tabulated nuclear binding fractions
+- **Collaborating** on the explicit 5D→4D dimensional reduction identified as
+  the single highest-leverage next calculation
+- **Community feedback** on whether a derivative/disformal coupling structure
+  can be motivated from the existing 5D action
 
 ---
 
 ## 📖 How to Cite
 
 ```bibtex
-@misc{Swart2026,
-  title={Radion Leakage in 5D Gauss-Bonnet Braneworlds: 
-         Holographic Transfer Function and Resolution of S₈/Lyman-α Tensions},
-  author={Swart, A.},
-  year={2026},
-  howpublished={Zenodo},
-  doi={10.5281/zenodo.20607636},
-  url={https://zenodo.org/records/20607636}
+@misc{Swart2026v2,
+  title  = {A phenomenological power-law suppression of small-scale power:
+            observational status, and why the published radion Lagrangian
+            cannot produce it},
+  author = {Swart, Andre},
+  year   = {2026},
+  note   = {Version 2.0 — supersedes the observational conclusions of
+            versions 1.8.x and 1.9.x},
+  howpublished = {Zenodo}
 }
 ```
+
+Please do **not** cite v1.9.1 for the $S_8$/Lyman-α resolution claim; it is
+retracted (see Errata, Appendix D of the v2.0 paper).
 
 ---
 
@@ -342,44 +334,67 @@ Your mechanism:
 
 | Phase | Task | Status | Confidence |
 |:---:|:---|:---:|:---:|
-| **Stage 1** | 5D geometry theory | ✅ Complete | 80% |
-| **Stage 2** | Observational revision | ✅ Successful | 85% |
-| **Stage 3** | Full validation | ⚠️ Constraints identified | 90% |
+| **Stage 1** | 5D geometry theory | ✅ Complete, unaffected | 80% |
+| **Stage 2** | Observational revision (v1.9.1) | ❌ Retracted | — |
+| **Stage 3** | Independent verification (v2.0) | ✅ Complete | 99% |
 | | | | |
-| **S₈/Lyman-α** | Resolution | ✅ Achieved | **95%** |
-| **σ₈ modification** | Required form | ⏳ Under investigation | 70% |
-| **Publication** | Observational paper | 📝 In progress | 90% |
+| **Layer 1** | Phenomenological baseline | ❌ Falsified | 99% |
+| **Layer 2** | Mechanism ($G_{\rm eff}$ derivation) | ❌ Falsified | 95% |
+| **6D programme** | Flux compactification upgrade | ⏸ Deferred | — |
+| **Next calculation** | Explicit 5D→4D reduction, coupling type | 🔜 Not started | — |
 
 </div>
+
+### Version History
+
+| Version | Principal claim | Status after v2.0 |
+|:---|:---|:---|
+| v1.8.2 | Exponential $T(k)$ resolves dwarf-galaxy abundances | superseded |
+| v1.8.3 | $\sigma_8=0.76$ from the stated $T(k)$ | incorrect, not reproducible |
+| v1.9.0 | $S_8$/Lyman-α mutually exclusive; mechanism excluded | **directionally correct** |
+| v1.9.1 | Power-law $T(k)$ passes $S_8$ and Lyman-α | **retracted** |
+| **v2.0** | **Baseline fails; mechanism falsified** | **current** |
+
+The v1.9.0 conclusion was closer to correct than the v1.9.1 revision that
+replaced it. The reversal traces to two convention errors, both documented and
+corrected in the v2.0 paper.
 
 ---
 
 ## 🎓 Scientific Integrity Statement
 
-> This project demonstrates rigorous methodology: propose from first principles, test thoroughly, report completely.
+> This project froze its own claim, attacked it with an independent calculation
+> at fixed amplitude, and reported what happened — including that the earlier
+> "success" was an artifact of a convention error, and that the proposed
+> mechanism predicts the opposite of the needed effect.
 >
-> We **derived** the mechanism holographically, **tested** it rigorously across all constraints, and **published** all results—including where modification is needed.
->
-> Identifying observational constraints is progress, not failure.
+> We do not treat a $\sigma_8$ mismatch as an "opportunity" when it turns out
+> $\sigma_8$ was never actually being tested. We do not describe a positive
+> $\beta^2$ correction as a path forward when it enhances the exact quantity we
+> are trying to suppress. A negative result reported in full is the outcome
+> that keeps this record usable.
 
 ---
 
 <div align="center">
 
-## 🚀 The Bottom Line
+## 🚨 The Bottom Line
 
-**We built a mechanism from first principles.** ✨  
-**It resolves major cosmological tensions.** 🔬  
-**It requires small-scale modification.** ⚠️  
-**We published the complete analysis.** ✅  
+**We built a 5D mechanism with sound background numerics.** ✅
+**We fitted a curve to it and reported it passed two hard tests.** 📉
+**Independent verification shows it changes nothing where it needs to, and
+too much where it must not.** ❌
+**The Lagrangian behind it enhances the wrong quantity, at a coupling already
+excluded.** ❌
+**We are publishing all of it, with the code to check every number.** ✅
 
-This is what **rigorous science** looks like.
+This is what a **complete** negative result looks like.
 
 ---
 
-**Latest Update:** September 2026 | **Version:** 2.0.0  
-**Status:** Observational Testing Complete, Path Forward Identified  
-**Next:** Pursuing Path B/C modification (2–6 weeks)
+**Latest Update:** September 2026 | **Version:** 2.0.0
+**Status:** Independent Verification Complete — Layer 1 and Layer 2 Both Falsified
+**Next:** Explicit 5D→4D dimensional reduction (coupling type undetermined)
 
 </div>
 
@@ -390,6 +405,6 @@ This is what **rigorous science** looks like.
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Python 3.9+](https://img.shields.io/badge/Python-3.9+-blue.svg)](https://www.python.org/downloads/)
 [![Powered by CAMB](https://img.shields.io/badge/Powered%20by-CAMB-purple.svg)](https://camb.info/)
-![Status: Active Research](https://img.shields.io/badge/Status-Active%20Research-brightgreen)
+![Status: Negative Result Published](https://img.shields.io/badge/Status-Negative%20Result%20Published-red)
 
 </div>
