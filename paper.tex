@@ -1,0 +1,948 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{mathptmx}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{xcolor}
+\usepackage[margin=2.6cm]{geometry}
+\usepackage{caption}
+\usepackage{framed}
+\usepackage[colorlinks=true,linkcolor=blue!55!black,citecolor=blue!55!black,
+            urlcolor=blue!55!black]{hyperref}
+\usepackage{fancyhdr}
+\usepackage{enumitem}
+
+\captionsetup{font=small,labelfont=bf,width=0.94\textwidth}
+\pagestyle{fancy}\fancyhf{}
+\fancyhead[L]{\small Power-law suppression and the status of radion leakage}
+\fancyhead[R]{\small\thepage}
+\renewcommand{\headrulewidth}{0.3pt}
+
+\newcommand{\Mpl}{M_{\rm Pl}}
+\newcommand{\hMpc}{h\,\mathrm{Mpc}^{-1}}
+\newcommand{\LCDM}{\Lambda\mathrm{CDM}}
+\newcommand{\Geff}{G_{\rm eff}}
+\newcommand{\meff}{m_{\rm eff}}
+
+\definecolor{boxgrey}{gray}{0.95}
+\newenvironment{keybox}
+  {\begin{framed}\small\noindent}
+  {\end{framed}}
+
+\title{\bfseries A phenomenological power-law suppression\\[2pt]
+of small-scale power:\\[6pt]
+\large observational status, and why the published\\
+radion Lagrangian cannot produce it}
+
+\author{Andre Swart\\[2pt]
+\small GeometricCosmo, Cape Town, South Africa\\
+\small \texttt{geometriccosmo.illusion559@passinbox.com}}
+
+\date{September 2026 \quad|\quad Version 2.0}
+
+\begin{document}
+\maketitle
+\thispagestyle{empty}
+
+\begin{abstract}
+\noindent
+A broken power-law transfer function, $T(k)=(1.5/k)^{1/2}$ for $k\ge1.5\,\hMpc$ and
+$T=1$ below, was previously reported to satisfy $S_8$ and Lyman-$\alpha$ constraints
+simultaneously while leaving $\sigma_8$ too high, and was attributed to a radion
+degree of freedom in a five-dimensional Gauss--Bonnet braneworld. We freeze that
+function and its reported numbers as an immutable phenomenological baseline, then
+test the baseline and the attribution independently.
+
+The baseline does not survive. An independent \textsc{camb} run at fixed $A_s$ shows
+that the function changes $\sigma_8$ by $-4.8\times10^{-5}$ in fractional terms,
+because only $0.048\%$ of the $\sigma_8$ variance lies above the break scale.
+It follows that $S_8$ is unchanged as well: $S_8$ and $\sigma_8$ differ only by the
+fixed factor $(\Omega_m/0.3)^{1/2}=1.025$, so the reported pattern of an $S_8$ pass
+alongside a $\sigma_8$ failure is not attainable. Both sit $1.7\sigma$ above the
+weak-lensing target. The reported Lyman-$\alpha$ ratio of $0.891$ is reproduced only
+if $T$ multiplies $P(k)$ rather than the density contrast, and only if the average
+includes two sampling points at which $T\equiv1$ by construction; under the standard
+convention the suppression reaches $70\%$ at $k=5\,\hMpc$, which is excluded.
+
+We then derive, from the published radion equation of motion, the quasi-static
+effective gravitational coupling
+$\Geff/G = 1+2\beta^2k^2/(k^2+a^2\meff^2)$. This fails in three independent ways.
+The correction scales as $\beta^2$ and is therefore positive: the mechanism enhances
+clustering and cannot lower $\sigma_8$. Its shape is a saturating Yukawa step, not a
+declining power law. And because the coupling reaches non-relativistic matter only
+through electromagnetic binding energy, the strength required for a percent-level
+effect exceeds existing Solar-System and equivalence-principle limits by at least
+four orders of magnitude. A previously reported screening factor of $10^{42}$ is
+withdrawn as a category error; the correct statement is that the Lagrangian contains
+no screening mechanism at all.
+
+We state the conditions any successor mechanism must satisfy, and argue that the
+proposed move to six-dimensional flux compactification should be deferred, since
+none of the three failures depends on the number of dimensions.
+\end{abstract}
+
+\vspace{6pt}
+\begin{keybox}
+\textbf{Status of this document.} This is a negative result. It supersedes the
+observational claims of versions 1.8.x and 1.9.x of this project, which should not
+be cited for the conclusions listed in Appendix~D. The 5D background numerics and
+the reproducibility infrastructure are unaffected and remain available.
+\end{keybox}
+
+\newpage
+\tableofcontents
+\newpage
+
+%=====================================================================
+\section{Introduction}
+
+The amplitude of late-time matter clustering inferred from weak gravitational
+lensing sits persistently below the value extrapolated from the cosmic microwave
+background under $\LCDM$. Depending on the survey and the treatment of systematics,
+weak-lensing analyses prefer $S_8\equiv\sigma_8(\Omega_m/0.3)^{1/2}$ near $0.76$--$0.78$,
+while \emph{Planck} 2018 gives $S_8=0.832\pm0.013$. The discrepancy is at the level
+of two to three standard deviations and has motivated a large number of proposals
+that suppress small-scale power or slow late-time growth.
+
+Any such proposal has to thread a narrow gap. Suppression strong enough to move
+$S_8$ must act at scales the $\sigma_8$ filter can see, roughly
+$k\lesssim1\,\hMpc$. Suppression that extends to $k\sim1$--$10\,\hMpc$ runs into the
+Lyman-$\alpha$ forest, which constrains the one-dimensional flux power spectrum and
+therefore the three-dimensional matter power over precisely that range. These two
+requirements pull in opposite directions across roughly one decade in wavenumber,
+and most mechanisms fail one of them.
+
+Earlier versions of this project proposed that a radion in a five-dimensional
+Gauss--Bonnet braneworld, coupled to the electromagnetic sector, produces a broken
+power-law transfer function that threads this gap. The claim had two parts, which
+we will keep carefully separate:
+
+\begin{description}[leftmargin=2.2em,style=nextline,itemsep=2pt]
+\item[Layer 1 --- Phenomenology.] A particular function $T(k)$, applied to the
+$\LCDM$ power spectrum, yields a specified set of observables.
+\item[Layer 2 --- Mechanism.] Radion leakage in a braneworld produces that function.
+\item[Layer 3 --- Derivation.] The higher-dimensional field equations require that
+function uniquely.
+\end{description}
+
+\noindent
+Layer 3 was never claimed. This paper tests Layers 1 and 2. Both fail, Layer 1 for
+reasons that have nothing to do with braneworlds and everything to do with the
+$\sigma_8$ window function, and Layer 2 for reasons that have nothing to do with the
+number of extra dimensions.
+
+Section~\ref{sec:baseline} freezes the baseline. Section~\ref{sec:verify} reports an
+independent verification and three corrections. Section~\ref{sec:geff} derives
+$\Geff(k,a)$ from the published Lagrangian, and Section~\ref{sec:failures} states the
+three ways it fails. Section~\ref{sec:screening} withdraws the earlier screening
+result. Sections~\ref{sec:comoving}--\ref{sec:6d} set out what a successor mechanism
+would need and why the six-dimensional programme should wait.
+
+%=====================================================================
+\section{The frozen baseline (Layer 1)}\label{sec:baseline}
+
+To prevent the target from moving during the analysis, we fix the following and do
+not alter them anywhere in this paper.
+
+\paragraph{Transfer function.}
+\begin{equation}
+T(k)=
+\begin{cases}
+1, & k<k_c,\\[2pt]
+\left(k_c/k\right)^{1/2}, & k\ge k_c,
+\end{cases}
+\qquad k_c = 1.5\,\hMpc .
+\label{eq:Tk}
+\end{equation}
+Both $k_c$ and the index $1/2$ are fitted quantities. They are not derived from any
+five- or six-dimensional calculation, and we do not treat them as such.
+
+\paragraph{Cosmology.} \emph{Planck} 2018 TT,TE,EE$+$lowE$+$lensing best fit, with
+$A_s$ held fixed. No amplitude rescaling is permitted at any stage, since allowing
+$A_s$ to float would absorb precisely the effect under test. Values are listed in
+Table~\ref{tab:cosmo}.
+
+\begin{table}[htb]
+\centering
+\small
+\begin{tabular}{lll}
+\toprule
+Parameter & Value & Note\\
+\midrule
+$H_0$        & $67.36$ km s$^{-1}$Mpc$^{-1}$ & \\
+$\Omega_b h^2$ & $0.02237$ & \\
+$\Omega_c h^2$ & $0.1200$  & \\
+$\sum m_\nu$ & $0.06$ eV & one massive eigenstate\\
+$\tau$       & $0.0544$  & \\
+$A_s$        & $2.100\times10^{-9}$ & \textbf{fixed, never rescaled}\\
+$n_s$        & $0.9649$  & \\
+$\Omega_k$   & $0$       & \\
+\midrule
+$\Omega_m$   & $0.31519$ & derived\\
+$(\Omega_m/0.3)^{1/2}$ & $1.02501$ & derived; fixes $S_8/\sigma_8$\\
+\bottomrule
+\end{tabular}
+\caption{Frozen cosmological inputs. Linear matter power only; no non-linear
+prescription is applied, since the baseline $T(k)$ is a linear-theory object.}
+\label{tab:cosmo}
+\end{table}
+
+\paragraph{Observables.} With $W(x)=3(\sin x-x\cos x)/x^3$ the real-space top-hat
+window,
+\begin{equation}
+\sigma_R^2=\int\frac{\mathrm{d}k}{k}\,\frac{k^3P(k)}{2\pi^2}\,W^2(kR),
+\qquad R=8\,h^{-1}\mathrm{Mpc},
+\label{eq:sigma8}
+\end{equation}
+\begin{equation}
+S_8=\sigma_8\left(\Omega_m/0.3\right)^{1/2},
+\label{eq:S8}
+\end{equation}
+and the Lyman-$\alpha$ ratio as originally defined, namely the unweighted mean of
+$P_{\rm mod}(k)/P_{\LCDM}(k)$ at $k=0.5,\,1.0,\,2.0,\,3.0\,\hMpc$.
+
+\paragraph{Reported numbers.} The values to be tested are
+\begin{equation}
+S_8=0.829,\qquad \sigma_8=0.811,\qquad
+\text{Lyman-}\alpha\text{ ratio}=0.891,
+\end{equation}
+previously annotated as \textsc{pass}, \textsc{fail}, \textsc{pass} respectively
+against targets $S_8=0.78\pm0.03$, $\sigma_8=0.76\pm0.03$, and a Lyman-$\alpha$
+ratio in $[0.70,0.90]$.
+
+%=====================================================================
+\section{Independent verification, and three corrections}\label{sec:verify}
+
+We ran \textsc{camb} 2.0.4 with the parameters of Table~\ref{tab:cosmo}, extracted
+the linear $P(k)$ at $z=0$ over $10^{-4}\le k\le100\,\hMpc$ on $4000$ logarithmic
+points, and evaluated Eqs.~\eqref{eq:sigma8}--\eqref{eq:S8} by Simpson quadrature.
+As a check on the quadrature, our $\LCDM$ value $\sigma_8=0.81125$ agrees with
+\textsc{camb}'s internal $\sigma_8=0.81107$ to $2\times10^{-4}$ fractionally.
+The script is \texttt{verify\_baseline.py}; its output is
+\texttt{baseline\_verification.json}.
+
+Three separate problems emerge.
+
+%---------------------------------------------------------------------
+\subsection{Correction 1: the transfer function does not move \texorpdfstring{$\sigma_8$}{sigma8} at all}
+
+Applying Eq.~\eqref{eq:Tk} in the standard way, $P_{\rm mod}(k)=T^2(k)P_{\LCDM}(k)$,
+gives
+\begin{equation}
+\sigma_8^{\rm mod}=0.81121,
+\qquad
+\frac{\sigma_8^{\rm mod}}{\sigma_8^{\LCDM}}-1 = -4.8\times10^{-5}.
+\end{equation}
+The change is five orders of magnitude smaller than the $6.7\%$ shift that would be
+needed to reach $\sigma_8=0.76$.
+
+The reason is visible in Figure~\ref{fig:window}. The integrand of
+Eq.~\eqref{eq:sigma8} peaks near $k\simeq0.2\,\hMpc$ and is already negligible by
+$k\simeq1\,\hMpc$, because the top-hat window oscillates and decays as $k^{-2}$
+beyond $kR\sim\pi$. Integrating the measured integrand, the fraction of the total
+$\sigma_8$ variance carried by $k\ge k_c=1.5\,\hMpc$ is
+\begin{equation}
+\frac{\int_{k_c}^{\infty}\mathrm{d}\ln k\; \mathrm{d}\sigma_8^2/\mathrm{d}\ln k}
+     {\int_{0}^{\infty}\mathrm{d}\ln k\; \mathrm{d}\sigma_8^2/\mathrm{d}\ln k}
+= 4.8\times10^{-4} \;=\; 0.048\%.
+\end{equation}
+A function that is identically unity below $k_c$ therefore cannot alter $\sigma_8$,
+whatever it does above $k_c$. This is a statement about filters, not about physics,
+and it holds for any modification of this form.
+
+\begin{figure}[htb]
+\centering
+\includegraphics[width=0.78\textwidth]{figures/fig1_window.png}
+\caption{\textbf{Why the baseline cannot work.} \emph{Top:} the frozen transfer
+function and the corresponding power suppression $T^2$. \emph{Bottom:} the
+contribution per logarithmic interval to $\sigma_8^2$ in $\LCDM$. The modification
+switches on exactly where the $\sigma_8$ filter has stopped listening. Only
+$0.048\%$ of the variance lies above $k_c$.}
+\label{fig:window}
+\end{figure}
+
+%---------------------------------------------------------------------
+\subsection{Correction 2: \texorpdfstring{$S_8$}{S8} and \texorpdfstring{$\sigma_8$}{sigma8} are the same measurement}
+
+Since $\Omega_m$ is fixed by Table~\ref{tab:cosmo} and is unaffected by a transfer
+function applied at $z=0$, Eq.~\eqref{eq:S8} is a fixed multiplication:
+\begin{equation}
+S_8 = 1.02501\,\sigma_8 .
+\end{equation}
+There is no freedom for one to pass while the other fails. Quantitatively, the
+baseline gives
+\begin{equation}
+\sigma_8=0.8112,\qquad S_8=0.8315,
+\end{equation}
+against targets $0.76\pm0.03$ and $0.78\pm0.03$, which are themselves consistent
+with each other under the same rescaling ($0.76\times1.025=0.779$). The deviations
+are
+\begin{equation}
+\frac{0.8112-0.76}{0.03}=1.71\sigma,
+\qquad
+\frac{0.8315-0.78}{0.03}=1.72\sigma .
+\end{equation}
+These are the same number. The earlier annotation of $S_8$ as a pass and $\sigma_8$
+as a failure arose from comparing a slightly low quoted value ($0.829$ rather than
+the correct $0.8315$) against the looser of two equivalent targets. Both quantities
+are $1.7\sigma$ high; neither passes. Figure~\ref{fig:s8} shows the geometry.
+
+\begin{figure}[htb]
+\centering
+\includegraphics[width=0.66\textwidth]{figures/fig2_s8_sigma8.png}
+\caption{\textbf{The claimed pass/fail split is not attainable.} With $\Omega_m$
+fixed, the model is confined to the black line. The baseline point coincides with
+$\LCDM$ to four decimal places and lies outside both target bands (green). Dotted
+guides show how projecting the same point onto the two axes produced the
+appearance of one pass and one failure.}
+\label{fig:s8}
+\end{figure}
+
+%---------------------------------------------------------------------
+\subsection{Correction 3: the Lyman-\texorpdfstring{$\alpha$}{alpha} ratio is a convention artefact}
+
+A transfer function multiplies the density contrast, so the power spectrum carries
+$T^2$. Evaluating the four-point mean under both conventions:
+\begin{equation}
+\left\langle \frac{T^2P}{P}\right\rangle_{4} = 0.8125,
+\qquad
+\left\langle \frac{TP}{P}\right\rangle_{4} = 0.8933 .
+\end{equation}
+The reported value, $0.891$, matches the second. The quoted Lyman-$\alpha$ pass
+therefore rests on applying $T$ to the power spectrum rather than to the density
+field, which is off by one power.
+
+A second issue compounds it. Two of the four sampling points, $k=0.5$ and
+$k=1.0\,\hMpc$, lie below $k_c$, where $T\equiv1$ by construction. Half the average
+is a tautology, and it pulls the mean upward by design. Sampling the range that the
+Lyman-$\alpha$ forest actually constrains, under the standard convention, gives
+Table~\ref{tab:lya}: a $25\%$ suppression at $k=2$, $50\%$ at $k=3$, $70\%$ at $k=5$,
+and $85\%$ at $k=10\,\hMpc$. Suppressions of this size across this range are excluded
+by a wide margin; typical analyses tolerate at most tens of percent. See
+Figure~\ref{fig:lya}.
+
+\begin{table}[htb]
+\centering
+\small
+\begin{tabular}{lcccccc}
+\toprule
+$k\;[\hMpc]$ & 1.0 & 2.0 & 3.0 & 5.0 & 8.0 & 10.0\\
+\midrule
+$P_{\rm mod}/P_{\LCDM}$, standard ($T^2$) & $1.000$ & $0.750$ & $0.500$ & $0.300$ & $0.188$ & $0.150$\\
+suppression & $0\%$ & $25\%$ & $50\%$ & $70\%$ & $81\%$ & $85\%$\\
+\bottomrule
+\end{tabular}
+\caption{Power suppression from the frozen $T(k)$ under the standard convention,
+over the range the Lyman-$\alpha$ forest constrains. The quoted ratio of $0.891$
+describes none of this.}
+\label{tab:lya}
+\end{table}
+
+\begin{figure}[htb]
+\centering
+\includegraphics[width=0.72\textwidth]{figures/fig3_lyman_alpha.png}
+\caption{\textbf{Two conventions, two conclusions.} The dashed curve is what was
+evaluated; the solid curve is the standard $P\propto T^2$. Open circles mark the four
+sampling points behind the quoted ratio, two of which sit in the region where
+$T\equiv1$ by construction. The green band indicates the order of magnitude of
+tolerable suppression.}
+\label{fig:lya}
+\end{figure}
+
+%---------------------------------------------------------------------
+\subsection{Corrected baseline}
+
+\begin{table}[htb]
+\centering
+\small
+\begin{tabular}{lccl}
+\toprule
+Observable & Previously reported & Verified here & Verdict\\
+\midrule
+$\sigma_8$ & $0.811$, \textsc{fail} & $0.8112$ & value correct; but it is the
+$\LCDM$ value\\
+$S_8$ & $0.829$, \textsc{pass} & $0.8315$ & $1.7\sigma$ high; not a pass\\
+Lyman-$\alpha$ ratio & $0.891$, \textsc{pass} & $0.8125$ & wrong convention;
+excluded under the right one\\
+$\Delta\sigma_8/\sigma_8$ & --- & $-4.8\times10^{-5}$ & the mechanism does nothing\\
+\bottomrule
+\end{tabular}
+\caption{Corrected Layer-1 baseline. The frozen $T(k)$ leaves $\sigma_8$ and $S_8$
+at their $\LCDM$ values and violates Lyman-$\alpha$ constraints once the standard
+convention is used.}
+\label{tab:corrected}
+\end{table}
+
+\noindent
+The honest summary of Layer 1 is that the frozen function has the worst of both
+outcomes: it does nothing where help is needed and too much where it is not.
+
+%=====================================================================
+\section{The effective coupling from the published Lagrangian}\label{sec:geff}
+
+Layer 1 is already fatal for the observational claim. Layer 2 is worth testing
+anyway, because the outcome determines whether any refitted version of the
+mechanism could work, and because it governs whether the proposed
+six-dimensional programme is worth starting.
+
+\subsection{Action}
+
+The published equation of motion,
+\begin{equation}
+\ddot r+3H\dot r-\frac{1}{a^2}\nabla^2r+m_r^2r+(\gamma+3\beta_3)r^2+\delta r^3
++\alpha r\!\left(\dot r^2-(\nabla r)^2\right)
+=\frac{\lambda}{M_5^{3/2}}(\partial_\mu\phi)^2,
+\label{eq:eom}
+\end{equation}
+follows from
+\begin{equation}
+S=\int\!\mathrm{d}^4x\sqrt{-g}\left[\frac{\Mpl^2}{2}R-\frac12(\partial r)^2-V(r)
+-\frac{\alpha}{2}r(\partial r)^2+\frac{\lambda}{M_5^{3/2}}\,r\,(\partial\phi)^2\right]
++S_m[\psi,g_{\mu\nu}],
+\label{eq:action}
+\end{equation}
+with $V(r)=\tfrac12 m_r^2r^2+\tfrac13(\gamma+3\beta_3)r^3+\tfrac14\delta r^4$. Two
+features of Eq.~\eqref{eq:action} govern everything below. The radion kinetic term
+has standard sign, so the field is not a ghost. And the matter sector $S_m$ is
+minimally coupled: there is no conformal factor multiplying $g_{\mu\nu}$ and no
+$r\,T^{\mu}{}_{\mu}$ term. The only route from $r$ to matter is the last term in the
+bracket, which is of the electromagnetic $F^2$ type.
+
+\subsection{How an \texorpdfstring{$F^2$}{F2} coupling reaches non-relativistic matter}
+\label{sec:damour}
+
+Free radiation has $\langle F_{\mu\nu}F^{\mu\nu}\rangle=0$, so the coupling does not
+act on the photon background. It reaches ordinary matter through the electromagnetic
+self-energy of bound systems, principally the Coulomb energy of nuclei. This is the
+standard construction for dilaton- and moduli-like fields. Writing $\xi_A$ for the
+fraction of the mass of body $A$ contributed by electromagnetic binding,
+\begin{equation}
+m_A(r)=m_A\left[1+\xi_A\frac{\lambda}{M_5^{3/2}}\,r+\mathcal{O}(r^2)\right],
+\qquad \xi_A\sim10^{-3},
+\end{equation}
+and the dimensionless coupling that controls all scalar-mediated effects is
+\begin{equation}
+\boxed{\;\beta_A \equiv \Mpl\frac{\partial\ln m_A}{\partial r}
+= \Mpl\,\xi_A\,\frac{\lambda}{M_5^{3/2}}\;}
+\label{eq:beta}
+\end{equation}
+Two properties matter later. First, $\beta_A$ is independent of the field value,
+because the coupling in Eq.~\eqref{eq:action} is linear in $r$. Second, $\xi_A$
+depends on composition, roughly as $Z^2/A^{4/3}$, so $\beta_A$ differs between
+materials.
+
+\subsection{Quasi-static reduction}
+
+Write $r=\bar r(t)+\delta r(\mathbf{k},t)$ and keep the action to quadratic order.
+The cubic and quartic terms of $V$, and the derivative self-interaction
+$\alpha r(\partial r)^2$, contribute to the linear equation for $\delta r$ only
+through the background-dependent effective mass
+\begin{equation}
+\meff^2 = V''(\bar r)\big/\!\left(1+\alpha\bar r\right) + \mathcal{O}(\dot{\bar r}^2),
+\end{equation}
+and do not generate any new coupling between $\delta r$ and $\delta\rho_m$ at this
+order. (This is checked explicitly in Appendix~A.) Inside the sound horizon and for
+$k/a\gg H$ the time derivatives of $\delta r$ are negligible against $k^2/a^2$, and
+\begin{equation}
+\left(\frac{k^2}{a^2}+\meff^2\right)\delta r
+=\frac{\beta}{\Mpl}\,\delta\rho_m
+\qquad\Longrightarrow\qquad
+\delta r=\frac{\beta}{\Mpl}\,
+\frac{\delta\rho_m}{k^2/a^2+\meff^2}.
+\label{eq:deltar}
+\end{equation}
+Matter responds to the gradient of $\Phi+(\beta/\Mpl)\delta r$, with the Newtonian
+potential obeying $-k^2\Phi/a^2=4\pi G\,\delta\rho_m$. Substituting
+Eq.~\eqref{eq:deltar} into the geodesic equation and using $8\pi G\Mpl^2=1$,
+\begin{equation}
+\ddot\delta_m+2H\dot\delta_m=4\pi G_{\rm eff}(k,a)\,\rho_m\delta_m,
+\end{equation}
+\begin{equation}
+\boxed{\;
+\frac{\Geff(k,a)}{G}=1+2\beta^2\,\frac{k^2}{k^2+a^2\meff^2}\;}
+\label{eq:geff}
+\end{equation}
+This is the familiar scalar-tensor result, and its familiarity is the point: nothing
+about the braneworld origin of $r$ modifies it.
+
+%=====================================================================
+\section{Three independent failures}\label{sec:failures}
+
+\subsection{Sign}
+
+The correction in Eq.~\eqref{eq:geff} is proportional to $\beta^2$. It is positive
+for every real value of $\lambda$, $M_5$ and $\xi_A$, and for either sign of the
+coupling. This is not an artefact of the parameterisation. Exchange of a spin-zero
+quantum between two sources of like charge is attractive, so any healthy scalar
+linearly coupled to matter increases the effective gravitational attraction. There
+is no choice of parameters for which $\Geff<G$.
+
+The consequence is direct: \emph{the mechanism as written raises $\sigma_8$ and
+$S_8$}. It moves the observables in the wrong direction. Integrating the growth
+equation numerically (Appendix~A) gives, for $\beta=0.10$,
+$\Delta P/P=+16\%$ at $k=5\,\hMpc$, and for $\beta=0.22$, $+104\%$.
+Figure~\ref{fig:geff} shows both panels.
+
+The only formal escape is a wrong-sign kinetic term for $r$, which would make the
+scalar a ghost. That is not a physical option and we do not pursue it.
+
+\begin{figure}[htb]
+\centering
+\includegraphics[width=0.96\textwidth]{figures/fig4_geff.png}
+\caption{\textbf{The derived response, against the response required.}
+\emph{(a)} $\Geff/G$ from Eq.~\eqref{eq:geff}: above unity everywhere, rising through
+the transition at $k=a\meff$, saturating at $1+2\beta^2$.
+\emph{(b)} The resulting fractional change in $P(k)$ at $z=0$ (red) against the
+change the fitted $T(k)$ encodes (blue). They occupy opposite half-planes.}
+\label{fig:geff}
+\end{figure}
+
+\subsection{Shape}
+
+Even setting sign aside, the functional forms are incompatible. Equation
+\eqref{eq:geff} describes a \emph{saturating step}: flat and negligible for
+$k\ll a\meff$, rising through a transition, and constant at $1+2\beta^2$ for
+$k\gg a\meff$. The fitted Eq.~\eqref{eq:Tk} is the mirror image: flat at unity for
+$k<k_c$, then declining without bound as $k^{-1/2}$.
+
+The distinction is not cosmetic. The Lyman-$\alpha$ behaviour of the fitted form
+depends entirely on continued decline in the tail. The dynamics gives a plateau
+there. No value of $\meff$, $\beta$ or $M_5$ interpolates between a bounded step and
+an unbounded power law.
+
+A further mismatch appears in panel (b) of Figure~\ref{fig:geff}. The predicted
+$\Delta P/P$ is non-zero even at $k=0.01\,\hMpc$, where one might expect the Yukawa
+cutoff to protect large scales. It is not protected, because the comoving Compton
+scale $a\meff$ shrinks towards zero as $a\to0$: at early times the force is
+effectively long-range at all comoving wavenumbers, and every mode accumulates some
+enhancement. The result is closer to a scale-independent amplitude shift than to a
+localised feature. We return to this in Section~\ref{sec:comoving}.
+
+\subsection{Magnitude}
+
+Reaching $\sigma_8=0.76$ requires $|\Delta P/P|\sim0.1$ near $k\sim0.2\,\hMpc$, hence
+$\beta\simeq0.2$ and $\beta^2\simeq5\times10^{-2}$.
+
+The available coupling is far smaller. Because $\meff^{-1}\sim$ Mpc, the force is of
+effectively infinite range for every laboratory and Solar-System test, and because
+the coupling is linear in $r$ there is no screening (Section~\ref{sec:screening}).
+Two independent classes of bound apply.
+
+\begin{itemize}[leftmargin=1.4em,itemsep=2pt]
+\item \textbf{Composition-independent.} A long-range scalar coupled to matter with
+strength $\beta$ shifts the PPN parameter $\gamma$ by $\Delta\gamma\simeq-2\beta^2$.
+The Cassini bound $|\gamma-1|<2.3\times10^{-5}$ then gives
+$\beta^2\lesssim10^{-5}$, a shortfall of at least four orders of magnitude. We treat
+this as the conservative floor.
+\item \textbf{Composition-dependent.} Because $\xi_A$ varies between materials,
+$\beta_A$ does too, and the scalar produces a differential acceleration.
+Schematically $\eta\sim\beta^2\,\Delta\xi/\bar\xi$ with $\Delta\xi/\bar\xi=\mathcal{O}(0.1$--$1)$
+between the Ti and Pt test masses. The MICROSCOPE limit $|\eta|<10^{-15}$ then
+implies $\beta^2\lesssim10^{-14}$, a shortfall of thirteen orders.
+\end{itemize}
+
+\noindent
+The second estimate is schematic and should be replaced by a proper calculation with
+tabulated nuclear $\xi_A$ before it is quoted as a number. The first does not depend
+on that refinement. Either way the requirement is not close to being met; see
+Figure~\ref{fig:coupling}.
+
+\begin{figure}[htb]
+\centering
+\includegraphics[width=0.84\textwidth]{figures/fig5_coupling.png}
+\caption{\textbf{Required versus permitted coupling.} The red band is what a
+percent-level effect on $\sigma_8$ demands. The blue band is the conservative
+Solar-System floor; the green band is the nominal equivalence-principle limit. The
+gap is at least four orders of magnitude and plausibly much larger.}
+\label{fig:coupling}
+\end{figure}
+
+\begin{keybox}
+\textbf{Verdict on Layer 2.} The published Lagrangian produces an enhancement rather
+than a suppression, with a saturating rather than declining $k$-dependence, at a
+coupling strength that existing experiments already exclude by at least four orders
+of magnitude. The attribution of the fitted $T(k)$ to radion leakage is falsified,
+not merely underived.
+\end{keybox}
+
+%=====================================================================
+\section{Withdrawal of the screening result}\label{sec:screening}
+
+An earlier calculation in this project reported a ratio of $10^{42}$ between local
+and cosmological values of $(\partial_\mu\phi)^2$, and interpreted it as a screening
+failure of that magnitude. We withdraw that interpretation.
+
+The quantity computed is the ratio of \emph{background source strengths}, which sets
+the local value of $\bar r$ through Eq.~\eqref{eq:eom}. It is not a screening factor.
+Screening means that the \emph{coupling} $\beta$ is suppressed in dense
+environments, which happens in three known ways: a density-dependent mass
+(chameleon), a density-dependent coupling (symmetron), or derivative
+self-interaction that suppresses the scalar gradient near a source (Vainshtein).
+Equation~\eqref{eq:action} realises none of them. The coupling is linear in $r$,
+so $\beta$ in Eq.~\eqref{eq:beta} is a constant, and the $\alpha r(\partial r)^2$
+term acts on the radion's own gradient, not on its coupling to matter.
+
+The corrected statement is stronger than the one withdrawn, and in the same
+direction:
+
+\begin{keybox}
+There is no screening mechanism in this Lagrangian. The composition dependence of
+$\xi_A$ therefore propagates without suppression into an Eötvös signal, and the
+magnitude bound of Section~\ref{sec:failures} applies with full force.
+\end{keybox}
+
+%=====================================================================
+\section{The comoving-scale problem}\label{sec:comoving}
+
+A feature at fixed \emph{comoving} wavenumber cannot be produced by a fixed proper
+length. Compactification radii, Compton wavelengths and force ranges are proper
+lengths; $k_c$ in Eq.~\eqref{eq:Tk} is comoving. Every genuine feature in the
+observed power spectrum arises instead from a time-dependent crossing condition:
+the horizon size at matter--radiation equality, a free-streaming length, or a Jeans
+scale.
+
+For a scalar mediator the natural identification is $k_c\simeq a\,\meff$, evaluated
+today. With $k_c=1.5\,\hMpc=1.01\,\mathrm{Mpc}^{-1}$ and
+$1\,\mathrm{Mpc}^{-1}=6.39\times10^{-30}$ eV,
+\begin{equation}
+\meff \simeq 6.5\times10^{-30}\ \mathrm{eV}
+\;\simeq\; 4.5\times10^{3}\,H_0,
+\qquad
+\meff^{-1}\simeq1\ \mathrm{Mpc}.
+\label{eq:mass}
+\end{equation}
+This is the number any successor construction must produce. It is worth recording
+how far it sits from a generic braneworld modulus mass. If $\meff$ is of order the
+Kaluza--Klein scale, sub-millimetre tests of Newtonian gravity require
+$\meff\gtrsim10^{-2}$~eV, twenty-eight orders of magnitude too heavy. If instead the
+modulus is a classically flat direction lifted only by whatever generates the
+residual vacuum energy, one expects $\meff\sim H_0$, and Eq.~\eqref{eq:mass} then
+demands a factor of a few thousand above that. The second regime is the only one
+within reach, and it is not generic.
+
+The same argument has a second edge. If $\meff$ is constant, the comoving feature
+drifts as $a^{-1}$, so the correct object is $T(k,z)$, not $T(k)$. The frozen
+baseline has no redshift dependence at all. Fitting a $z$-independent function to
+data drawn from several epochs is therefore inconsistent with the mechanism it was
+meant to represent, independently of everything in
+Sections~\ref{sec:geff}--\ref{sec:failures}.
+
+%=====================================================================
+\section{What a viable successor would require}\label{sec:requirements}
+
+Collecting the constraints, any mechanism that still wishes to be described as
+radion leakage and to suppress rather than enhance small-scale power must satisfy
+all of the following.
+
+\begin{enumerate}[leftmargin=1.6em,itemsep=4pt]
+\item \textbf{$\Delta G<0$, which rules out conformal scalar exchange.} The two
+known routes are genuine energy transfer out of the matter sector, so that
+$\dot\rho_m+3H\rho_m=-\Gamma\rho_m$ with $\Gamma$ derived rather than inserted, or a
+derivative or disformal coupling in the Horndeski class, where $\Geff<G$ is
+attainable in some parameter ranges. The first is what the word ``leakage'' ought to
+mean and is \emph{not} what Eq.~\eqref{eq:action} describes. Either route requires
+rewriting the coupling structure, not retuning it.
+
+\item \textbf{A suppression that does not drift.} Either $\meff\propto H$, in which
+case the feature tracks the horizon and will not sit at $1.5\,\hMpc$, or the model
+predicts an explicit $T(k,z)$ that must be fitted jointly across redshift.
+
+\item \textbf{A coupling that avoids the electromagnetic sector, or is screened.}
+Given Section~\ref{sec:failures}, an unscreened $F^2$ coupling of the required
+strength is excluded. A chameleon or Vainshtein sector would have to be added
+explicitly and shown to be stable.
+
+\item \textbf{Support where $\sigma_8$ lives.} Any $T$ that equals unity below
+$1\,\hMpc$ cannot move $\sigma_8$, by Figure~\ref{fig:window}. This is a constraint
+on the fitting function itself and is independent of the mechanism.
+
+\item \textbf{Simultaneous consistency with Lyman-$\alpha$.} Conditions 4 and 5
+together are the original difficulty, and nothing in this analysis has made it
+easier.
+\end{enumerate}
+
+%=====================================================================
+\section{Implications for the six-dimensional programme}\label{sec:6d}
+
+A move to a six-dimensional codimension-two construction, stabilised by bulk
+magnetic flux and a bulk cosmological constant, has been proposed as a way to derive
+$k_c$ from geometry rather than fitting it. We recommend deferring it, for three
+reasons.
+
+First, none of the failures in Section~\ref{sec:failures} depends on the number of
+dimensions. Equation~\eqref{eq:geff} follows from a light scalar with a healthy
+kinetic term coupled linearly to matter through $F^2$. That description survives
+dimensional reduction from five, six or ten dimensions. Flux compactification would
+determine how $\meff$ and $\lambda$ are fixed; it would not change the sign of
+$\beta^2$.
+
+Second, the claimed advantages of codimension-two are weaker than advertised. In the
+football and rugby-ball solutions the bulk flux must be tuned to obtain flat branes,
+the compact case requires two branes of exactly equal tension, and the apparent
+insensitivity of the brane geometry to brane vacuum energy does not survive a change
+of tension: these models remain subject to Weinberg's no-go theorem. Flux
+quantisation discretises the compactification radius; it does not select it, since
+the radius is fixed by a balance among the bulk cosmological constant, the gauge
+coupling and the flux integer. One fitted number would be traded for three inputs.
+
+Third, the premise that five dimensions cannot achieve dynamical scale selection is
+not correct. Goldberger--Wise stabilisation generates an exponential hierarchy from
+$\mathcal{O}(1)$ bulk parameters. The obstacle identified in
+Section~\ref{sec:comoving} is not the number of dimensions but the mapping from any
+proper length to a comoving wavenumber, and adding a dimension does not address it.
+
+The refined claim that does survive is narrower: codimension-two is the lowest
+setting in which the modulus potential comes from bulk field equations plus a
+topological quantisation condition, rather than from an added stabilising scalar.
+That is an improvement in economy. It is not an argument that the resulting scale is
+$1.5\,\hMpc$.
+
+%=====================================================================
+\section{Falsifiable content}\label{sec:predictions}
+
+This paper makes three statements that can be checked directly and would overturn
+the conclusion if found wrong.
+
+\begin{enumerate}[leftmargin=1.6em,itemsep=3pt]
+\item \textbf{The window-function claim.} Any Boltzmann code, with any reasonable
+cosmology, will find that a transfer function identically unity below $1.5\,\hMpc$
+changes $\sigma_8$ by less than $10^{-4}$ fractionally. This requires no model
+assumptions and can be confirmed in minutes with \texttt{verify\_baseline.py}.
+\item \textbf{The sign of $\Geff$.} If an explicit dimensional reduction of the 5D
+Gauss--Bonnet action yields a matter coupling that is \emph{not} of the conformal
+form assumed in Section~\ref{sec:damour}, for example a genuine disformal or
+derivative coupling, then Eq.~\eqref{eq:geff} does not apply and the sign
+argument must be redone. Producing that reduction explicitly is the natural
+next calculation, and is the one route by which the mechanism could be revived.
+\item \textbf{The magnitude bound.} A careful Damour--Donoghue treatment with
+tabulated $\xi_A$ would sharpen the equivalence-principle constraint. We predict it
+will tighten, not relax, the bound quoted in Section~\ref{sec:failures}.
+\end{enumerate}
+
+\noindent
+The prediction that would have been the interesting one, a distinctive
+$\Delta P(k,z)$ fingerprint testable against forthcoming wide-field data, is not
+available: the mechanism predicts enhancement at a level already excluded, so there
+is nothing left to test against future surveys.
+
+%=====================================================================
+\section{Conclusions}
+
+The broken power-law $T(k)=(1.5/k)^{1/2}$ remains a well-defined object that can be
+compared with data. What it does when compared is not what was reported. It leaves
+$\sigma_8$ and $S_8$ at their $\LCDM$ values, because $99.95\%$ of the $\sigma_8$
+variance lies below its break scale, and it suppresses the matter power spectrum by
+$50$--$85\%$ across the Lyman-$\alpha$ range once the standard $P\propto T^2$
+convention is applied. The reported pattern of an $S_8$ pass alongside a $\sigma_8$
+failure is not attainable at all, since the two quantities differ by a fixed factor
+of $1.025$.
+
+The attribution of the fitted curve to a radion in a Gauss--Bonnet braneworld is
+separately falsified. The published Lagrangian yields
+$\Geff/G=1+2\beta^2k^2/(k^2+a^2\meff^2)$: an enhancement, of saturating rather than
+power-law shape, at a coupling that Solar-System and equivalence-principle tests
+already exclude by at least four orders of magnitude. The earlier screening
+calculation is withdrawn, and replaced by the stronger statement that the Lagrangian
+contains no screening mechanism at all.
+
+We do not regard this as a reason to abandon the underlying programme, but we do
+regard it as a reason to change what is being built. The five-dimensional background
+numerics and the reproducibility infrastructure developed for this project are
+sound and unaffected. The next useful calculation is an explicit dimensional
+reduction of the 5D action, carried far enough to determine whether the induced
+matter coupling is conformal, as assumed here, or of a derivative type that could
+evade the sign argument. Until that is done, neither a refit of the transfer
+function nor a move to six dimensions rests on anything.
+
+%=====================================================================
+\section*{Data and code availability}
+\addcontentsline{toc}{section}{Data and code availability}
+
+All scripts, outputs and figures accompanying this paper are released with it:
+\texttt{verify\_baseline.py} (independent \textsc{camb} run and observable
+extraction), \texttt{make\_figures.py} (all figures),
+\texttt{baseline\_verification.json} (numerical results),
+\texttt{pk\_baseline.csv} (power spectra and the $\sigma_8$ integrand), and
+\texttt{V2.0\_BASELINE\_LOCKED.md} (the frozen definitions of
+Section~\ref{sec:baseline}). Every number in this paper is regenerated by running
+the two scripts in order. Repository:
+\url{https://github.com/GeometricCosmo/gb-leakage-cmb}.
+
+\section*{Acknowledgements}
+\addcontentsline{toc}{section}{Acknowledgements}
+
+The analysis in Sections~\ref{sec:verify}--\ref{sec:failures} was carried out with
+substantial assistance from large language model tooling, used for derivation
+checking, code generation and adversarial review. All numerical results were
+executed and are reproducible from the released scripts. Responsibility for the
+content, including any remaining errors, rests with the author.
+
+\newpage
+\appendix
+
+%=====================================================================
+\section{Growth equation and the role of the higher-order terms}
+
+\subsection{Numerical growth integration}
+
+Writing $N=\ln a$ and using $\mathrm{d}\ln H/\mathrm{d}N=-\tfrac32\Omega_m(a)$ for a
+flat $\Lambda$ background,
+\begin{equation}
+\frac{\mathrm{d}^2\delta}{\mathrm{d}N^2}
++\left(2-\tfrac32\Omega_m(a)\right)\frac{\mathrm{d}\delta}{\mathrm{d}N}
+-\tfrac32\Omega_m(a)\,\frac{\Geff(k,a)}{G}\,\delta = 0,
+\qquad
+\Omega_m(a)=\frac{\Omega_m a^{-3}}{\Omega_m a^{-3}+1-\Omega_m}.
+\end{equation}
+We integrate from $a=10^{-3}$ with $\delta=\mathrm{d}\delta/\mathrm{d}N=a$ and form
+$\Delta P/P=(\delta/\delta_{\LCDM})^2-1$ at $a=1$. Results are in
+Table~\ref{tab:growth}.
+
+\begin{table}[htb]
+\centering
+\small
+\begin{tabular}{lcccccc}
+\toprule
+$k\,[\hMpc]$ & $0.01$ & $0.10$ & $0.50$ & $1.50$ & $5.0$ & $20$\\
+\midrule
+$\Delta P/P$, $\beta=0.10$ & $+0.047$ & $+0.105$ & $+0.143$ & $+0.158$ & $+0.161$ & $+0.162$\\
+$\Delta P/P$, $\beta=0.22$ & $+0.244$ & $+0.612$ & $+0.891$ & $+1.007$ & $+1.039$ & $+1.043$\\
+\bottomrule
+\end{tabular}
+\caption{Fractional change in $P(k)$ at $z=0$ from Eq.~\eqref{eq:geff}, with
+$\meff=1.5\,\hMpc$. Positive at every scale, monotonically increasing, saturating.}
+\label{tab:growth}
+\end{table}
+
+\subsection{Why the cubic, quartic and derivative terms drop out}
+
+Expanding Eq.~\eqref{eq:eom} to first order in $\delta r$ about a homogeneous
+background $\bar r(t)$:
+\begin{align}
+\text{from } (\gamma+3\beta_3)r^2 :&\quad 2(\gamma+3\beta_3)\bar r\,\delta r,\\
+\text{from } \delta r^3 :&\quad 3\delta\,\bar r^2\,\delta r,\\
+\text{from } \alpha r(\dot r^2-(\nabla r)^2) :&\quad
+\alpha\dot{\bar r}^2\,\delta r + 2\alpha\bar r\dot{\bar r}\,\dot{\delta r}.
+\end{align}
+The first two are proportional to $\delta r$ with time-dependent coefficients and are
+absorbed into $\meff^2=V''(\bar r)$. The third contributes a friction-like term
+$2\alpha\bar r\dot{\bar r}\,\dot{\delta r}$, which is negligible in the quasi-static
+limit where $\dot{\delta r}$ is dropped relative to $(k^2/a^2)\delta r$, and a mass
+shift $\alpha\dot{\bar r}^2$. None of them couples $\delta r$ to $\delta\rho_m$.
+The matter coupling therefore comes entirely from the $F^2$ term, as used in
+Eq.~\eqref{eq:deltar}.
+
+The one caveat worth recording: if $\bar r$ evolves rapidly, so that
+$\alpha\bar r\dot{\bar r}$ is not small compared with $H$, the quasi-static
+approximation itself requires re-examination. For the parameter values considered
+here $\bar r$ is slowly rolling and the approximation holds, but a construction that
+relied on fast radion evolution would need this checked.
+
+%=====================================================================
+\section{Reproduction}
+
+\begin{verbatim}
+pip install camb numpy scipy matplotlib
+python verify_baseline.py     # -> baseline_verification.json, pk_baseline.csv
+python make_figures.py        # -> figures/fig1..fig5 .png
+\end{verbatim}
+
+\noindent
+Runtime is under two minutes on a single core. \textsc{camb} version 2.0.4 was used;
+any version from 1.3 onward should reproduce $\sigma_8$ to better than $10^{-3}$.
+The quadrature in Eq.~\eqref{eq:sigma8} is Simpson's rule on $4000$ logarithmic
+points over $10^{-4}$--$100\,\hMpc$; halving the resolution changes $\sigma_8$ in the
+fifth decimal.
+
+%=====================================================================
+\section{Relationship to earlier versions}
+
+\begin{table}[htb]
+\centering
+\small
+\begin{tabular}{lll}
+\toprule
+Version & Principal claim & Status after this paper\\
+\midrule
+v1.8.2 & Exponential $T(k)$ resolves small-scale abundances & superseded by v1.9.x\\
+v1.8.3 & $\sigma_8=0.76$ from the stated $T(k)$ & incorrect; not reproducible\\
+v1.9.0 & $S_8$/Lyman-$\alpha$ mutually exclusive; mechanism excluded & directionally correct\\
+v1.9.1 & Power-law $T(k)$ passes $S_8$ and Lyman-$\alpha$ & \textbf{retracted} (Sec.~\ref{sec:verify})\\
+v2.0 & Baseline fails; mechanism falsified & this paper\\
+\bottomrule
+\end{tabular}
+\caption{Version history and current status.}
+\end{table}
+
+\noindent
+The v1.9.0 conclusion, that the mechanism is observationally excluded, was closer to
+correct than the v1.9.1 revision that replaced it. The intervening change of sign in
+the project's own conclusions traces to the two convention errors identified in
+Section~\ref{sec:verify}.
+
+%=====================================================================
+\section{Errata}\label{app:errata}
+
+The following specific statements in earlier releases should not be cited.
+
+\begin{enumerate}[leftmargin=1.6em,itemsep=3pt]
+\item ``$S_8=0.829$ passes the weak-lensing constraint.'' It does not; the correct
+value is $0.8315$ and it lies $1.7\sigma$ above the target.
+\item ``The mechanism passes $S_8$ while failing $\sigma_8$.'' Not attainable;
+$S_8=1.025\,\sigma_8$ identically.
+\item ``Lyman-$\alpha$ ratio $=0.891$, within bounds.'' Computed with
+$P_{\rm mod}=TP$ rather than $T^2P$, and averaged over sampling points at which
+$T\equiv1$. The correct four-point value is $0.8125$ and the suppression reaches
+$70\%$ at $k=5\,\hMpc$.
+\item ``Gradient screening fails by $10^{42}$.'' Category error; withdrawn. See
+Section~\ref{sec:screening}.
+\item ``The holographic derivation fixes $T(k)$ uniquely.'' The asymptotic index has
+holographic motivation; the break scale $k_c$ and the low-$k$ behaviour are fitted.
+\end{enumerate}
+
+%=====================================================================
+\begin{thebibliography}{99}
+\small
+\bibitem{planck18} Planck Collaboration, \emph{Planck 2018 results. VI.
+Cosmological parameters}, Astron.\ Astrophys.\ \textbf{641} (2020) A6
+[arXiv:1807.06209].
+\bibitem{camb} A.~Lewis, A.~Challinor and A.~Lasenby, \emph{Efficient computation of
+CMB anisotropies in closed FRW models}, Astrophys.\ J.\ \textbf{538} (2000) 473
+[astro-ph/9911177].
+\bibitem{damour94} T.~Damour and A.~M.~Polyakov, \emph{The string dilaton and a
+least coupling principle}, Nucl.\ Phys.\ B \textbf{423} (1994) 532
+[hep-th/9401069].
+\bibitem{damour10} T.~Damour and J.~F.~Donoghue, \emph{Equivalence principle
+violations and couplings of a light dilaton}, Phys.\ Rev.\ D \textbf{82} (2010)
+084033 [arXiv:1007.2792].
+\bibitem{microscope} P.~Touboul et al.\ (MICROSCOPE Collaboration), \emph{MICROSCOPE
+mission: final results of the test of the equivalence principle}, Phys.\ Rev.\ Lett.\
+\textbf{129} (2022) 121102 [arXiv:2209.15487].
+\bibitem{cassini} B.~Bertotti, L.~Iess and P.~Tortora, \emph{A test of general
+relativity using radio links with the Cassini spacecraft}, Nature \textbf{425}
+(2003) 374.
+\bibitem{carroll03} S.~M.~Carroll and M.~M.~Guica, \emph{Sidestepping the
+cosmological constant with football-shaped extra dimensions}, hep-th/0302067.
+\bibitem{navarro03} I.~Navarro, \emph{Codimension two compactifications and the
+cosmological constant problem}, JCAP \textbf{0309} (2003) 004 [hep-th/0302129].
+\bibitem{garriga04} J.~Garriga and M.~Porrati, \emph{Football shaped extra
+dimensions and the absence of self-tuning}, JHEP \textbf{0408} (2004) 028
+[hep-th/0406158].
+\bibitem{akerblom10} N.~Akerblom and G.~Cornelissen, \emph{A compact codimension-two
+braneworld with precisely one brane}, Phys.\ Rev.\ D \textbf{81} (2010) 124025
+[arXiv:1004.1807].
+\bibitem{gw99} W.~D.~Goldberger and M.~B.~Wise, \emph{Modulus stabilization with
+bulk fields}, Phys.\ Rev.\ Lett.\ \textbf{83} (1999) 4922 [hep-ph/9907447].
+\bibitem{horndeski} G.~W.~Horndeski, \emph{Second-order scalar-tensor field
+equations in a four-dimensional space}, Int.\ J.\ Theor.\ Phys.\ \textbf{10} (1974)
+363.
+\bibitem{adelberger09} E.~G.~Adelberger, J.~H.~Gundlach, B.~R.~Heckel, S.~Hoedl and
+S.~Schlamminger, \emph{Torsion balance experiments: a low-energy frontier of
+particle physics}, Prog.\ Part.\ Nucl.\ Phys.\ \textbf{62} (2009) 102.
+\bibitem{zenodo191} A.~Swart, \emph{Radion leakage in a 5D Gauss--Bonnet braneworld},
+Zenodo v1.9.1 (2026), \url{https://zenodo.org/records/21663023}.
+\end{thebibliography}
+
+\end{document}
